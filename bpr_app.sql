@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 30, 2023 at 09:20 AM
+-- Generation Time: Jan 30, 2023 at 12:24 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -191,7 +191,56 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (17, '2023_01_25_071129_add_gender_table', 2),
 (18, '2023_01_24_105956_add_jenis_kelamin', 3),
 (19, '2023_01_27_104231_create_pengaduan_table', 3),
-(20, '2023_01_28_013320_add_notelp_information_table', 4);
+(20, '2023_01_28_013320_add_notelp_information_table', 4),
+(21, '2023_01_30_094524_create_news_table', 5),
+(22, '2023_01_30_100523_create_news_tags_table', 6);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `news`
+--
+
+CREATE TABLE `news` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `judul` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `users_id` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `news`
+--
+
+INSERT INTO `news` (`id`, `judul`, `category_id`, `content`, `slug`, `image`, `users_id`, `created_at`, `updated_at`) VALUES
+(1, 'OJK Dorong Auditor Internal Terapkan Teknologi dalam GRC Terintegrasi', 5, '<p>Otoritas Jasa Keuangan (OJK) mendorong penguatan peran audit internal di Industri Jasa Keuangan dalam penerapan&nbsp;<em>governance, risk, and compliance&nbsp;</em>(GRC) terintegrasi melalui pemanfaatan teknologi untuk mendukung terciptanya pengelolaan risiko yang efektif dan tata kelola perusahaan yang berkelanjutan.&nbsp;</p>\r\n\r\n<p>&quot;Salah satu&nbsp;<em>top risk&nbsp;</em>yang perlu diantisipasi perusahaan di tahun 2023 adalah adaptasi dan peningkatan penerapan teknologi dalam&nbsp;<em>Governance, Risk, and Compliance&nbsp;</em>(GRC) yang terintegrasi,&quot; kata Ketua Dewan Audit&nbsp;OJK Sophia Wattimena dalam&nbsp;<em>Townhall Meeting&nbsp;</em>Awal Tahun Institute of Internal Auditors (IIA) Indonesia di Jakarta, Selasa (24/01).</p>\r\n\r\n<p>Berdasarkan data survei oleh PwC tahun 2021, menunjukan bahwa&nbsp;<em>GRC Technology&nbsp;</em>belum dimanfaatkan secara optimal dalam fungsi audit internal. Namun, sebagian besar partisipan survei percaya bahwa proses audit dan&nbsp;<em>compliance&nbsp;</em>dapat diotomasi dan memanfaatkan&nbsp;<em>GRC Technology&nbsp;</em>ke depannya. Adanya gap ekspektasi dengan tingkat utilitas&nbsp;<em>GRC Technology&nbsp;</em>saat ini dapat menjadi acuan kita untuk terus memperbaiki proses bisnis, khususnya di lingkup implementasi GRC.</p>\r\n\r\n<p>Menurutnya, dalam menghadapi pesatnya perkembangan teknologi, internal auditor juga dituntut untuk lebih&nbsp;<em>agile&nbsp;</em>dan&nbsp;<em>adapt&nbsp;</em>dalam penggunaan teknologi untuk menghadapi risiko kedepan. Penggunaan&nbsp;<em>data analytics, Artificial Intelligence,&nbsp;</em>ataupun&nbsp;<em>GRC system&nbsp;</em>harus menjadi fokus pengembangan, sehingga dapat mendorong pelaksanaan&nbsp;<em>continuous audit continuous monitoring&nbsp;</em>(CACM) dengan&nbsp;<em>workflow&nbsp;</em>yang lebih fleksibel dan efisien.</p>\r\n\r\n<p>Lebih lanjut Sophia menyampaikan&nbsp;pentingnya perusahaan memiliki fungsi Audit Internal yang kuat dan didukung dengan teknologi, agar tata kelola perusahaan terus meningkat&nbsp;dan&nbsp;dapat memberikan&nbsp;<em>early warning&nbsp;</em>pada manajemen.&nbsp;Komunikasi auditor internal dengan&nbsp;<em>Board</em>&nbsp;menjadi sangat penting, sehingga&nbsp;<em>Board</em>&nbsp;dapat memahami permasalahan di perusahaan secara komprehensif.</p>\r\n\r\n<p>Auditor Internal harus bersikap proaktif dan mendorong proses konsultansi, sehingga risiko dapat dimitigasi sejak dini. Auditor internal juga harus selalu siap menghadapi berbagai tantangan kedepan, baik dari sisi kompleksitas bisnis maupun perubahan ketentuan di industri. Dengan demikian,&nbsp;peran auditor internal dapat menjadi lebih signifikan dalam mendukung terciptanya pengelolaan risiko yang efektif serta tata kelola perusahaan yang berkelanjutan<em>,&nbsp;</em>sehingga pengambilan keputusan&nbsp;yang diambil dapat lebih tepat sasaran dan sesuai kebutuhan&nbsp;<em>stakeholder</em>.</p>', 'ojk-dorong-auditor-internal-terapkan-teknologi-dalam-grc-terintegrasi', 'public/uploads/news/1675076257Thumbnail-INFO-TERKINI-KP-25-JAN-2023-OJK-DORONG-AUDIT-INTERNAL-TERAPKAN-TEKNOLOGI-GRC.png', 2, '2023-01-30 03:57:37', '2023-01-30 03:57:37');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `news_tags`
+--
+
+CREATE TABLE `news_tags` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `news_id` int(11) NOT NULL,
+  `tags_id` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `news_tags`
+--
+
+INSERT INTO `news_tags` (`id`, `news_id`, `tags_id`, `created_at`, `updated_at`) VALUES
+(1, 2, 5, NULL, NULL),
+(2, 1, 5, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -397,6 +446,18 @@ ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `news`
+--
+ALTER TABLE `news`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `news_tags`
+--
+ALTER TABLE `news_tags`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
@@ -485,7 +546,19 @@ ALTER TABLE `kredits`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `news`
+--
+ALTER TABLE `news`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `news_tags`
+--
+ALTER TABLE `news_tags`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `pengaduan`
