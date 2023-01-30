@@ -194,24 +194,14 @@
                     <!-- Latest Bitcoin News -->
                     <div class="latest_news_widget">
                         <h2>Berita Terbaru</h2>
-                        <div class="widget">
-                            <a href="news-details.html"><img src="{{ asset('vendor/images/post/lnw-1.jpg') }}"
-                                    alt=""></a>
-                            <a href="news-details.html" class="w_heding">Envion – Digital Currency Mint in Exploits
-                                World’s Lowest Cost Power</a>
-                        </div>
-                        <div class="widget">
-                            <a href="news-details.html"><img src="{{ asset('vendor/images/post/lnw-2.jpg') }}"
-                                    alt=""></a>
-                            <a href="news-details.html" class="w_heding">Bitcoin Cash Price Hits Record $2,500 to pierce
-                                $300 billion for the first time</a>
-                        </div>
-                        <div class="widget border-0">
-                            <a href="news-details.html"><img src="{{ asset('vendor/images/post/lnw-3.jpg') }}"
-                                    alt=""></a>
-                            <a href="news-details.html" class="w_heding">HOLD the Kitten! New Year Gift for Every Crypto
-                                Cuttie</a>
-                        </div>
+                        @foreach ($news as $info)
+                            <div class="widget">
+                                <a href="{{ route('news.detail', $aset->slug) }}"><img src="{{ $info->image }}"
+                                        alt=""></a>
+                                <a href="{{ route('news.detail', $info->slug) }}"
+                                    class="w_heding">{{ $info->judul }}</a>
+                            </div>
+                        @endforeach
                         <a href="news.html" class="load_more_btn">Load more..</a>
                     </div>
                 </div>

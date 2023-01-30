@@ -80,7 +80,7 @@
                     <div class="form-group col-12">
                         <label class="input-group-text">Jumlah Pinjaman*</label>
                         <input type="number" name="jumlah_pinjaman">
-                        <p style="color:red;">penulisan dalam nilai nomimal angka saja</p>
+                        <p style="color:red;">penulisan dalam nilai nominal angka saja</p>
                     </div>
                     <div class="form-group col-12">
                         <label class="input-group-text">Jaminan Agunan*</label>

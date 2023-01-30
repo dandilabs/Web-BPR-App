@@ -56,6 +56,23 @@
             </li>
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
+                    <i class="fas fa-book-open"></i> <span>News</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="nav-link" href="{{ route('new.index') }}">
+                            List News
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#">
+                            List News Trash
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
                     <i class="far fa-user"></i> <span>User</span>
                 </a>
                 <ul class="dropdown-menu">

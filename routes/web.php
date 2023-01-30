@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\JenisController;
@@ -33,6 +34,7 @@ Auth::routes([
 ]);
 
 Route::get('/', 'App\Http\Controllers\BlogController@index');
+Route::get('/news-detail/{slug}', 'App\Http\Controllers\NewsController@detail_news')->name('news.detail');
 Route::get('/aset', 'App\Http\Controllers\AsetController@index');
 Route::get('/aset-detail/{slug}', 'App\Http\Controllers\AsetController@detail_blog')->name('aset.detail');
 Route::get('/list-post','App\Http\Controllers\AsetController@list_blog')->name('aset.list');
@@ -84,6 +86,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/post/restore/{id}', 'App\Http\Controllers\PostController@restore')->name('post.restore');
     Route::delete('/post/kill/{id}', 'App\Http\Controllers\PostController@kill')->name('post.kill');
     Route::resource('/post', PostController::class);
+    Route::resource('/new', NewsController::class);
     Route::resource('/kredit', KreditController::class);
     Route::resource('/jenis', JenisController::class);
     Route::resource('/jaminan', JaminanController::class);

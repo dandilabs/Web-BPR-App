@@ -15,4 +15,9 @@ class Tags extends Model
     {
         return $this->belongsToMany(Posts::class);
     }
+
+    public function news()
+    {
+        return $this->belongsToMany(News::class);
+    }
 }

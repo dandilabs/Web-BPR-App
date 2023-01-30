@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     @include('template.head')
 </head>
+
 <body>
     <!-- Header Area -->
     <header class="main_header_area" id="header">
@@ -33,7 +33,7 @@
     <!-- End Home Banner Area -->
 
     <!-- Post section -->
-        @yield('content')
+    @yield('content')
     <!-- End Post section -->
 
     <!-- Connect with us -->
@@ -42,10 +42,12 @@
             <h2>Sosial Media Kami</h2>
             <ul class="contact_with_socail">
                 <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                <li><a href="#"><img src="{{ asset('vendor/images/tiktok.svg') }}" class="center"
+                            width="30"></a></li>
+                <li><a href="#"><img src="{{ asset('vendor/images/instagram.svg') }}" class="center"
+                            width="30"></a></li>
+                <li><a href="#"><img src="{{ asset('vendor/images/facebook.svg') }}" class="center"
+                            width="30"></a></li>
             </ul>
         </div>
     </section>
@@ -64,12 +66,13 @@
                     <address>
                         <span>LOCATION</span>
                         <p>Jl. Bintaro Utama Sektor IX, Blok HB 19 No. 3A ,
-                            <br>Pondok Aren - Tangerang Selatan</p>
+                            <br>Pondok Aren - Tangerang Selatan
+                        </p>
                     </address>
                 </div>
 
                 <div class="col-lg-5 col-md-6">
-                   <div class="subscribe">
+                    <div class="subscribe">
                         <h4>Kirim Masukkan</h4>
                         <p>Bila ada yg di tanyakan, silahkan kirim pesan</p>
                         <div class="input-group">
@@ -78,8 +81,8 @@
                                 <span class="input-group-text"><i class="fa fa-paper-plane"></i></span>
                             </div>
                         </div>
-                        <h6>Jam Kerja :  Senin - Jumat <span>Tutup : Sabtu - Minggu</span></h6>
-                   </div>
+                        <h6>Jam Kerja : Senin - Jumat <span>Tutup : Sabtu - Minggu</span></h6>
+                    </div>
                 </div>
 
                 <div class="col-lg-2 col-md-3 resources">
