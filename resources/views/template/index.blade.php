@@ -42,12 +42,12 @@
             <h2>Sosial Media Kami</h2>
             <ul class="contact_with_socail">
                 <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                <li><a href="#"><img src="{{ asset('vendor/images/tiktok.svg') }}" class="center"
-                            width="30"></a></li>
+                <li><a href="https://www.tiktok.com/@bprrizkybarokah?is_from_webapp=1&sender_device=pc"><img
+                            src="{{ asset('vendor/images/tiktok.svg') }}" class="center" width="30"></a></li>
                 <li><a href="#"><img src="{{ asset('vendor/images/instagram.svg') }}" class="center"
                             width="30"></a></li>
-                <li><a href="#"><img src="{{ asset('vendor/images/facebook.svg') }}" class="center"
-                            width="30"></a></li>
+                <li><a href="https://www.facebook.com/bpr.rizkybarokah.7"><img
+                            src="{{ asset('vendor/images/facebook.svg') }}" class="center" width="30"></a></li>
             </ul>
         </div>
     </section>

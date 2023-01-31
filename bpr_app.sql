@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 30, 2023 at 12:24 PM
+-- Generation Time: Jan 31, 2023 at 12:49 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -34,16 +34,6 @@ CREATE TABLE `category` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `category`
---
-
-INSERT INTO `category` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
-(2, 'Tanah', 'tanah', '2023-01-25 23:49:28', '2023-01-25 23:49:28'),
-(3, 'Sertifikat', 'sertifikat', '2023-01-25 23:49:34', '2023-01-25 23:49:34'),
-(4, 'Rumah', 'rumah', '2023-01-25 23:49:38', '2023-01-25 23:49:38'),
-(5, 'INFORMASI', 'informasi', '2023-01-30 00:41:03', '2023-01-30 00:41:03');
 
 -- --------------------------------------------------------
 
@@ -101,8 +91,8 @@ CREATE TABLE `jaminan` (
 --
 
 INSERT INTO `jaminan` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
-(1, 'BPKB KENDARAAN BERMOTOR', 'bpkb-kendaraan-bermotor', '2023-01-24 04:14:52', '2023-01-24 04:14:52'),
-(2, 'SERTIFIKAT TANAH', 'sertifikat-tanah', '2023-01-25 02:32:32', '2023-01-25 02:32:32');
+(1, 'BPKB KENDARAAN', 'bpkb-kendaraan', '2023-01-31 03:55:17', '2023-01-31 03:55:17'),
+(2, 'SERTIFIKAT RUMAH', 'sertifikat-rumah', '2023-01-31 03:55:27', '2023-01-31 03:55:27');
 
 -- --------------------------------------------------------
 
@@ -123,8 +113,10 @@ CREATE TABLE `jenis` (
 --
 
 INSERT INTO `jenis` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
-(1, 'Pegawai Negeri Sipil', 'pegawai-negeri-sipil', '2023-01-24 04:14:40', '2023-01-24 04:14:40'),
-(2, 'Pegawai Swasta', 'pegawai-swasta', '2023-01-25 02:32:22', '2023-01-25 02:32:22');
+(1, 'Pegawai Negeri Sipil', 'pegawai-negeri-sipil', '2023-01-31 03:54:40', '2023-01-31 03:54:40'),
+(2, 'Pegawai Swasta', 'pegawai-swasta', '2023-01-31 03:54:46', '2023-01-31 03:54:46'),
+(3, 'Pensiunan Biasa', 'pensiunan-biasa', '2023-01-31 03:54:53', '2023-01-31 03:54:53'),
+(4, 'Pensiunan PNS', 'pensiunan-pns', '2023-01-31 03:54:59', '2023-01-31 03:54:59');
 
 -- --------------------------------------------------------
 
@@ -152,8 +144,7 @@ CREATE TABLE `kredits` (
 --
 
 INSERT INTO `kredits` (`id`, `nama`, `jenis_id`, `jaminan_id`, `tempat_lahir`, `tanggal_lahir`, `jumlah_pinjaman`, `no_ktp`, `no_telp`, `created_at`, `updated_at`, `gender_id`) VALUES
-(1, 'Dandi Hermawan', 1, 1, 'Jakarta', '2023-01-30', '1000000', '3674030108980005', '089699451818', '2023-01-29 22:39:46', '2023-01-29 22:39:46', 1),
-(2, 'Sindu Prastomo', 2, 1, 'Jakarta', '2023-01-30', '10000000', '31313131311313', '13131313131', '2023-01-30 00:24:55', '2023-01-30 00:24:55', 1);
+(1, 'Dandi Hermawan', 1, 1, 'Jakarta', '2023-01-01', '1000000', '3674030108980005', '089699451818', '2023-01-31 03:57:50', '2023-01-31 03:57:50', 1);
 
 -- --------------------------------------------------------
 
@@ -213,13 +204,6 @@ CREATE TABLE `news` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `news`
---
-
-INSERT INTO `news` (`id`, `judul`, `category_id`, `content`, `slug`, `image`, `users_id`, `created_at`, `updated_at`) VALUES
-(1, 'OJK Dorong Auditor Internal Terapkan Teknologi dalam GRC Terintegrasi', 5, '<p>Otoritas Jasa Keuangan (OJK) mendorong penguatan peran audit internal di Industri Jasa Keuangan dalam penerapan&nbsp;<em>governance, risk, and compliance&nbsp;</em>(GRC) terintegrasi melalui pemanfaatan teknologi untuk mendukung terciptanya pengelolaan risiko yang efektif dan tata kelola perusahaan yang berkelanjutan.&nbsp;</p>\r\n\r\n<p>&quot;Salah satu&nbsp;<em>top risk&nbsp;</em>yang perlu diantisipasi perusahaan di tahun 2023 adalah adaptasi dan peningkatan penerapan teknologi dalam&nbsp;<em>Governance, Risk, and Compliance&nbsp;</em>(GRC) yang terintegrasi,&quot; kata Ketua Dewan Audit&nbsp;OJK Sophia Wattimena dalam&nbsp;<em>Townhall Meeting&nbsp;</em>Awal Tahun Institute of Internal Auditors (IIA) Indonesia di Jakarta, Selasa (24/01).</p>\r\n\r\n<p>Berdasarkan data survei oleh PwC tahun 2021, menunjukan bahwa&nbsp;<em>GRC Technology&nbsp;</em>belum dimanfaatkan secara optimal dalam fungsi audit internal. Namun, sebagian besar partisipan survei percaya bahwa proses audit dan&nbsp;<em>compliance&nbsp;</em>dapat diotomasi dan memanfaatkan&nbsp;<em>GRC Technology&nbsp;</em>ke depannya. Adanya gap ekspektasi dengan tingkat utilitas&nbsp;<em>GRC Technology&nbsp;</em>saat ini dapat menjadi acuan kita untuk terus memperbaiki proses bisnis, khususnya di lingkup implementasi GRC.</p>\r\n\r\n<p>Menurutnya, dalam menghadapi pesatnya perkembangan teknologi, internal auditor juga dituntut untuk lebih&nbsp;<em>agile&nbsp;</em>dan&nbsp;<em>adapt&nbsp;</em>dalam penggunaan teknologi untuk menghadapi risiko kedepan. Penggunaan&nbsp;<em>data analytics, Artificial Intelligence,&nbsp;</em>ataupun&nbsp;<em>GRC system&nbsp;</em>harus menjadi fokus pengembangan, sehingga dapat mendorong pelaksanaan&nbsp;<em>continuous audit continuous monitoring&nbsp;</em>(CACM) dengan&nbsp;<em>workflow&nbsp;</em>yang lebih fleksibel dan efisien.</p>\r\n\r\n<p>Lebih lanjut Sophia menyampaikan&nbsp;pentingnya perusahaan memiliki fungsi Audit Internal yang kuat dan didukung dengan teknologi, agar tata kelola perusahaan terus meningkat&nbsp;dan&nbsp;dapat memberikan&nbsp;<em>early warning&nbsp;</em>pada manajemen.&nbsp;Komunikasi auditor internal dengan&nbsp;<em>Board</em>&nbsp;menjadi sangat penting, sehingga&nbsp;<em>Board</em>&nbsp;dapat memahami permasalahan di perusahaan secara komprehensif.</p>\r\n\r\n<p>Auditor Internal harus bersikap proaktif dan mendorong proses konsultansi, sehingga risiko dapat dimitigasi sejak dini. Auditor internal juga harus selalu siap menghadapi berbagai tantangan kedepan, baik dari sisi kompleksitas bisnis maupun perubahan ketentuan di industri. Dengan demikian,&nbsp;peran auditor internal dapat menjadi lebih signifikan dalam mendukung terciptanya pengelolaan risiko yang efektif serta tata kelola perusahaan yang berkelanjutan<em>,&nbsp;</em>sehingga pengambilan keputusan&nbsp;yang diambil dapat lebih tepat sasaran dan sesuai kebutuhan&nbsp;<em>stakeholder</em>.</p>', 'ojk-dorong-auditor-internal-terapkan-teknologi-dalam-grc-terintegrasi', 'public/uploads/news/1675076257Thumbnail-INFO-TERKINI-KP-25-JAN-2023-OJK-DORONG-AUDIT-INTERNAL-TERAPKAN-TEKNOLOGI-GRC.png', 2, '2023-01-30 03:57:37', '2023-01-30 03:57:37');
-
 -- --------------------------------------------------------
 
 --
@@ -233,14 +217,6 @@ CREATE TABLE `news_tags` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `news_tags`
---
-
-INSERT INTO `news_tags` (`id`, `news_id`, `tags_id`, `created_at`, `updated_at`) VALUES
-(1, 2, 5, NULL, NULL),
-(2, 1, 5, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -275,8 +251,7 @@ CREATE TABLE `pengaduan` (
 --
 
 INSERT INTO `pengaduan` (`id`, `nama`, `email`, `pesan`, `created_at`, `updated_at`, `no_telp`) VALUES
-(1, 'Dandi Hermawan', 'dandihermawan87@gmail.com', 'ada', '2023-01-29 22:32:22', '2023-01-29 22:32:22', '23121'),
-(2, 'Sindu Prastomo', 'sindu@gmail.com', 'adada', '2023-01-30 00:30:46', '2023-01-30 00:30:46', '2313131');
+(1, 'Dandi Hermawan', 'dandihermawan87@gmail.com', 'Saya ingin mengajukan kredit, apa yg harus saya siapkan untuk persyaratan .. \r\n\r\nTerima Kasih', '2023-01-31 04:00:46', '2023-01-31 04:00:46', '089699451818');
 
 -- --------------------------------------------------------
 
@@ -316,15 +291,6 @@ CREATE TABLE `posts` (
   `users_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `posts`
---
-
-INSERT INTO `posts` (`id`, `judul`, `category_id`, `content`, `image`, `created_at`, `updated_at`, `slug`, `deleted_at`, `users_id`) VALUES
-(1, 'RUMAH INI DI LELANG', 2, '<p>dada</p>', 'public/uploads/posts/16750624251674925462erik-mclean-11342052-unsplash.jpg', '2023-01-30 00:07:05', '2023-01-30 00:07:05', 'rumah-ini-di-lelang', NULL, 2),
-(2, 'OJK Dorong Auditor Internal Terapkan Teknologi dalam GRC Terintegrasi', 5, '<p>Otoritas Jasa Keuangan (OJK) mendorong penguatan peran audit internal di Industri Jasa Keuangan dalam penerapan&nbsp;<em>governance, risk, and compliance&nbsp;</em>(GRC) terintegrasi melalui pemanfaatan teknologi untuk mendukung terciptanya pengelolaan risiko yang efektif dan tata kelola perusahaan yang berkelanjutan.&nbsp;</p>\r\n\r\n<p>&quot;Salah satu&nbsp;<em>top risk&nbsp;</em>yang perlu diantisipasi perusahaan di tahun 2023 adalah adaptasi dan peningkatan penerapan teknologi dalam&nbsp;<em>Governance, Risk, and Compliance&nbsp;</em>(GRC) yang terintegrasi,&quot; kata Ketua Dewan Audit&nbsp;OJK Sophia Wattimena dalam&nbsp;<em>Townhall Meeting&nbsp;</em>Awal Tahun Institute of Internal Auditors (IIA) Indonesia di Jakarta, Selasa (24/01).</p>\r\n\r\n<p>Berdasarkan data survei oleh PwC tahun 2021, menunjukan bahwa&nbsp;<em>GRC Technology&nbsp;</em>belum dimanfaatkan secara optimal dalam fungsi audit internal. Namun, sebagian besar partisipan survei percaya bahwa proses audit dan&nbsp;<em>compliance&nbsp;</em>dapat diotomasi dan memanfaatkan&nbsp;<em>GRC Technology&nbsp;</em>ke depannya. Adanya gap ekspektasi dengan tingkat utilitas&nbsp;<em>GRC Technology&nbsp;</em>saat ini dapat menjadi acuan kita untuk terus memperbaiki proses bisnis, khususnya di lingkup implementasi GRC.</p>\r\n\r\n<p>Menurutnya, dalam menghadapi pesatnya perkembangan teknologi, internal auditor juga dituntut untuk lebih&nbsp;<em>agile&nbsp;</em>dan&nbsp;<em>adapt&nbsp;</em>dalam penggunaan teknologi untuk menghadapi risiko kedepan. Penggunaan&nbsp;<em>data analytics, Artificial Intelligence,&nbsp;</em>ataupun&nbsp;<em>GRC system&nbsp;</em>harus menjadi fokus pengembangan, sehingga dapat mendorong pelaksanaan&nbsp;<em>continuous audit continuous monitoring&nbsp;</em>(CACM) dengan&nbsp;<em>workflow&nbsp;</em>yang lebih fleksibel dan efisien.</p>\r\n\r\n<p>Lebih lanjut Sophia menyampaikan&nbsp;pentingnya perusahaan memiliki fungsi Audit Internal yang kuat dan didukung dengan teknologi, agar tata kelola perusahaan terus meningkat&nbsp;dan&nbsp;dapat memberikan&nbsp;<em>early warning&nbsp;</em>pada manajemen.&nbsp;Komunikasi auditor internal dengan&nbsp;<em>Board</em>&nbsp;menjadi sangat penting, sehingga&nbsp;<em>Board</em>&nbsp;dapat memahami permasalahan di perusahaan secara komprehensif.</p>\r\n\r\n<p>Auditor Internal harus bersikap proaktif dan mendorong proses konsultansi, sehingga risiko dapat dimitigasi sejak dini. Auditor internal juga harus selalu siap menghadapi berbagai tantangan kedepan, baik dari sisi kompleksitas bisnis maupun perubahan ketentuan di industri. Dengan demikian,&nbsp;peran auditor internal dapat menjadi lebih signifikan dalam mendukung terciptanya pengelolaan risiko yang efektif serta tata kelola perusahaan yang berkelanjutan<em>,&nbsp;</em>sehingga pengambilan keputusan&nbsp;yang diambil dapat lebih tepat sasaran dan sesuai kebutuhan&nbsp;<em>stakeholder</em>.</p>', 'public/uploads/posts/1675064533Thumbnail-INFO-TERKINI-KP-25-JAN-2023-OJK-DORONG-AUDIT-INTERNAL-TERAPKAN-TEKNOLOGI-GRC.png', '2023-01-30 00:42:13', '2023-01-30 00:42:13', 'ojk-dorong-auditor-internal-terapkan-teknologi-dalam-grc-terintegrasi', NULL, 2),
-(3, 'Tindak Lanjut Pencabutan Izin Usaha PT Asuransi Jiwa Adisarana Wanaartha (Wanaartha Life)', 5, '<p>Kepala Eksekutif Pengawas Industri Keuangan Non Bank&nbsp;(IKNB) Ogi Prastomiyono menyatakan bahwa&nbsp;Otoritas Jasa Keuangan&nbsp;(OJK) telah menindaklanjuti proses pembubaran badan usaha dan pembentukan Tim Likuidasi (TL) PT Asuransi Jiwa Adisarana Wanartha (Wanaartha Life/WAL) pasca pencabutan izin usaha pada tanggal 5 Desember 2022 lalu.</p>\r\n\r\n<p>OJK telah menerima dokumen Rapat Umum Pemegang Saham (RUPS) yang diselenggarakan secara sirkuler dan ditandatangani oleh seluruh Pemegang Saham, dimana dalam RUPS tersebut telah memutuskan pembubaran perusahaan dan pembentukan TL sebelum batas waktu 30 hari sejak tanggal pencabutan izin usaha.</p>\r\n\r\n<p>Dasar hukum penyelenggaraan RUPS Sirkuler oleh Pemegang Saham tersebut adalah Pasal 91 Undang-Undang Nomor 40 Tahun 2007 tentang Perseroan Terbatas (&quot;UU PT&quot;) serta Pasal 10 ayat (5) Anggaran Dasar PT WAL.&nbsp;</p>\r\n\r\n<p>Selanjutnya, OJK melakukan penelaahan dokumen dan melakukan proses verifikasi terhadap calon TL yang sudah ditunjuk oleh RUPS dan disampaikan oleh Direksi sesuai dengan ketentuan perundangan yang berlaku. Berdasarkan hasil verifikasi tersebut, hanya 2 (dua) orang calon TL yang memenuhi syarat dari 3 (tiga) orang calon TL yang diajukan.</p>\r\n\r\n<p>Pada tanggal 13 Januari 2023, TL memberikan informasi bahwa telah melaksanakan proses pembubaran sebagaimana diatur dalam Pasal 5 POJK 28/2015 yaitu mendaftarkan dan memberitahukan kepada instansi yang berwenang, dalam hal ini Direktorat Jenderal Administrasi Hukum Umum, Kementerian Hukum dan HAM, mengenai akta penetapan RUPS Sirkuler, serta mengumumkannya pada surat kabar harian yang mempunyai peredaran luas pada tanggal 11 Januari 2023.</p>\r\n\r\n<p>Sesuai dengan pengumuman yang telah dilakukan oleh TL, maka Para Pemegang Polis, Tertanggung, Peserta, Karyawan, dan Kreditor lainnya dapat segera menyampaikan tagihan kepada TL dan untuk selanjutnya TL akan melakukan verifikasi atas dokumen pendukung yang menjadi dasar perhitungan penyelesaian kewajiban kepada para pihak.</p>\r\n\r\n<p>OJK menghormati dan mendukung proses hukum yang dilakukan oleh Bareskrim Polri melalui penetapan tujuh orang tersangka terkait kasus WAL, termasuk Pemegang Saham Pengendali dan keluarganya, yaitu Manfred Armin Pietruschka, Evelina Fadil Pietruschka, dan Rezanantha Pietruschka.</p>\r\n\r\n<p>OJK juga tetap meminta kepada Pemegang Saham Pengendali agar segera kembali ke Indonesia untuk bertanggung jawab atas permasalahan PT WAL, termasuk memenuhi kewajiban kepada para pemegang polis.</p>', 'public/uploads/posts/1675064803Thumbnail-INFO-TERKINI-KP-19-JAN-2023-CIU-WAL.png', '2023-01-30 00:46:43', '2023-01-30 00:46:43', 'tindak-lanjut-pencabutan-izin-usaha-pt-asuransi-jiwa-adisarana-wanaartha-wanaartha-life', NULL, 2);
-
 -- --------------------------------------------------------
 
 --
@@ -339,15 +305,6 @@ CREATE TABLE `posts_tags` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `posts_tags`
---
-
-INSERT INTO `posts_tags` (`id`, `posts_id`, `tags_id`, `created_at`, `updated_at`) VALUES
-(1, 1, 3, NULL, NULL),
-(2, 2, 5, NULL, NULL),
-(3, 3, 5, NULL, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -361,16 +318,6 @@ CREATE TABLE `tags` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `tags`
---
-
-INSERT INTO `tags` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
-(2, 'TANAH', 'tanah', '2023-01-25 23:49:52', '2023-01-25 23:49:52'),
-(3, 'RUMAH', 'rumah', '2023-01-25 23:49:56', '2023-01-25 23:49:56'),
-(4, 'SERTIFIKAT', 'sertifikat', '2023-01-25 23:50:02', '2023-01-25 23:50:02'),
-(5, 'berita terbaru', 'berita-terbaru', '2023-01-30 00:41:17', '2023-01-30 00:41:17');
 
 -- --------------------------------------------------------
 
@@ -510,7 +457,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -534,13 +481,13 @@ ALTER TABLE `jaminan`
 -- AUTO_INCREMENT for table `jenis`
 --
 ALTER TABLE `jenis`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `kredits`
 --
 ALTER TABLE `kredits`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -552,19 +499,19 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `news_tags`
 --
 ALTER TABLE `news_tags`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `pengaduan`
 --
 ALTER TABLE `pengaduan`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -576,19 +523,19 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `posts_tags`
 --
 ALTER TABLE `posts_tags`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tags`
 --
 ALTER TABLE `tags`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
