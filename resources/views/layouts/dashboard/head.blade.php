@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="{{ asset('assets/modules/fontawesome/css/all.min.css') }}">
 
 <!-- CSS Libraries -->
-<link rel="shortcut icon" href="{{ asset('dist/assets/images/logo-bpr.png') }}" type="image/x-icon">
+<link rel="shortcut icon" href="{{ asset('vendor/images/logo-bpr.png') }}" type="image/x-icon">
 
 <!-- Template CSS -->
 <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">

@@ -22,6 +22,20 @@ class NewsController extends Controller
         return view('admin.news.index', compact('news'));
     }
 
+    public function detail_news($slug)
+    {
+        $data = News::where('slug', $slug)->get();
+        $tags = Tags::all();
+        $category_list = Category::all();
+        return view('aset.detail', compact('data','tags','category_list'));
+    }
+
+    public function list_news()
+    {
+        $data = News::latest()->paginate(6);
+        $category_list = Category::all();
+        return view('aset.list', compact('data','category_list'));
+    }
     /**
      * Show the form for creating a new resource.
      *
