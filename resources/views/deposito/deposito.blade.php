@@ -4,7 +4,7 @@
     <!-- Pages Heder Area -->
     <div class="container">
         <div class="pages_heder">
-            <h2>Deposit Berjangka</h2>
+            <h2>Deposito</h2>
             <ol class="breadcrumb">
                 <li><a href="/">Beranda</a></li>
                 <li><a href="deposito" class="active">Deposito</a></li>
@@ -16,7 +16,9 @@
     <!-- About Content Area -->
     <section class="about_content">
         <div class="container">
-            <h2>merupakan tabungan yang pencairannya dilakukan berdasarkan jangka waktu tertentu.</h2>
+            <h2>Produk simpanan nasabah pada BPR yang ditujukan untuk masyarakat umum (perorangan dan Lembaga) yang
+                penarikannya dapat dilakukan pada waktu tertentu sesuai jangka waktu yang disepakati dengan prosentasi bunga
+                yang lebih besar dari tabungan dan dapat dijadikan sebagai agunan kredit .</h2>
             <img src="{{ asset('vendor/images/produk/deposito.png') }}" alt="">
             <div class="mission_area row mt-4">
                 <div class="col-md-3">

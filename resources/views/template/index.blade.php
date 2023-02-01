@@ -41,7 +41,8 @@
         <div class="container">
             <h2>Sosial Media Kami</h2>
             <ul class="contact_with_socail">
-                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="#"><img src="{{ asset('vendor/images/google.svg') }}" class="center"
+                            width="30"></a></li>
                 <li><a href="https://www.tiktok.com/@bprrizkybarokah?is_from_webapp=1&sender_device=pc"><img
                             src="{{ asset('vendor/images/tiktok.svg') }}" class="center" width="30"></a></li>
                 <li><a href="#"><img src="{{ asset('vendor/images/instagram.svg') }}" class="center"
@@ -58,7 +59,7 @@
         <div class="container">
             <div class="footer_inner row">
                 <div class="col-lg-5 col-md-6 footer_logo">
-                    {{-- <a href="index-2.html"><img src="{{ asset('vendor/images/logo-2.png') }}" width="200"></a> --}}
+                    <a href="index-2.html"><img src="{{ asset('vendor/images/lps.jpg') }}" width="100"></a>
                     <p>
                         PT. Bank Perkreditan Rakyat Rizky Barokah
                         merupakan perusahaan di bidang jasa keuangan / perbankan.
@@ -74,14 +75,14 @@
                 <div class="col-lg-5 col-md-6">
                     <div class="subscribe">
                         <h4>Kirim Masukkan</h4>
-                        <p>Bila ada yg di tanyakan, silahkan kirim pesan</p>
+                        <p>Informasi lebih lanjut hubungi kami </p>
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fa fa-paper-plane"></i></span>
                             </div>
                         </div>
-                        <h6>Jam Kerja : Senin - Jumat <span>Tutup : Sabtu - Minggu</span></h6>
+                        <h6>Senin - Jumat : 08:30 - 17:30 WIB<span>Sabtu - Minggu : TUTUP</span></h6>
                     </div>
                 </div>
 
@@ -90,8 +91,6 @@
                     <ul class="resources_list">
                         <li><a href="tentang-kami">Tentang Kami</a></li>
                         <li><a href="/hubungi">Hubungi Kami</a></li>
-                        <li><a href="#">Kebijakan</a></li>
-                        <li><a href="/hubungi">Tanya Jawab</a></li>
                         <li><a href="/ajukan">Pengajuan Kredit</a></li>
                     </ul>
                 </div>

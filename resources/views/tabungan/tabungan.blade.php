@@ -17,9 +17,9 @@
     <section class="about_content">
         <div class="container">
             <h2>
-                Tabungan pada BPR Rizky Barokah adalah tabungan dari nasabah (perorangan maupun lembaga) dalam mata uang
-                rupiah yang setorannya dapat dilakkan secara berulang-ulang dan penarikan hanya dapat dilakukan dengan
-                syarat-syarat tertentu yang telah disepakati oleh nasabah dan <strong>BPR Rizky Barokah</strong>
+                Produk simpanan yang ditujukan untuk masyarakat umum (pelajar, perorangan dan Lembaga) yang penyetorannya
+                dapat dilakukan secara berulang-ulang dan penarikannya dapat dilakukan setiap saat dengan syarat tertentu
+                dengan prosentasi bunga yang lebih kecil dari deposito dan dapat dijadikan sebagai agunan kredit
             </h2>
             <img src="{{ asset('vendor/images/karyawan/tabungan-1.png') }}" alt="">
             <div class="mission_area row mt-4">

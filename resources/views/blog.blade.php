@@ -1,5 +1,5 @@
 @extends('template.index')
-@section('title', 'Home')
+@section('title', 'Beranda')
 @section('news')
     <div class="braking_news row">
         <h4 class="braking_heding col-1">Produk</h4>
@@ -49,7 +49,7 @@
                 <img src="{{ asset('vendor/images/produk/kredit.png') }}" alt="First slide">
                 <div class="slider_caption">
                     <a href="news-details.html" class="wow fadeInUp animated heding" data-wow-delay="0.2s">Kredit</a>
-                    <p class="wow fadeInUp animated" data-wow-delay="0.4s">
+                    <p class="wow fadeInUp animated" data-wow-delay="0.4s" style="text-align: justify">
                         Penyedian uang atau tagihan yang dapat dipersamakan dengan itu berdasarkan persetujuan atau
                         kesepakatan pinjam-meminjam antara BPR dengan pihak lain yang mewajibkan pihak peminjam untuk
                         melunasi hutangnya setelah jangka waktu tertentu dengan pemberian bunga .
@@ -66,10 +66,11 @@
                 </ul>
                 <div class="slider_caption">
                     <a href="news-details.html" class="wow fadeInUp animated heding" data-wow-delay="0.2s">Tabungan Ku</a>
-                    <p class="wow fadeInUp animated" data-wow-delay="0.4s">
-                        Simpanan yang penarikannya hanya dapat dilakukan menurut syarat tertentu yang disepakati,
-                        tetapi tidak dapat ditarik dengan cek,
-                        bilyet giro,dan atau alat lainnya yang dipersamakan dengan itu .
+                    <p class="wow fadeInUp animated" data-wow-delay="0.4s" style="text-align: justify">
+                        Produk simpanan yang ditujukan untuk masyarakat umum (pelajar, perorangan dan Lembaga) yang
+                        penyetorannya dapat dilakukan secara berulang-ulang dan penarikannya dapat dilakukan setiap saat
+                        dengan syarat tertentu dengan prosentasi bunga yang lebih kecil dari deposito dan dapat dijadikan
+                        sebagai agunan kredit .
                     </p>
                     <a href="tabungan-ku" class="wow fadeInUp animated tag_btn" data-wow-delay="0.6s">Tabungan Ku</a>
                 </div>
@@ -82,9 +83,10 @@
                 </ul>
                 <div class="slider_caption">
                     <a href="news-details.html" class="wow fadeInUp animated heding" data-wow-delay="0.2s">Deposito</a>
-                    <p class="wow fadeInUp animated" data-wow-delay="0.4s">
-                        Simpanan yang penarikannya hanya dapet dilakukan pada waktu tertentu
-                        berdasarkan perjanjian nasabah penyimpan dengan BPR
+                    <p class="wow fadeInUp animated" data-wow-delay="0.4s" style="text-align: justify">
+                        Produk simpanan nasabah pada BPR yang ditujukan untuk masyarakat umum (perorangan dan Lembaga) yang
+                        penarikannya dapat dilakukan pada waktu tertentu sesuai jangka waktu yang disepakati dengan
+                        prosentasi bunga yang lebih besar dari tabungan dan dapat dijadikan sebagai agunan kredit .
                     </p>
                     <a href="deposito" class="wow fadeInUp animated tag_btn" data-wow-delay="0.6s">Deposito</a>
                 </div>
