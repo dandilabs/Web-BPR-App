@@ -1,6 +1,6 @@
 @extends('layouts.dashboard.index')
 @section('title', 'Pengaduan')
-@section('sub', 'Informasi Pengaduan')
+@section('sub', 'Informasi Pesan')
 @section('content')
 
     @if (Session::has('success'))
@@ -28,10 +28,10 @@
                     <td>{{ $hasil->no_telp }}</td>
                     <td>{{ $hasil->pesan }}</td>
                     <td>
-                        <form action="{{ route('user.destroy', $hasil->id) }}" method="POST">
+                        <form action="{{ route('pengaduan.destroy', $hasil->id) }}" method="POST">
                             @csrf
                             @method('delete')
-                            <a href="{{ route('user.edit', $hasil->id) }}" class="btn btn-sm btn-primary">
+                            <a href="{{ route('pengaduan.edit', $hasil->id) }}" class="btn btn-sm btn-primary">
                                 <i class="fas fa-pen"></i> Edit
                             </a>
                             <button href="" class="btn btn-sm btn-danger">

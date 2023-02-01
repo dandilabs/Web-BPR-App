@@ -60,10 +60,6 @@
             </div>
             <div class="carousel-item">
                 <img src="{{ asset('vendor/images/produk/tabungan.png') }}" alt="Second slide">
-                <ul class="special_share">
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                </ul>
                 <div class="slider_caption">
                     <a href="news-details.html" class="wow fadeInUp animated heding" data-wow-delay="0.2s">Tabungan Ku</a>
                     <p class="wow fadeInUp animated" data-wow-delay="0.4s" style="text-align: justify">
@@ -77,10 +73,6 @@
             </div>
             <div class="carousel-item">
                 <img src="{{ asset('vendor/images/produk/deposit.png') }}" alt="Second slide">
-                <ul class="special_share">
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                </ul>
                 <div class="slider_caption">
                     <a href="news-details.html" class="wow fadeInUp animated heding" data-wow-delay="0.2s">Deposito</a>
                     <p class="wow fadeInUp animated" data-wow-delay="0.4s" style="text-align: justify">
@@ -104,6 +96,12 @@
 @section('content')
     <section class="post_section">
         <div class="container">
+            <div class="alert alert-primary" role="alert">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                Info : PT. Bank Perkreditan Rakyat Rizky Barokah menawarkan berbagai fasilitas kredit, Klik
+                <a href="kredit-modul" class="wow fadeInUp animated tag_btn" data-wow-delay="0.6s">Disini</a> untuk
+                informasi pengajuan Kredit
+            </div>
             <div class="row post_section_inner">
                 <!-- Left_sidebar -->
                 <div class="col-lg-8 left_sidebar">

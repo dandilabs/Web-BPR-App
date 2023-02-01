@@ -83,6 +83,8 @@ class KreditController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $kredit = Kredits::findOrFail($id);
+        $kredit->delete();
+        return redirect()->back()->with('success', 'Kredits Success deleted');
     }
 }

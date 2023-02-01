@@ -2,17 +2,13 @@
 @section('title', 'Ajukan')
 @section('sub', 'Ajukan Kredit')
 @section('content')
+    @if (Session::has('success'))
+        <div class="alert alert-success" role="alert">
+            {{ Session('success') }}
+        </div>
+    @endif
     <div class="container">
         <div class="row">
-            @if (Session::has('success'))
-                <div class="alert alert-success" role="alert">
-                    {{ Session('success') }}
-                </div>
-            @endif
-
-            <a href="{{ route('kredit.create') }}" class="btn btn-sm btn-primary">
-                <i class="fas fa-pen"></i> Add User
-            </a>
             <table class="table mt-3">
                 <thead class="thead-dark">
                     <tr>

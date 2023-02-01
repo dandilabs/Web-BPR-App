@@ -101,6 +101,8 @@ class PengaduanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Pengaduan::findOrFail($id);
+        $data->delete();
+        return redirect()->back()->with('success', 'Your Information Success deleted');
     }
 }
