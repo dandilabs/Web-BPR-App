@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Tags;
 use App\Models\Posts;
+use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use App\Models\Category;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
@@ -58,7 +59,8 @@ class PostController extends Controller
             'content'       => $request->content,
             'image'         => 'public/uploads/posts/' . $new_image,
             'slug'          => Str::slug($request->judul),
-            'users_id'      => Auth::id()
+            'users_id'      => Auth::id(),
+            'created_at'    => Carbon::parse($request->created_at)->translatedFormat('1, d F Y')
         ]);
         $post->tags()->attach($request->tags);
         $image->move('public/uploads/posts/', $new_image);

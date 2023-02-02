@@ -128,8 +128,9 @@
                                     <div class="media-body feture_content">
                                         <a href="{{ route('aset.detail', $aset->slug) }}"
                                             class="f_heding">{{ $aset->judul }}</a>
-                                        <h6>{{ $aset->created_at->diffForHumans() }} <span>|</span><a
-                                                href="http://emran-khan.com/">{{ $aset->users->name }}</a></h6>
+                                        <h6>{{ \Carbon\Carbon::parse($aset->created_at)->translatedFormat('d F Y') }}
+                                            <span>|</span><a href="http://emran-khan.com/">{{ $aset->users->name }}</a>
+                                        </h6>
                                         <p>{{ $aset->category->name }}</p>
                                     </div>
                                 </div>
@@ -193,16 +194,16 @@
                 <div class="col-lg-4 right_sidebar">
                     <!-- Latest Bitcoin News -->
                     <div class="latest_news_widget">
-                        <h2>Berita Terbaru</h2>
+                        <h2>Informasi Terbaru</h2>
                         @foreach ($news as $info)
                             <div class="widget">
-                                <a href="{{ route('news.detail', $aset->slug) }}"><img src="{{ $info->image }}"
+                                <a href="{{ route('news.detail', $info->slug) }}"><img src="{{ $info->image }}"
                                         alt=""></a>
                                 <a href="{{ route('news.detail', $info->slug) }}"
                                     class="w_heding">{{ $info->judul }}</a>
                             </div>
                         @endforeach
-                        <a href="news.html" class="load_more_btn">Load more..</a>
+                        <a href="#" class="load_more_btn">Load more..</a>
                     </div>
                 </div>
             </div>

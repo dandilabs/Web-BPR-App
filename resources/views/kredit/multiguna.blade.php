@@ -1,17 +1,16 @@
 @extends('template.index')
-@section('title', 'Kredit')
+@section('title', 'Pengajuan')
 @section('content')
     <!-- Kreidt Content Area -->
     <section class="about_content">
         <div class="container">
-
             <img src="{{ asset('vendor/images/produk/pengajuan.png') }}" class="center" alt="">
-            <p style="text-align: justify">
+            {{-- <p style="text-align: justify">
                 Kredit merupakan Penyedian uang atau tagihan yang dapat dipersamakan dengan itu berdasarkan
                 persetujuan atau kesepakatan <br> pinjam-meminjam antara BPR dengan pihak lain yang mewajibkan pihak
                 peminjam untuk melunasi hutangnya
                 setelah jangka waktu tertentu dengan pemberian bunga .
-            </p>
+            </p> --}}
             <div class="mission_area row">
                 <div class="col-md-3">
                     <div class="nav tab_nav" role="tablist">

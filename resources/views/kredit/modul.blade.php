@@ -1,5 +1,5 @@
 @extends('template.index')
-@section('title', 'Kredit Modul')
+@section('title', 'Kredit')
 @section('content')
     <!-- Pages Heder Area -->
     <div class="container">
