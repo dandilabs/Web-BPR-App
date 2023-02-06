@@ -180,11 +180,7 @@
                                     class="w_heding">{{ $info->judul }}</a>
                             </div>
                         @endforeach
-<<<<<<< HEAD
-                        <a href="news.html" class="load_more_btn">Selanjutnya..</a>
-=======
-                        <a href="#" class="load_more_btn">Load more..</a>
->>>>>>> 02b39a993f8c899c707696feb555c569735a19a1
+                        <a href="#" class="load_more_btn">Selanjutnya..</a>
                     </div>
                 </div>
             </div>

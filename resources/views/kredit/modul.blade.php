@@ -27,40 +27,40 @@
             <div class="mission_area row">
                 <div class="col-md-3">
                     <div class="nav tab_nav" role="tablist">
-                        <a class="active" data-toggle="pill" href="#Konsumtif" role="tab">Kredit Konsumtif</a>
+                        <a class="active" data-toggle="pill" href="#Konsumtif" role="tab">Kredit Multiguna</a>
                         <a data-toggle="pill" href="#Investasi" role="tab">Kredit Investasi</a>
                         <a data-toggle="pill" href="#Modal" role="tab">Kredit Modal Kerja</a>
-                        <a data-toggle="pill" href="#Pensiun" role="tab">Kredit Pensiun</a>
+                        {{-- <a data-toggle="pill" href="#Pensiun" role="tab">Kredit Pensiun</a>
                         <a data-toggle="pill" href="#Ekspres" role="tab">Kredit Pensiun Ekspres</a>
                         <a data-toggle="pill" href="#Digicash" role="tab">Kredit Digicash</a>
-                        <a data-toggle="pill" href="#Fintech" role="tab">Kredit Fintech</a>
+                        <a data-toggle="pill" href="#Fintech" role="tab">Kredit Fintech</a> --}}
                     </div>
                 </div>
                 <div class="tab-content col-md-9" id="v-pills-tabContent">
                     <div class="tab-pane fade show active" id="Konsumtif" role="tabpanel">
-                        <h4>Kredit Konsumtif</h4>
-                        <p style="text-align: justify">Fasilitas kredit yang diberikan kepada PNS/ASN, karyawan swasta dan
-                            pensiunan yang memiliki
-                            sumber penghasilan tetap atau jasa profesi tetap yang digunakan untuk membiayai berbagai macam
-                            kebutuhan antara lain pendidikan, pernikahan, pengobatan/kesehatan, renovasi rumah dan lainnya .
+                        <h4>Kredit Multiguna</h4>
+                        <p style="text-align: justify">Kredit multiguna adalah Sebuah layanan <strong>PT BPR RIZKY
+                                BAROKAH</strong> yang
+                            menyediakan Pinjaman dalam bentuk uang tunai dengan jaminan tertentu dari penggunanya .
                         </p>
                     </div>
                     <div class="tab-pane fade" id="Investasi" role="tabpanel">
                         <h4>Kredit Investasi</h4>
-                        <p style="text-align: justify">Fasilitas kredit yang diberikan kepada pelaku usaha dan masyarakat
-                            umum untuk membiayai kebutuhan
-                            barang modal dalam rangka pembelian sarana alat produksi, rehabilitasi, modernisasi (mesin,
-                            peralatan, pabrik), pendirian proyek baru dan atau kebutuhan khusus terkait investasi .</p>
+                        <p style="text-align: justify">Fasilitas kredit yg diberikan oleh <strong>PT BPR RIZKY BAROKAH
+                            </strong> untuk membiayai kebutuhan barang modal dalam rangka rehabilitas, moderenisasi,
+                            perluasan, pendirian proyek baru dan atau kebutuhan khusus terkait investasi.</p>
                     </div>
                     <div class="tab-pane fade" id="Modal" role="tabpanel">
                         <h4>Kredit Modal Kerja</h4>
-                        <p style="text-align: justify">Fasilitas kredit yang diberikan kepada pelaku UMKM untuk memenuhi
+                        <p style="text-align: justify">Fasilitas kredit yang diberikan oleh
+                            <strong>PT BPR RIZKY BAROKAH</strong> kepada pelaku UMKM untuk memenuhi
                             kebutuhan modal kerja yang
                             dipakai dalam satu siklus usaha (pembelian bahan baku atau barang yang akan diperdagangkan) dan
                             kebutuhan modal kerja yang bersifat khusus (pembiayaan inventory, piutang, proyek atau kebutuhan
-                            khusus lainnya)</p>
+                            khusus lainnya)
+                        </p>
                     </div>
-                    <div class="tab-pane fade" id="Pensiun" role="tabpanel">
+                    {{-- <div class="tab-pane fade" id="Pensiun" role="tabpanel">
                         <h4>Kredit Pensiun</h4>
                         <p style="text-align: justify">Kredit konsumtif dengan angsuran tetap (Pokok dan Bunga) dan jangka
                             waktu tertentu dengan sumber
@@ -89,7 +89,7 @@
                             sumber pembayaran berasal dari Invoice atau Tagihan piutang usaha dari perusahaan-perusahaan
                             Grup Nabati dan perusahaan swasta multinasional lainnya (Pola Channeling)
                         </p>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="topics_row row">
                     <div class="col-12">

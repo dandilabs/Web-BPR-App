@@ -4,7 +4,7 @@
     <!-- Pages Heder Area -->
     <div class="container">
         <div class="pages_heder">
-            <h2>Aset Lelangan</h2>
+            <h2>Aset Menarik</h2>
             <ol class="breadcrumb">
                 <li><a href="/">Beranda</a></li>
                 <li><a href="#">Aset</a></li>

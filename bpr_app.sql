@@ -3,11 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
-<<<<<<< HEAD
--- Generation Time: Feb 06, 2023 at 08:23 AM
-=======
--- Generation Time: Feb 06, 2023 at 04:42 AM
->>>>>>> 02b39a993f8c899c707696feb555c569735a19a1
+-- Generation Time: Feb 06, 2023 at 10:45 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -104,7 +100,8 @@ CREATE TABLE `jaminan` (
 
 INSERT INTO `jaminan` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
 (1, 'BPKB KENDARAAN', 'bpkb-kendaraan', '2023-02-05 20:15:43', '2023-02-05 20:15:43'),
-(2, 'SHM (Sertifikat Hak Milik)', 'shm-sertifikat-hak-milik', '2023-02-05 20:15:58', '2023-02-05 20:15:58');
+(2, 'SHM (Sertifikat Hak Milik)', 'shm-sertifikat-hak-milik', '2023-02-05 20:15:58', '2023-02-05 20:15:58'),
+(3, 'AJB (Akta Jual Beli)', 'ajb-akta-jual-beli', '2023-02-06 02:18:45', '2023-02-06 02:18:45');
 
 -- --------------------------------------------------------
 
@@ -517,7 +514,7 @@ ALTER TABLE `gender`
 -- AUTO_INCREMENT for table `jaminan`
 --
 ALTER TABLE `jaminan`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `jenis`

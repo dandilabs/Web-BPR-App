@@ -4,7 +4,7 @@
     <!-- Pages Heder Area -->
     <div class="container">
         <div class="pages_heder">
-            <h2>List Lelangan</h2>
+            <h2>List Menarik</h2>
             <ol class="breadcrumb">
                 <li><a href="/">Beranda</a></li>
                 <li><a href="#">List</a></li>
