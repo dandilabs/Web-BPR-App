@@ -6,7 +6,7 @@
         <div class="pages_heder">
             <h2>Kredit</h2>
             <ol class="breadcrumb">
-                <li><a href="index-2.html">Beranda</a></li>
+                <li><a href="/">Beranda</a></li>
                 <li><a href="kredit-modul" class="active">Kredit</a></li>
             </ol>
         </div>

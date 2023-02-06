@@ -23,24 +23,6 @@
         </div>
     </div>
 @endsection
-@section('banner')
-    <section class="banner-section">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-9 text-center">
-                    <div class="banner-content">
-                        <h2 class="title">Kami siap membantu untuk maju bersama menuju Sejahtera</h2>
-                        <div class="btn-area">
-                            <a href="kredit-modul" class="cmn-btn">Solusi Keuangan</a>
-                            <a href="/ajukan" class="cmn-btn-active">Ajukan Kredit</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-@endsection
-
 @section('slider')
     <!-- Slicer col -->
     <div id="carouselExampleIndicators" class="carousel slide banner_slider col-12" data-ride="carousel">

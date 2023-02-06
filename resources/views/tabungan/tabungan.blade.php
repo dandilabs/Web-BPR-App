@@ -53,9 +53,9 @@
                     </div>
                 </div>
                 <div class="topics_row row">
-                    <div class="col-12">
+                    {{-- <div class="col-12">
                         <a href="#" class="btn btn-sm btn-primary">isi formulir</a>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
