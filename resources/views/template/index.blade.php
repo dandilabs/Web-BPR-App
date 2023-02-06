@@ -39,13 +39,14 @@
     <!-- Connect with us -->
     <section class="connect_with_us">
         <div class="container">
-            <h2>Sosial Media Kami</h2>
+            <h2>Ikuti Kami di</h2>
             <ul class="contact_with_socail">
-                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="#"><img src="{{ asset('vendor/images/google.svg') }}" class="center"
+                            width="30"></a></li>
                 <li><a href="https://www.tiktok.com/@bprrizkybarokah?is_from_webapp=1&sender_device=pc"><img
                             src="{{ asset('vendor/images/tiktok.svg') }}" class="center" width="30"></a></li>
-                <li><a href="#"><img src="{{ asset('vendor/images/instagram.svg') }}" class="center"
-                            width="30"></a></li>
+                <li><a href="https://instagram.com/bpr_rb?igshid=YmMyMTA2M2Y="><img
+                            src="{{ asset('vendor/images/instagram.svg') }}" class="center" width="30"></a></li>
                 <li><a href="https://www.facebook.com/bpr.rizkybarokah.7"><img
                             src="{{ asset('vendor/images/facebook.svg') }}" class="center" width="30"></a></li>
             </ul>
@@ -64,22 +65,27 @@
                         merupakan perusahaan di bidang jasa keuangan / perbankan.
                     </p>
                     <address>
-                        <span>LOCATION</span>
+                        <span>Lokasi Kantor</span>
                         <p>Jl. Bintaro Utama Sektor IX, Blok HB 19 No. 3A ,
                             <br>Pondok Aren - Tangerang Selatan
                         </p>
+                        <p>Telp (021) 7457667</p>
+                        <p>Email rizky_barokah@yahoo.com</p>
                     </address>
                 </div>
 
                 <div class="col-lg-5 col-md-6">
                     <div class="subscribe">
-                        <h4>Kirim Masukkan</h4>
-                        <p>Bila ada yg di tanyakan, silahkan kirim pesan</p>
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="">
-                            <div class="input-group-append">
-                                <span class="input-group-text"><i class="fa fa-paper-plane"></i></span>
-                            </div>
+                        <h4>Tercatat dan Diawasi</h4>
+                        <div class="mt-2">
+                            <a href="https://www.ojk.go.id/id/Default.aspx"><img
+                                    src="{{ asset('vendor/images/ojk.png') }}" width="100" alt="">
+                            </a>
+                            <a href="https://www.lps.go.id/"><img src="{{ asset('vendor/images/lps.png') }}"
+                                    width="110" alt=""></a>
+                            <a href="https://ayokebank.com/"><img src="{{ asset('vendor/images/ayo.jpg') }}"
+                                    width="100" alt=""></a>
+                            <h4 class="mt-3">Jam Operasional</h4>
                         </div>
                         <h6>Jam Kerja : Senin - Jumat <span>Tutup : Sabtu - Minggu</span></h6>
                     </div>
@@ -90,15 +96,13 @@
                     <ul class="resources_list">
                         <li><a href="tentang-kami">Tentang Kami</a></li>
                         <li><a href="/hubungi">Hubungi Kami</a></li>
-                        <li><a href="#">Kebijakan</a></li>
-                        <li><a href="/hubungi">Tanya Jawab</a></li>
                         <li><a href="/ajukan">Pengajuan Kredit</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="copy_right">
-            <p><a target="_blank" href="#">PT. Bank Perkreditan Rakyat Rizky Barokah</a></p>
+            <p><a target="_blank" href="/">&copy; 2023 PT BPR Rizky Barokah</a></p>
         </div>
     </footer>
     <!-- End Footer Area -->

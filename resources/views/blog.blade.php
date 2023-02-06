@@ -1,5 +1,5 @@
 @extends('template.index')
-@section('title', 'Home')
+@section('title', 'Beranda')
 @section('news')
     <div class="braking_news row">
         <h4 class="braking_heding col-1">Produk</h4>
@@ -119,11 +119,6 @@
                                     <div class="feture_img">
                                         <a href="{{ route('aset.detail', $aset->slug) }}"><img src="{{ $aset->image }}"
                                                 width="250"></a>
-                                        <ul class="special_share">
-                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                        </ul>
                                     </div>
                                     <div class="media-body feture_content">
                                         <a href="{{ route('aset.detail', $aset->slug) }}"
@@ -152,7 +147,7 @@
                         <div class="col-12 mt-4">
                             <div class="feature_tittle">
                                 <h2>Galeri Kami</h2>
-                                <a href="video-details.html">View More <i class="fa fa-arrow-right"></i></a>
+                                <a href="#">View More <i class="fa fa-arrow-right"></i></a>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -193,7 +188,7 @@
                 <div class="col-lg-4 right_sidebar">
                     <!-- Latest Bitcoin News -->
                     <div class="latest_news_widget">
-                        <h2>Berita Terbaru</h2>
+                        <h2>Informasi Terbaru</h2>
                         @foreach ($news as $info)
                             <div class="widget">
                                 <a href="{{ route('news.detail', $aset->slug) }}"><img src="{{ $info->image }}"
@@ -202,7 +197,7 @@
                                     class="w_heding">{{ $info->judul }}</a>
                             </div>
                         @endforeach
-                        <a href="news.html" class="load_more_btn">Load more..</a>
+                        <a href="news.html" class="load_more_btn">Selanjutnya..</a>
                     </div>
                 </div>
             </div>

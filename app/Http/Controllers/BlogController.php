@@ -12,7 +12,7 @@ class BlogController extends Controller
 {
     public function index(Posts $posts)
     {
-        $data = $posts->orderBy('created_at', 'desc')->take(8)->get();
+        $data = $posts->orderBy('created_at', 'desc')->take(4)->get();
         $populer = $posts->latest('created_at', 'desc')->paginate(3);
         $tags = Tags::all();
         $news = News::all();

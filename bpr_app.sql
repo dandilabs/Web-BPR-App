@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 31, 2023 at 12:49 PM
+-- Generation Time: Feb 06, 2023 at 08:23 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -34,6 +34,14 @@ CREATE TABLE `category` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
+(1, 'RUMAH', 'rumah', '2023-02-05 21:28:13', '2023-02-05 21:28:13'),
+(2, 'RUKO / KIOS', 'ruko-kios', '2023-02-05 23:43:07', '2023-02-05 23:43:07');
 
 -- --------------------------------------------------------
 
@@ -91,8 +99,8 @@ CREATE TABLE `jaminan` (
 --
 
 INSERT INTO `jaminan` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
-(1, 'BPKB KENDARAAN', 'bpkb-kendaraan', '2023-01-31 03:55:17', '2023-01-31 03:55:17'),
-(2, 'SERTIFIKAT RUMAH', 'sertifikat-rumah', '2023-01-31 03:55:27', '2023-01-31 03:55:27');
+(1, 'BPKB KENDARAAN', 'bpkb-kendaraan', '2023-02-05 20:15:43', '2023-02-05 20:15:43'),
+(2, 'SHM (Sertifikat Hak Milik)', 'shm-sertifikat-hak-milik', '2023-02-05 20:15:58', '2023-02-05 20:15:58');
 
 -- --------------------------------------------------------
 
@@ -113,10 +121,13 @@ CREATE TABLE `jenis` (
 --
 
 INSERT INTO `jenis` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
-(1, 'Pegawai Negeri Sipil', 'pegawai-negeri-sipil', '2023-01-31 03:54:40', '2023-01-31 03:54:40'),
-(2, 'Pegawai Swasta', 'pegawai-swasta', '2023-01-31 03:54:46', '2023-01-31 03:54:46'),
-(3, 'Pensiunan Biasa', 'pensiunan-biasa', '2023-01-31 03:54:53', '2023-01-31 03:54:53'),
-(4, 'Pensiunan PNS', 'pensiunan-pns', '2023-01-31 03:54:59', '2023-01-31 03:54:59');
+(1, 'Pegawai Negeri Sipil', 'pegawai-negeri-sipil', '2023-02-05 20:16:35', '2023-02-05 20:16:48'),
+(2, 'Pegawai Swasta', 'pegawai-swasta', '2023-02-05 20:16:59', '2023-02-05 20:16:59'),
+(3, 'Pensiunan PNS', 'pensiunan-pns', '2023-02-05 20:27:53', '2023-02-05 20:27:53'),
+(4, 'TNI / POLRI', 'tni-polri', '2023-02-05 20:28:03', '2023-02-05 20:28:03'),
+(5, 'Pensiunan Biasa', 'pensiunan-biasa', '2023-02-05 20:29:22', '2023-02-05 20:29:22'),
+(6, 'Wirausaha / Pengusaha', 'wirausaha-pengusaha', '2023-02-05 20:29:32', '2023-02-05 20:29:32'),
+(7, 'Tidak Bekerja', 'tidak-bekerja', '2023-02-05 20:29:42', '2023-02-05 20:29:42');
 
 -- --------------------------------------------------------
 
@@ -138,13 +149,6 @@ CREATE TABLE `kredits` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `gender_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `kredits`
---
-
-INSERT INTO `kredits` (`id`, `nama`, `jenis_id`, `jaminan_id`, `tempat_lahir`, `tanggal_lahir`, `jumlah_pinjaman`, `no_ktp`, `no_telp`, `created_at`, `updated_at`, `gender_id`) VALUES
-(1, 'Dandi Hermawan', 1, 1, 'Jakarta', '2023-01-01', '1000000', '3674030108980005', '089699451818', '2023-01-31 03:57:50', '2023-01-31 03:57:50', 1);
 
 -- --------------------------------------------------------
 
@@ -251,7 +255,8 @@ CREATE TABLE `pengaduan` (
 --
 
 INSERT INTO `pengaduan` (`id`, `nama`, `email`, `pesan`, `created_at`, `updated_at`, `no_telp`) VALUES
-(1, 'Dandi Hermawan', 'dandihermawan87@gmail.com', 'Saya ingin mengajukan kredit, apa yg harus saya siapkan untuk persyaratan .. \r\n\r\nTerima Kasih', '2023-01-31 04:00:46', '2023-01-31 04:00:46', '089699451818');
+(2, 'Dandi Hermawan', 'dandihermawan87@gmail.com', 'Saya ingin menanyakan terkati informasi Pengajuan Kredit', '2023-01-31 23:38:08', '2023-01-31 23:38:08', '089699451818'),
+(3, 'Dendi Hermawan', 'dandihermawan87@gmail.com', 'Dadadad', '2023-02-01 21:51:20', '2023-02-01 21:51:20', '983131312');
 
 -- --------------------------------------------------------
 
@@ -291,6 +296,19 @@ CREATE TABLE `posts` (
   `users_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `posts`
+--
+
+INSERT INTO `posts` (`id`, `judul`, `category_id`, `content`, `image`, `created_at`, `updated_at`, `slug`, `deleted_at`, `users_id`) VALUES
+(1, 'RUKO / KIOS 350 JUTA', 2, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<p>Lokasi : PERUMAHAN TAMAN ANGGREK Blok. Kios No.Desa Rawakalong, Kecamatan Gunung Sindur, Kota BOGOR</p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SHGB&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>50 </strong>m2 &nbsp;</li>\r\n	<li>Luas bangunan &nbsp;: <strong>&plusmn; 70</strong> m2</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Kontruksi Bangunan : pondasi batu kali &amp; Cor beton, dinding batako,rangka atap baja ringan, genteng glazur, keramik 30 X 30,kusen jendela alumunium, rolling door.</li>\r\n	<li>Lokasi dekat dengan BSD,dekat dengan kantor pemda pamulang, dekat kampus Unpam,dekat Ciputat, Dll</li>\r\n</ul>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<ul>\r\n	<li>PT. BPR RIZKY BAROKAH ( 021-7457667 / 22213065 )</li>\r\n</ul>', 'public/uploads/posts/16756665811.png', '2023-02-05 23:56:21', '2023-02-06 00:00:38', 'ruko-kios-350-juta', NULL, 2),
+(2, 'RUMAH DI JUAL HARGA 400 JT', 1, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<p><strong>Lokasi : </strong><strong>Jl. </strong><strong>Mujahir III</strong><strong> No.</strong><strong>165</strong><strong> Rt.00</strong><strong>4</strong><strong>/00</strong><strong>9</strong><strong>&nbsp; </strong><strong>Kel.</strong><strong> </strong><strong>Depok Jaya</strong><strong> Kec.&nbsp;</strong><strong>Pancoran Mas Depok</strong><strong> &ndash; Jawa Barat</strong></p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SHM&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>103</strong><strong> </strong>m2 &nbsp;</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Luas bangunan &nbsp;: <strong>&nbsp;&nbsp;94</strong> m2</li>\r\n	<li>Rumah dengan Teras, R. Tamu, R. Keluarga,Kamar Tidur 3, Kamar mandi 1, R. Makan &amp; Dapur.</li>\r\n	<li>Lokasi dekat pusat kota, Sekolah, Kampus, Pusat belanja, Pasar, Kantor Pemerintah.</li>\r\n</ul>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<ul>\r\n	<li>PT. BPR RIZKY BAROKAH (&nbsp;021-222 13 065 )</li>\r\n</ul>', 'public/uploads/posts/16756668041-.png', '2023-02-06 00:00:04', '2023-02-06 00:00:53', 'rumah-di-jual-harga-400-jt', NULL, 2),
+(3, 'RUMAH DIJUAL HARGA Rp. 1,6 M', 1, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<p>Lokasi : Jl. Pondok Serut Gg. Masjid III No.101 Rt.001/003 Kel. Paku Jaya Kec. Serpong Utara, Tangerang Selatan - Banten</p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SH</strong><strong>GB</strong><strong>&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>208</strong><strong> </strong>m2 &nbsp;</li>\r\n	<li>Luas bangunan &nbsp;: <strong>&plusmn; 32</strong><strong>0</strong> m2</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Rumah Kontrakan 2 Lantai terdiri dari : 5 pintu untuk latar dasar dan 8 pintu untuk lantai 2,</li>\r\n	<li>Lokasi berdekatan dengan Perumahan Graha Raya, Masjid Nurul Hikmah, SDN Pakujaya 2, Perumahan Parbu Residence, Akses Tol, Dll.</li>\r\n</ul>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<ul>\r\n	<li>PT. BPR RIZKY BAROKAH ( 021-7457667 / 22213065)</li>\r\n</ul>', 'public/uploads/posts/16756676292-.png', '2023-02-06 00:13:49', '2023-02-06 00:13:49', 'rumah-dijual-harga-rp-16-m', NULL, 2),
+(4, 'RUMAH DIJUAL HARGA Rp. 1,9 M', 1, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<p>Lokasi : Jl. Panda Raya No.234 Rt.005/005 Kel. Pondok Ranji, Kec. Ciputat Timur, Tangerang Selatan - Banten</p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SHM&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>410 </strong>m2 &nbsp;</li>\r\n	<li>Luas bangunan &nbsp;: <strong>&plusmn; 324</strong> m2</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Rumah 2 Lantai, R.Keluarga, R.Tamu, K. Tidur 6, K. Mandi 6,Kolam renang &amp; Taman.</li>\r\n	<li>Lokasi berdekatan dengan bintaro sek.7, dekat BXC Mall, Sta.Pondok Ranji, Pasar Modern, Kampus / Sekolah, RS Premier, Akses Tol Bintaro, Dll.</li>\r\n</ul>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<ul>\r\n	<li>PT. BPR RIZKY BAROKAH (&nbsp;021-22213065 )</li>\r\n</ul>', 'public/uploads/posts/16756677013-.png', '2023-02-06 00:15:01', '2023-02-06 00:15:01', 'rumah-dijual-harga-rp-19-m', NULL, 2),
+(5, 'RUMAH DI JUAL HARGA 800 JT', 1, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<p><strong>Lokasi : </strong><strong>Jl. </strong><strong>Buaran I</strong><strong> No.</strong><strong>33</strong><strong> Rt.00</strong><strong>9</strong><strong>/0</strong><strong>12</strong><strong>&nbsp; </strong><strong>Kel.</strong><strong> </strong><strong>Klender</strong><strong> Kec. </strong><strong>Duren sawit, Jakarta Timur</strong></p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SHM&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>84</strong><strong> </strong>m2 &nbsp;</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Luas bangunan &nbsp;: <strong>84</strong> m2</li>\r\n	<li>Rumah dengan Teras, R. Tamu, R. Keluarga,Kamar Tidur, Kamar mandi 1, R. Makan &amp; Dapur.</li>\r\n	<li>Lokasi dekat pusat kota, Sekolah, Kampus, Pusat belanja, Pasar, Kantor Pemerintah.</li>\r\n</ul>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<ul>\r\n	<li>PT. BPR RIZKY BAROKAH (&nbsp;021-22213065 )</li>\r\n</ul>', 'public/uploads/posts/16756678114-.png', '2023-02-06 00:16:51', '2023-02-06 00:16:51', 'rumah-di-jual-harga-800-jt', NULL, 2),
+(6, 'RUMAH DI JUAL HARGA 570 JT', 1, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<p><strong>Lokasi : Jl. Sukasari I no. 12 Rt. 01 / 02 Kel. Tegal Munjul Kec. Purwakarta &ndash; Jawa Barat</strong></p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SHM&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>163 </strong>m2 &nbsp;</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Luas bangunan &nbsp;: <strong>129</strong> m2</li>\r\n	<li>Rumah di pinggir jalan, Carpot, Teras, Kolam Belakang &amp; Air mancur, R. Tamu, R. Keluarga,Kamar Tidur 3, Kamar mandi 3, R. Makan &amp; Dapur.</li>\r\n	<li>Lokasi dekat pusat kota, Sekolah, Kampus, Pusat belanja Giant, Jogja, Pasar, Kantor Pemerintah, RSUD, Tol Sadang.</li>\r\n</ul>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<ul>\r\n	<li>PT. BPR RIZKY BAROKAH (&nbsp;021-222 13 065 )</li>\r\n</ul>', 'public/uploads/posts/16756678725-.png', '2023-02-06 00:17:52', '2023-02-06 00:17:52', 'rumah-di-jual-harga-570-jt', NULL, 2),
+(7, 'RUMAH DI JUAL HARGA 1,8 M', 1, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<p>Lokasi : Jl. Malaka No.49 Rt.003/001 Kel. Peusar, Kec. Panongan Kabupaten Tangerang - Banten</p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SHM&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>1.009 </strong>m2 &nbsp;</li>\r\n	<li>Luas bangunan &nbsp;: <strong>&plusmn; 252</strong> m2</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Rumah 1 &frac12; Lantai, R.Keluarga, R.Tamu, K. Tidur 6, K. Mandi 3,Kolam renang &amp; Taman.</li>\r\n	<li>Lokasi Belakan Citra Raya, dekat dengan Bizzpoint, Pasar, Sekolah, kantor pemerintah, akses tol Cikupa, fasilitas umum lengkap,Dll.</li>\r\n</ul>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<ul>\r\n	<li>PT. BPR RIZKY BAROKAH (( 021-7457667 )</li>\r\n</ul>', 'public/uploads/posts/16756679466-.png', '2023-02-06 00:19:06', '2023-02-06 00:19:06', 'rumah-di-jual-harga-18-m', NULL, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -305,6 +323,19 @@ CREATE TABLE `posts_tags` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `posts_tags`
+--
+
+INSERT INTO `posts_tags` (`id`, `posts_id`, `tags_id`, `created_at`, `updated_at`) VALUES
+(1, 1, 2, NULL, NULL),
+(2, 2, 1, NULL, NULL),
+(3, 3, 1, NULL, NULL),
+(4, 4, 1, NULL, NULL),
+(5, 5, 1, NULL, NULL),
+(6, 6, 1, NULL, NULL),
+(7, 7, 1, NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -318,6 +349,14 @@ CREATE TABLE `tags` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `tags`
+--
+
+INSERT INTO `tags` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
+(1, 'RUMAH', 'rumah', '2023-02-05 21:28:24', '2023-02-05 21:28:24'),
+(2, 'RUKO / KIOS', 'ruko-kios', '2023-02-05 23:43:47', '2023-02-05 23:44:24');
 
 -- --------------------------------------------------------
 
@@ -342,8 +381,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `type`) VALUES
-(1, 'admin', 'admin@gmail.com', NULL, '$2y$10$utDF2VJn.YzKayX9fhVCEe0VqitkQc/ehRZdL6CFPZtE.O.KwPnyO', NULL, '2023-01-24 04:14:25', '2023-01-24 19:57:30', 1),
-(2, 'Mas Dandi', 'dandihermawan87@gmail.com', NULL, '$2y$10$daCpKTcV.SBOXgQyXhgS/.IpoisstJuM8kyepf973vJlUUTzDY/l6', NULL, '2023-01-24 19:49:42', '2023-01-30 00:44:50', 1);
+(2, 'admin', 'dandihermawan87@gmail.com', NULL, '$2y$10$daCpKTcV.SBOXgQyXhgS/.IpoisstJuM8kyepf973vJlUUTzDY/l6', NULL, '2023-01-24 19:49:42', '2023-02-05 20:08:44', 1);
 
 --
 -- Indexes for dumped tables
@@ -457,7 +495,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -481,13 +519,13 @@ ALTER TABLE `jaminan`
 -- AUTO_INCREMENT for table `jenis`
 --
 ALTER TABLE `jenis`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `kredits`
 --
 ALTER TABLE `kredits`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -511,7 +549,7 @@ ALTER TABLE `news_tags`
 -- AUTO_INCREMENT for table `pengaduan`
 --
 ALTER TABLE `pengaduan`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -523,19 +561,19 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `posts_tags`
 --
 ALTER TABLE `posts_tags`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tags`
 --
 ALTER TABLE `tags`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
