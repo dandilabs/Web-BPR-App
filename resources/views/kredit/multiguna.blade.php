@@ -44,7 +44,7 @@
                 </div>
                 <div class="topics_row row">
                     <div class="col-12">
-                        <a href="{{ route('kredit.ajukan') }}" class="btn btn-sm btn-primary">Pengajuan Kredit</a>
+                        <a href="{{ route('kredit.ajukan') }}" class="btn btn-sm btn-primary">Ajukan Kredit</a>
                     </div>
                 </div>
             </div>

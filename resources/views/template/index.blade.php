@@ -39,14 +39,14 @@
     <!-- Connect with us -->
     <section class="connect_with_us">
         <div class="container">
-            <h2>Sosial Media Kami</h2>
+            <h2>Ikuti Kami di</h2>
             <ul class="contact_with_socail">
                 <li><a href="#"><img src="{{ asset('vendor/images/google.svg') }}" class="center"
                             width="30"></a></li>
                 <li><a href="https://www.tiktok.com/@bprrizkybarokah?is_from_webapp=1&sender_device=pc"><img
                             src="{{ asset('vendor/images/tiktok.svg') }}" class="center" width="30"></a></li>
-                <li><a href="#"><img src="{{ asset('vendor/images/instagram.svg') }}" class="center"
-                            width="30"></a></li>
+                <li><a href="https://instagram.com/bpr_rb?igshid=YmMyMTA2M2Y="><img
+                            src="{{ asset('vendor/images/instagram.svg') }}" class="center" width="30"></a></li>
                 <li><a href="https://www.facebook.com/bpr.rizkybarokah.7"><img
                             src="{{ asset('vendor/images/facebook.svg') }}" class="center" width="30"></a></li>
             </ul>
@@ -59,24 +59,37 @@
         <div class="container">
             <div class="footer_inner row">
                 <div class="col-lg-5 col-md-6 footer_logo">
-                    <a href="index-2.html"><img src="{{ asset('vendor/images/lps.jpg') }}" width="100"></a>
+                    {{-- <a href="/"><img src="{{ asset('vendor/images/background.png') }}" height="100"
+                            width="250"></a> --}}
                     <p>
                         PT. Bank Perkreditan Rakyat Rizky Barokah
                         merupakan perusahaan di bidang jasa keuangan / perbankan.
                     </p>
                     <address>
-                        <span>LOCATION</span>
+                        <span>Lokasi Kantor</span>
                         <p>Jl. Bintaro Utama Sektor IX, Blok HB 19 No. 3A ,
                             <br>Pondok Aren - Tangerang Selatan
                         </p>
+                        <i class="fa-solid fa-phone"></i>
+                        <p>Telp (021) 7457667</p>
+                        <p>Email rizky_barokah@yahoo.com</p>
                     </address>
                 </div>
 
                 <div class="col-lg-5 col-md-6">
                     <div class="subscribe">
-                        <h4>Kirim Masukkan</h4>
-                        <p>Informasi lebih lanjut hubungi kami </p>
-                        <div class="input-group">
+                        <h4>Tercatat dan Diawasi</h4>
+                        <div class="mt-2">
+                            <a href="https://www.ojk.go.id/id/Default.aspx"><img
+                                    src="{{ asset('vendor/images/ojk.png') }}" width="100" alt="">
+                            </a>
+                            <a href="https://www.lps.go.id/"><img src="{{ asset('vendor/images/lps.png') }}"
+                                    width="110" alt=""></a>
+                            <a href="https://ayokebank.com/"><img src="{{ asset('vendor/images/ayo.jpg') }}"
+                                    width="100" alt=""></a>
+                            <h4 class="mt-3">Jam Operasional</h4>
+                        </div>
+                        <div class="input-group mt-2">
                             <input type="text" class="form-control" placeholder="">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fa fa-paper-plane"></i></span>
@@ -97,7 +110,7 @@
             </div>
         </div>
         <div class="copy_right">
-            <p><a target="_blank" href="#">PT. Bank Perkreditan Rakyat Rizky Barokah</a></p>
+            <p><a target="_blank" href="/">&copy; 2023 PT BPR Rizky Barokah</a></p>
         </div>
     </footer>
     <!-- End Footer Area -->

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 31, 2023 at 12:49 PM
+-- Generation Time: Feb 06, 2023 at 04:42 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -91,8 +91,8 @@ CREATE TABLE `jaminan` (
 --
 
 INSERT INTO `jaminan` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
-(1, 'BPKB KENDARAAN', 'bpkb-kendaraan', '2023-01-31 03:55:17', '2023-01-31 03:55:17'),
-(2, 'SERTIFIKAT RUMAH', 'sertifikat-rumah', '2023-01-31 03:55:27', '2023-01-31 03:55:27');
+(1, 'BPKB KENDARAAN', 'bpkb-kendaraan', '2023-02-05 20:15:43', '2023-02-05 20:15:43'),
+(2, 'SHM (Sertifikat Hak Milik)', 'shm-sertifikat-hak-milik', '2023-02-05 20:15:58', '2023-02-05 20:15:58');
 
 -- --------------------------------------------------------
 
@@ -113,10 +113,13 @@ CREATE TABLE `jenis` (
 --
 
 INSERT INTO `jenis` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
-(1, 'Pegawai Negeri Sipil', 'pegawai-negeri-sipil', '2023-01-31 03:54:40', '2023-01-31 03:54:40'),
-(2, 'Pegawai Swasta', 'pegawai-swasta', '2023-01-31 03:54:46', '2023-01-31 03:54:46'),
-(3, 'Pensiunan Biasa', 'pensiunan-biasa', '2023-01-31 03:54:53', '2023-01-31 03:54:53'),
-(4, 'Pensiunan PNS', 'pensiunan-pns', '2023-01-31 03:54:59', '2023-01-31 03:54:59');
+(1, 'Pegawai Negeri Sipil', 'pegawai-negeri-sipil', '2023-02-05 20:16:35', '2023-02-05 20:16:48'),
+(2, 'Pegawai Swasta', 'pegawai-swasta', '2023-02-05 20:16:59', '2023-02-05 20:16:59'),
+(3, 'Pensiunan PNS', 'pensiunan-pns', '2023-02-05 20:27:53', '2023-02-05 20:27:53'),
+(4, 'TNI / POLRI', 'tni-polri', '2023-02-05 20:28:03', '2023-02-05 20:28:03'),
+(5, 'Pensiunan Biasa', 'pensiunan-biasa', '2023-02-05 20:29:22', '2023-02-05 20:29:22'),
+(6, 'Wirausaha / Pengusaha', 'wirausaha-pengusaha', '2023-02-05 20:29:32', '2023-02-05 20:29:32'),
+(7, 'Tidak Bekerja', 'tidak-bekerja', '2023-02-05 20:29:42', '2023-02-05 20:29:42');
 
 -- --------------------------------------------------------
 
@@ -138,13 +141,6 @@ CREATE TABLE `kredits` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `gender_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `kredits`
---
-
-INSERT INTO `kredits` (`id`, `nama`, `jenis_id`, `jaminan_id`, `tempat_lahir`, `tanggal_lahir`, `jumlah_pinjaman`, `no_ktp`, `no_telp`, `created_at`, `updated_at`, `gender_id`) VALUES
-(1, 'Dandi Hermawan', 1, 1, 'Jakarta', '2023-01-01', '1000000', '3674030108980005', '089699451818', '2023-01-31 03:57:50', '2023-01-31 03:57:50', 1);
 
 -- --------------------------------------------------------
 
@@ -251,7 +247,8 @@ CREATE TABLE `pengaduan` (
 --
 
 INSERT INTO `pengaduan` (`id`, `nama`, `email`, `pesan`, `created_at`, `updated_at`, `no_telp`) VALUES
-(1, 'Dandi Hermawan', 'dandihermawan87@gmail.com', 'Saya ingin mengajukan kredit, apa yg harus saya siapkan untuk persyaratan .. \r\n\r\nTerima Kasih', '2023-01-31 04:00:46', '2023-01-31 04:00:46', '089699451818');
+(2, 'Dandi Hermawan', 'dandihermawan87@gmail.com', 'Saya ingin menanyakan terkati informasi Pengajuan Kredit', '2023-01-31 23:38:08', '2023-01-31 23:38:08', '089699451818'),
+(3, 'Dendi Hermawan', 'dandihermawan87@gmail.com', 'Dadadad', '2023-02-01 21:51:20', '2023-02-01 21:51:20', '983131312');
 
 -- --------------------------------------------------------
 
@@ -342,8 +339,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `type`) VALUES
-(1, 'admin', 'admin@gmail.com', NULL, '$2y$10$utDF2VJn.YzKayX9fhVCEe0VqitkQc/ehRZdL6CFPZtE.O.KwPnyO', NULL, '2023-01-24 04:14:25', '2023-01-24 19:57:30', 1),
-(2, 'Mas Dandi', 'dandihermawan87@gmail.com', NULL, '$2y$10$daCpKTcV.SBOXgQyXhgS/.IpoisstJuM8kyepf973vJlUUTzDY/l6', NULL, '2023-01-24 19:49:42', '2023-01-30 00:44:50', 1);
+(2, 'admin', 'dandihermawan87@gmail.com', NULL, '$2y$10$daCpKTcV.SBOXgQyXhgS/.IpoisstJuM8kyepf973vJlUUTzDY/l6', NULL, '2023-01-24 19:49:42', '2023-02-05 20:08:44', 1);
 
 --
 -- Indexes for dumped tables
@@ -481,13 +477,13 @@ ALTER TABLE `jaminan`
 -- AUTO_INCREMENT for table `jenis`
 --
 ALTER TABLE `jenis`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `kredits`
 --
 ALTER TABLE `kredits`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -511,7 +507,7 @@ ALTER TABLE `news_tags`
 -- AUTO_INCREMENT for table `pengaduan`
 --
 ALTER TABLE `pengaduan`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
