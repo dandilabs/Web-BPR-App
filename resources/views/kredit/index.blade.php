@@ -1,5 +1,5 @@
 @extends('template.index')
-@section('title', 'Kredit')
+@section('title', 'Pengajuan')
 
 @section('content')
     <div class="container">

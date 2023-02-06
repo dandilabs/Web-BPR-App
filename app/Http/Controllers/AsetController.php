@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Tags;
 use App\Models\Posts;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class AsetController extends Controller
 {
@@ -20,6 +21,7 @@ class AsetController extends Controller
 
     public function detail_blog($slug)
     {
+        $today = Carbon::now()->isoFormat('D MMMM Y');
         $data = Posts::where('slug', $slug)->get();
         $tags = Tags::all();
         $category_list = Category::all();

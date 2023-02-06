@@ -22,7 +22,7 @@
                         <!-- News Item -->
                         @foreach ($data as $aset)
                             <div class="news_item">
-                                <h6>{{ $aset->created_at->diffForHumans() }}</h6>
+                                <h6>{{ \Carbon\Carbon::parse($aset->created_at)->translatedFormat('d F Y') }}</h6>
                                 <a href="{{ route('aset.detail', $aset->slug) }}"
                                     class="news_heding">{{ $aset->judul }}</a>
                                 <img src="{{ $aset->image }}" alt="">

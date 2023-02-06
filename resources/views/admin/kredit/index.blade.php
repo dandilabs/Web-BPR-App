@@ -2,17 +2,13 @@
 @section('title', 'Ajukan')
 @section('sub', 'Ajukan Kredit')
 @section('content')
+    @if (Session::has('success'))
+        <div class="alert alert-success" role="alert">
+            {{ Session('success') }}
+        </div>
+    @endif
     <div class="container">
         <div class="row">
-            @if (Session::has('success'))
-                <div class="alert alert-success" role="alert">
-                    {{ Session('success') }}
-                </div>
-            @endif
-
-            <a href="{{ route('kredit.create') }}" class="btn btn-sm btn-primary">
-                <i class="fas fa-pen"></i> Add User
-            </a>
             <table class="table mt-3">
                 <thead class="thead-dark">
                     <tr>
@@ -36,7 +32,7 @@
                             <td>{{ $hasil->nama }}</td>
                             <td>{{ $hasil->gender->jenis_kelamin }}</td>
                             <td>{{ $hasil->tempat_lahir }}</td>
-                            <td>{{ $hasil->tanggal_lahir }}</td>
+                            <td>{{ \Carbon\Carbon::parse($hasil->tanggal_lahir)->translatedFormat('d F Y') }}</td>
                             <td>{{ $hasil->jenis->name }}</td>
                             <td>@currency($hasil->jumlah_pinjaman)</td>
                             <td>{{ $hasil->no_ktp }}</td>

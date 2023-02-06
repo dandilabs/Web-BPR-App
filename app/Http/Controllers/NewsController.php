@@ -27,14 +27,14 @@ class NewsController extends Controller
         $data = News::where('slug', $slug)->get();
         $tags = Tags::all();
         $category_list = Category::all();
-        return view('aset.detail', compact('data','tags','category_list'));
+        return view('news.detail', compact('data','tags','category_list'));
     }
 
     public function list_news()
     {
         $data = News::latest()->paginate(6);
         $category_list = Category::all();
-        return view('aset.list', compact('data','category_list'));
+        return view('news.list', compact('data','category_list'));
     }
     /**
      * Show the form for creating a new resource.

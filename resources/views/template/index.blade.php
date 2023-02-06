@@ -59,7 +59,8 @@
         <div class="container">
             <div class="footer_inner row">
                 <div class="col-lg-5 col-md-6 footer_logo">
-                    {{-- <a href="index-2.html"><img src="{{ asset('vendor/images/logo-2.png') }}" width="200"></a> --}}
+                    {{-- <a href="/"><img src="{{ asset('vendor/images/background.png') }}" height="100"
+                            width="250"></a> --}}
                     <p>
                         PT. Bank Perkreditan Rakyat Rizky Barokah
                         merupakan perusahaan di bidang jasa keuangan / perbankan.
@@ -69,6 +70,10 @@
                         <p>Jl. Bintaro Utama Sektor IX, Blok HB 19 No. 3A ,
                             <br>Pondok Aren - Tangerang Selatan
                         </p>
+<<<<<<< HEAD
+=======
+                        <i class="fa-solid fa-phone"></i>
+>>>>>>> 02b39a993f8c899c707696feb555c569735a19a1
                         <p>Telp (021) 7457667</p>
                         <p>Email rizky_barokah@yahoo.com</p>
                     </address>
@@ -86,8 +91,17 @@
                             <a href="https://ayokebank.com/"><img src="{{ asset('vendor/images/ayo.jpg') }}"
                                     width="100" alt=""></a>
                             <h4 class="mt-3">Jam Operasional</h4>
+<<<<<<< HEAD
+=======
                         </div>
-                        <h6>Jam Kerja : Senin - Jumat <span>Tutup : Sabtu - Minggu</span></h6>
+                        <div class="input-group mt-2">
+                            <input type="text" class="form-control" placeholder="">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fa fa-paper-plane"></i></span>
+                            </div>
+>>>>>>> 02b39a993f8c899c707696feb555c569735a19a1
+                        </div>
+                        <h6>Senin - Jumat : 08:30 - 17:30 WIB<span>Sabtu - Minggu : TUTUP</span></h6>
                     </div>
                 </div>
 
