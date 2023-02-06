@@ -42,7 +42,7 @@
                         <div class="form-group">
                             <label>Select Tags</label>
                             <select class="form-control select2" name="tags[]" multiple="" data-height="100%">
-                                @foreach ($tags as $tag )
+                                @foreach ($tags as $tag)
                                     <option value="{{ $tag->id }}">{{ $tag->name }}</option>
                                 @endforeach
                             </select>
@@ -54,6 +54,22 @@
                         <div class="form-group">
                             <label>Image</label>
                             <input type="file" class="form-control" name="image">
+                        </div>
+                        <div class="form-group">
+                            <label>Image</label>
+                            <input type="file" class="form-control" name="image_1">
+                        </div>
+                        <div class="form-group">
+                            <label>Image</label>
+                            <input type="file" class="form-control" name="image_2">
+                        </div>
+                        <div class="form-group">
+                            <label>Image</label>
+                            <input type="file" class="form-control" name="image_3">
+                        </div>
+                        <div class="form-group">
+                            <label>Image</label>
+                            <input type="file" class="form-control" name="image_4">
                         </div>
                         <div class="form-group">
                             <button class="btn btn-block btn-primary">Save</button>

@@ -4,7 +4,7 @@
     <!-- Pages Heder Area -->
     <div class="container">
         <div class="pages_heder">
-            <h2>Deposito</h2>
+            <h2>DEPOSITO</h2>
             <ol class="breadcrumb">
                 <li><a href="/">Beranda</a></li>
                 <li><a href="deposito" class="active">Deposito</a></li>
@@ -17,34 +17,41 @@
     <section class="about_content">
         <div class="container">
             <h2>Produk simpanan nasabah pada BPR yang ditujukan untuk masyarakat umum (perorangan dan Lembaga) yang
-                penarikannya dapat dilakukan pada waktu tertentu sesuai jangka waktu yang disepakati dengan prosentasi bunga
-                yang lebih besar dari tabungan dan dapat dijadikan sebagai agunan kredit .</h2>
+                penarikannya dapat dilakukan pada waktu tertentu sesuai jangka waktu yang disepakati dengan
+                prosentasi bunga yang lebih besar dari tabungan dan dapat dijadikan sebagai agunan kredit serta
+                dapat memberikan kenyamanan pengaturan jangka waktu penempatan deposito dengan pelayanan yang cepat
+                dan mudah.</h2>
             <img src="{{ asset('vendor/images/produk/deposito.png') }}" alt="">
             <div class="mission_area row mt-4">
                 <div class="col-md-3">
                     <div class="nav tab_nav" role="tablist">
-                        <a class="active" data-toggle="pill" href="#Mission" role="tab">Keuntungan produk
+                        <a class="active" data-toggle="pill" href="#Mission" role="tab">Keunggulan produk
                             Deposito</a>
                         <a data-toggle="pill" href="#Organization" role="tab">Syarat dan Ketentuan:</a>
                     </div>
                 </div>
                 <div class="tab-content col-md-9" id="v-pills-tabContent">
                     <div class="tab-pane fade show active" id="Mission" role="tabpanel">
-                        <h4>Keuntungan dengan produk Deposito</h4>
+                        <h4>Keunggulan dengan produk Deposito</h4>
+                        <p>- Proses cepat dan mudah.</p>
                         <p>- Aman di jamin Lembaga Pinjaman Simpanan (LPS).</p>
                         <p>- Suku bunga kompetitif.</p>
-                        <p>- Bebas biaya administrasi bulanan.</p>
                         <p>- Memiliki jangka waktu mulai dari 1,3,6, dan 12 bulan.</p>
                         <p>- Minimal penempatan deposito Rp 5.000.000.</p>
                     </div>
                     <div class="tab-pane fade" id="Organization" role="tabpanel">
                         <h4>Syarat dan Ketentuan:</h4>
-                        <p>- KTP & NPWP</p>
-                        <p>- Mengisi formulir pembukaan rekening.</p>
-                        <p>- Dikenakan biaya materai Rp 10.000 masing-masing untuk saat penempatan & pencairan deposito.</p>
+                        <p><strong>1 Perseorangan</strong></p>
+                        <p>- Identitas KTP-el/Paspor yang masih berlaku.</p>
+                        <p><strong>2 Badan Hukum</strong></p>
+                        <p>- Copy Akta pendirian awal dan sampai akta perubahan/akhir..</p>
+                        <p>- Copy SIUP, NIB, NPWP perusahaan.</p>
+                        <p>- Copy Surat Keterangan Domisili Usaha.</p>
+                        <p>- KTP-el/Paspor pengurus dan pemegang saham yang masih berlaku.</p>
+                        <p><strong>3 Bersedia menandatangani aplikasi pembukaan rekening deposito.</strong></p>
                     </div>
                 </div>
-                <div class="container mt-4">
+                <div class="container mt-3">
                     <table width="100%" border="1">
                         <thead align="center">
                             <tr class="p-3 mb-2 bg-secondary text-white">

@@ -31,6 +31,10 @@
                                 </h6>
                                 <a href="" class="news_heding">{{ $result->judul }}</a>
                                 <img src="{{ asset($result->image) }}" alt="">
+                                <img src="{{ asset($result->image_1) }}" alt="">
+                                <img src="{{ asset($result->image_2) }}" alt="">
+                                <img src="{{ asset($result->image_3) }}" alt="">
+                                <img src="{{ asset($result->image_4) }}" alt="">
                                 <p class="fast_p">{!! $result->content !!}</p>
                                 <p class="end_pera"></p>
                                 <div class="share_row row">
