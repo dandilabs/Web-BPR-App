@@ -70,11 +70,8 @@
                         <p>Jl. Bintaro Utama Sektor IX, Blok HB 19 No. 3A ,
                             <br>Pondok Aren - Tangerang Selatan
                         </p>
-<<<<<<< HEAD
-=======
                         <i class="fa-solid fa-phone"></i>
->>>>>>> 02b39a993f8c899c707696feb555c569735a19a1
-                        <p>Telp (021) 7457667</p>
+                        <p>Telp (021) 7457667 - 22213065</p>
                         <p>Email rizky_barokah@yahoo.com</p>
                     </address>
                 </div>
@@ -88,18 +85,15 @@
                             </a>
                             <a href="https://www.lps.go.id/"><img src="{{ asset('vendor/images/lps.png') }}"
                                     width="110" alt=""></a>
-                            <a href="https://ayokebank.com/"><img src="{{ asset('vendor/images/ayo.jpg') }}"
-                                    width="100" alt=""></a>
+                            <a href="#"><img src="{{ asset('vendor/images/anak.png') }}" width="35"
+                                    alt=""></a>
                             <h4 class="mt-3">Jam Operasional</h4>
-<<<<<<< HEAD
-=======
                         </div>
                         <div class="input-group mt-2">
                             <input type="text" class="form-control" placeholder="">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fa fa-paper-plane"></i></span>
                             </div>
->>>>>>> 02b39a993f8c899c707696feb555c569735a19a1
                         </div>
                         <h6>Senin - Jumat : 08:30 - 17:30 WIB<span>Sabtu - Minggu : TUTUP</span></h6>
                     </div>
