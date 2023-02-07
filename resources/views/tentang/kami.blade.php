@@ -70,88 +70,9 @@
                             referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
+                    <br><br>
                 </div>
             </div>
         </div>
     </section>
-    <!-- team-section start -->
-    {{-- <section class="team-section team-section--style pt-120 pb-120">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-7 text-center">
-                    <div class="section-header">
-                        <h2 class="section-title">Struktur Organisasi</h2>
-                        <p>
-                            Struktur organisasi sebagai suatu garis hirarki yang mendeskripsikan berbagai komponen yang
-                            menyusun perusahaan, dimana setiap individu atau Sumber Daya Manusia pada
-                            lingkup perusahaan tersebut kemudian memiliki posisi dan fungsinya masing-masing.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row mb-30-none">
-                <div class="col-lg-6 col-md-6 mb-30">
-                    <div class="team-item d-flex flex-wrap">
-                        <div class="team-thumb">
-                            <img src="assets/images/buandi.jpg" alt="image">
-                        </div>
-                        <div class="team-content">
-                            <h3 class="title">Andi Irnawati</h3>
-                            <span class="sub-title">Direktur</span>
-                            <p style="text-align:justify">
-                                Sebelum kamu menjadi seorang pemimpin, sukses adalah tentang menumbuhkan dirimu sendiri.
-                                Ketika kamu menjadi seorang pemimpin, kesuksesan adalah tentang menumbuhkan orang lain.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 mb-30">
-                    <div class="team-item d-flex flex-wrap">
-                        <div class="team-thumb">
-                            <img src="assets/images/buandi.jpg" alt="image">
-                        </div>
-                        <div class="team-content">
-                            <h3 class="title">Andi Irnawati</h3>
-                            <span class="sub-title">Direktur</span>
-                            <p style="text-align:justify">
-                                Sebelum kamu menjadi seorang pemimpin, sukses adalah tentang menumbuhkan dirimu sendiri.
-                                Ketika kamu menjadi seorang pemimpin, kesuksesan adalah tentang menumbuhkan orang lain.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 mb-30">
-                    <div class="team-item d-flex flex-wrap">
-                        <div class="team-thumb">
-                            <img src="assets/images/buandi.jpg" alt="image">
-                        </div>
-                        <div class="team-content">
-                            <h3 class="title">Andi Irnawati</h3>
-                            <span class="sub-title">Direktur</span>
-                            <p style="text-align:justify">
-                                Sebelum kamu menjadi seorang pemimpin, sukses adalah tentang menumbuhkan dirimu sendiri.
-                                Ketika kamu menjadi seorang pemimpin, kesuksesan adalah tentang menumbuhkan orang lain.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 mb-30">
-                    <div class="team-item d-flex flex-wrap">
-                        <div class="team-thumb">
-                            <img src="assets/images/buandi.jpg" alt="image">
-                        </div>
-                        <div class="team-content">
-                            <h3 class="title">Andi Irnawati</h3>
-                            <span class="sub-title">Direktur</span>
-                            <p style="text-align:justify">
-                                Sebelum kamu menjadi seorang pemimpin, sukses adalah tentang menumbuhkan dirimu sendiri.
-                                Ketika kamu menjadi seorang pemimpin, kesuksesan adalah tentang menumbuhkan orang lain.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-    <!-- team-section end -->
 @endsection
