@@ -99,7 +99,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <h6 style="color: red">Suku bunga dapat berubah sesuai dengan Counter Rate BPR RIZKY BAROKAH</h6>
+                    <h6 style="color: red">Suku Bunga Dapat Berubah Sewaktu-Waktu</h6>
                     <br><br>
                 </div>
             </div>

@@ -56,7 +56,7 @@
                                 <h4>Tanggal: {{ \Carbon\Carbon::parse($result->created_at)->translatedFormat('d F Y') }}
                                 </h4>
                                 <h4>Kategori: {{ $result->category->name }}</h4>
-                                <p>Harga: @currency($result->harga)</p>
+                                <p>Harga: @currency($result->harga),-</p>
                             </div>
 
                             <div class="review-tab col-12">
@@ -105,8 +105,11 @@
                 </div>
             </div>
             <div class="share_row row">
-                <div class="col-sm-6 back_to"><a href="/aset"><i class="fa fa-arrow-left"></i>
-                        Kembali Ke Halaman Utama</a></div>
+                <div class="col-sm-6 back_to">
+                    <a href="/aset" class="red_btn"><i class="fa fa-arrow-left"></i>
+                        Kembali Ke Halaman Utama
+                    </a>
+                </div>
             </div>
         </div>
     </section>
