@@ -40,6 +40,19 @@
                             @endforeach
                         </ul>
                     </div>
+                    {{-- <div class="s_widget popular_products">
+                        <h4>Aset Terpopuler</h4>
+                        @foreach ($populer_aset as $result)
+                            <div class="media media_fast">
+                                <a href="shop-details.html"><img src="{{ asset($result->image) }}" width="100"
+                                        alt=""></a>
+                                <div class="media-body">
+                                    <a href="{{ route('aset.detail', $result->slug) }}">{{ $result->judul }}</a>
+                                    <h6>@currency($result->harga),-</h6>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div> --}}
                 </div>
 
                 <div class="col-lg-9 shop_left_sidebar">
@@ -50,10 +63,10 @@
                             </div>
                             <div class="col-md-6 product_details">
                                 <h2>{{ $result->judul }}</h2>
-                                <h1>Post by:
+                                <h1>
                                     {{ $result->users->name }}
                                 </h1>
-                                <h4>Tanggal: {{ \Carbon\Carbon::parse($result->created_at)->translatedFormat('d F Y') }}
+                                <h4>Tanggal: {{ \Carbon\Carbon::parse($result->created_at)->translatedFormat('l, d F Y') }}
                                 </h4>
                                 <h4>Kategori: {{ $result->category->name }}</h4>
                                 <p>Harga: @currency($result->harga),-</p>

@@ -24,8 +24,9 @@ class AsetController extends Controller
         $today = Carbon::now()->isoFormat('D MMMM Y');
         $data = Posts::where('slug', $slug)->get();
         $tags = Tags::all();
+        $populer_aset = Posts::where('harga', '1900000000')->get();
         $category_list = Category::all();
-        return view('aset.detail', compact('data','tags','category_list'));
+        return view('aset.detail', compact('data','tags','category_list','populer_aset'));
     }
 
     public function list_blog()

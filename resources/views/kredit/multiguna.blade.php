@@ -16,7 +16,7 @@
                     <div class="nav tab_nav" role="tablist">
                         <a class="active" data-toggle="pill" href="#Syarat" role="tab">Persyaratan Umum</a>
                         <a data-toggle="pill" href="#Konsumtif" role="tab">Jangka Waktu</a>
-                        <a data-toggle="pill" href="#Investasi" role="tab">Dokumen Jaminan</a>
+                        <a data-toggle="pill" href="#Investasi" role="tab">Dokumen Jaminan Property</a>
                         <a data-toggle="pill" href="#Modal" role="tab">Dokumen Jaminan (Kendaraan)</a>
                     </div>
                 </div>
@@ -31,8 +31,8 @@
                                     <th scope="col" class="text-center">Wiraswasta</th>
                                 </tr>
                             </thead>
-                            <tr height="20">
-                                <td>KTP / Pasport Suami/Istri *</td>
+                            <tr>
+                                <td>KTP / Pasport Suami/Istri</td>
                                 <td class="text-center text-success"><i class="fa fa-check"></i></td>
                                 <td class="text-center text-success"><i class="fa fa-check"></i></td>
                             </tr>
@@ -42,22 +42,27 @@
                                 <td class="text-center text-success"><i class="fa fa-check"></i></td>
                             </tr>
                             <tr>
+                                <td>Surat Pernyataan Belum Menikah</td>
+                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
+                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
+                            </tr>
+                            <tr>
                                 <td>Akte Nikah *</td>
                                 <td class="text-center text-success"><i class="fa fa-check"></i></td>
                                 <td class="text-center text-success"><i class="fa fa-check"></i></td>
                             </tr>
                             <tr>
-                                <td>Bukti Kepemilikan Rumah</td>
+                                <td>Bukti Rumah</td>
                                 <td class="text-center text-success"><i class="fa fa-check"></i></td>
                                 <td class="text-center text-success"><i class="fa fa-check"></i></td>
                             </tr>
                             <tr>
-                                <td>Rek Koran Bank 3 Bln Terakhir</td>
+                                <td>Rek. Bank 3 Bln Terakhir</td>
                                 <td class="text-center text-success"><i class="fa fa-check"></i></td>
                                 <td class="text-center text-success"><i class="fa fa-check"></i></td>
                             </tr>
                             <tr>
-                                <td>Asli Slip Gaji (terbaru)</td>
+                                <td>Asli Slip Gaji</td>
                                 <td class="text-center text-success"><i class="fa fa-check"></i></td>
                                 <td class="text-center text-danger"><i class="fa fa-times"></i></td>
                             </tr>
@@ -67,7 +72,7 @@
                                 <td class="text-center text-danger"><i class="fa fa-times"></i></td>
                             </tr>
                             <tr>
-                                <td>Bukti Usaha, SIUP, TDP, NPWP</td>
+                                <td>Bukti Usaha, SIUP, TDP, NPWP, KTP Pengurus</td>
                                 <td class="text-center text-danger"><i class="fa fa-times"></i></td>
                                 <td class="text-center text-success"><i class="fa fa-check"></i></td>
                             </tr>
@@ -87,7 +92,8 @@
                     </div>
                     <div class="tab-pane fade" id="Modal" role="tabpanel">
                         <h4>Dokumen Syarat Jaminan Yang Dibutuhkan (Kendaraan)</h4>
-                        <p>- BPKB</p>
+                        <p>- BPKB Asli</p>
+                        <p>- Fotocopy STNK / Pajak</p>
                         <p>- Faktur & NIK</p>
                         <p>- Surat Jual/Beli dan Kwitansi</p>
                     </div>

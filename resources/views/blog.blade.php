@@ -2,17 +2,19 @@
 @section('title', 'Beranda')
 @section('news')
     <div class="braking_news row">
-        <h4 class="braking_heding col-1">Produk</h4>
+        <h4 class="braking_heding col-1">
+            PRODUK
+        </h4>
         <div id="newsIndicators" class="carousel slide col-11" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <a href="kredit-modul">Kredit</a>
+                    <a href="kredit-modul">KREDIT</a>
                 </div>
                 <div class="carousel-item">
-                    <a href="tabungan-ku">Tabungan Ku</a>
+                    <a href="tabungan-ku">TARIZKAH</a>
                 </div>
                 <div class="carousel-item">
-                    <a href="deposito">Deposito</a>
+                    <a href="deposito">DEPOSITO</a>
                 </div>
             </div>
             <ol class="carousel-indicators">
@@ -30,6 +32,9 @@
             <div class="carousel-item active">
                 <img src="{{ asset('vendor/images/produk/kredit.png') }}" alt="First slide">
                 <div class="slider_caption">
+                    <h6 class="wow fadeInUp animated">
+                        Hari : {{ \Carbon\Carbon::now()->translatedFormat('l, d F Y') }}
+                    </h6>
                     <a href="kredit-modul" class="wow fadeInUp animated heding" data-wow-delay="0.2s">KREDIT</a>
                     <p class="wow fadeInUp animated" data-wow-delay="0.4s" style="text-align: justify">
                         Penyedian uang atau tagihan yang dapat dipersamakan dengan itu berdasarkan persetujuan atau
@@ -43,6 +48,9 @@
             <div class="carousel-item">
                 <img src="{{ asset('vendor/images/produk/tabungan.png') }}" alt="Second slide">
                 <div class="slider_caption">
+                    <h6 class="wow fadeInUp animated">
+                        Hari : {{ \Carbon\Carbon::now()->translatedFormat('l, d F Y') }}
+                    </h6>
                     <a href="tabungan-ku" class="wow fadeInUp animated heding" data-wow-delay="0.2s">TARIZKAH</a>
                     <p class="wow fadeInUp animated" data-wow-delay="0.4s" style="text-align: justify">
                         Produk simpanan yang ditujukan untuk masyarakat umum (pelajar, perorangan dan Lembaga) yang
@@ -57,6 +65,9 @@
             <div class="carousel-item">
                 <img src="{{ asset('vendor/images/produk/deposit.png') }}" alt="Second slide">
                 <div class="slider_caption">
+                    <h6 class="wow fadeInUp animated">
+                        Hari : {{ \Carbon\Carbon::now()->translatedFormat('l, d F Y') }}
+                    </h6>
                     <a href="deposito" class="wow fadeInUp animated heding" data-wow-delay="0.2s">DEPOSITO</a>
                     <p class="wow fadeInUp animated" data-wow-delay="0.4s" style="text-align: justify">
                         Produk simpanan nasabah pada BPR yang ditujukan untuk masyarakat umum (perorangan dan Lembaga) yang
@@ -108,7 +119,7 @@
                                     <div class="media-body feture_content">
                                         <a href="{{ route('aset.detail', $aset->slug) }}"
                                             class="f_heding">{{ $aset->judul }}</a>
-                                        <h6>{{ \Carbon\Carbon::parse($aset->created_at)->translatedFormat('d F Y') }}
+                                        <h6>{{ \Carbon\Carbon::parse($aset->created_at)->translatedFormat('l, d F Y') }}
                                             <span>|</span><a href="http://emran-khan.com/">{{ $aset->users->name }}</a>
                                         </h6>
                                         <p>{{ $aset->category->name }}</p>

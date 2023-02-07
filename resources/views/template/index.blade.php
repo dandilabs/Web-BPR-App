@@ -78,7 +78,7 @@
 
                 <div class="col-lg-5 col-md-6">
                     <div class="subscribe">
-                        <h4>Tercatat dan Diawasi</h4>
+                        <h4>Terdaftar dan Diawasi</h4>
                         <div class="mt-2">
                             <a href="https://www.ojk.go.id/id/Default.aspx"><img
                                     src="{{ asset('vendor/images/ojk.png') }}" width="100" alt="">

@@ -12,7 +12,7 @@
     <a href="{{ route('post.create') }}" class="btn btn-sm btn-primary">
         <i class="fas fa-pen"></i> Add Post
     </a>
-    <table class="table mt-3">
+    <table class="table table-striped mt-3">
         <thead class="thead-dark">
             <tr>
                 <th scope="col">No</th>
@@ -31,7 +31,7 @@
                     <td>{{ $hasil->judul }}</td>
                     <td>{{ $hasil->category->name }}</td>
                     <td>
-                        @foreach ($hasil->tags as $tag )
+                        @foreach ($hasil->tags as $tag)
                             <ul>
                                 <h6><span class="badge badge-info">{{ $tag->name }}</span></h6>
                             </ul>
