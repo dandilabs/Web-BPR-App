@@ -18,25 +18,44 @@
         <div class="container">
             <h2><strong>PT Bank Perkreditan Rakyat Rizky Barokah</strong></h2>
             <img src="{{ asset('vendor/images/Depan.jpg') }}" width="100%">
-            <p>merupakan perusahaan di bidang jasa keuangan / perbankan berkedudukan di Jalan Bintaro Utama Sektor IX Blok
-                HB 19 No. 3A, Tangerang Selatan. Berdiri dan beroperasi sejak tahun 1997</p>
-            <div class="mission_area row">
+            <div class="mission_area row mt-5">
                 <div class="col-md-3">
                     <div class="nav tab_nav" role="tablist">
-                        <a class="active" data-toggle="pill" href="#Visi" role="tab">Visi </a>
+                        <a class="active" data-toggle="pill" href="#Sejarah" role="tab">Sejarah </a>
+                        <a data-toggle="pill" href="#Visi" role="tab">Visi</a>
                         <a data-toggle="pill" href="#Misi" role="tab">Misi</a>
                         <a data-toggle="pill" href="#Lokasi" role="tab">Lokasi</a>
                     </div>
                 </div>
                 <div class="tab-content col-md-9" id="v-pills-tabContent">
-                    <div class="tab-pane fade show active" id="Visi" role="tabpanel">
-                        <h4>Visi BPR Rizky Barokah</h4>
-                        <p>Menjadi BPR yang Tangguh, Terpercaya, Kompetetif dan
-                            Berkontribusi bagi Masyarakat
-                            Sekitar.</p>
+                    <div class="tab-pane fade show active" id="Sejarah" role="tabpanel">
+                        <h4>Sejarah BPR RIZKY BAROKAH</h4>
+                        <p style="text-align: justify">Merupakan lembaga keuangan bank yang berdiri sejak 23 Oktober 1997
+                            dan merupakan salah satu
+                            afiliasi
+                            <strong>PT. Permodalan Nasional Madani (Persero)</strong> sejak tahun 2008. <strong>PT
+                                PNM</strong>
+                            merupakan BUMN yang mengemban tugas pemerintah untuk menangani pengembangan Lembaga Keuangan
+                            Mikro dan
+                            Usaha Kecil Menengah diseluruh Indonesia.. <br><br>
+                            Sesuai dengan <strong>UU No. 24 Tahun 2004</strong> Tentang <strong>Lembaga Penjamin
+                                Simpanan</strong> dan ketentuan perundang-undangan lainnya,
+                            maka setiap simpanan masyarakat yang ditempatkan di <strong>PT BPR RIZKY BAROKAH</strong> baik
+                            tabungan maupun
+                            deposito dijamin oleh <strong>LPS (Lembaga Penjamin Simpanan).</strong> <br><br>
+                            Dengan moto perusahaan <strong>"Siap Membantu Untuk Maju Bersama Menuju Sejahtera"</strong> kami
+                            berusaha
+                            untuk menjadi Lembaga Keuangan yang selalu siap membantu memenuhi kebutuhan keuangan pelaku
+                            usaha dan masyarakat.
+                        </p>
+                    </div>
+                    <div class="tab-pane fade" id="Visi" role="tabpanel">
+                        <h4>Visi</h4>
+                        <p>Menjadi <strong>BPR RIZKY BAROKAH</strong> yang Tangguh, Terpercaya, Kompetitif dan
+                            Berkontribusi bagi Masyarakat Sekitar.</p>
                     </div>
                     <div class="tab-pane fade" id="Misi" role="tabpanel">
-                        <h4>Misi BPR Rizky Barokah</h4>
+                        <h4>Misi</h4>
                         <p>1.Memperkuat Struktur modal dan kepemilikan BPR</p>
                         <p>2.Membangun reputasi BPR yang baik.</p>
                         <p>3.Membentuk SDM yang Terampil dan Profesional</p>

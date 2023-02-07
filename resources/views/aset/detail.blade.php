@@ -14,51 +14,23 @@
     </div>
     <!-- End Pages Heder Area -->
 
-    <!-- Post section -->
-    <section class="post_section news_post">
+    <!-- Shop with sidebar -->
+    <section class="shop_with_sidebar">
         <div class="container">
-            <div class="row post_section_inner">
-                <!-- Left_sidebar -->
-                <div class="col-lg-8">
-                    <div class="news_left_sidebar">
-                        <!-- News Item -->
-                        @foreach ($data as $result)
-                            <div class="news_item news_details">
-                                <h6><span>{{ \Carbon\Carbon::parse($result->created_at)->translatedFormat('d F Y') }}</span>
-                                    <a href="#">Post by :
-                                        {{ $result->users->name }}</a> <a href="#"
-                                        class="investing">{{ $result->category->name }}</a>
-                                </h6>
-                                <a href="" class="news_heding">{{ $result->judul }}</a>
-                                <img src="{{ asset($result->image) }}" alt="">
-                                <img src="{{ asset($result->image_1) }}" alt="">
-                                <img src="{{ asset($result->image_2) }}" alt="">
-                                <img src="{{ asset($result->image_3) }}" alt="">
-                                <img src="{{ asset($result->image_4) }}" alt="">
-                                <p class="fast_p">{!! $result->content !!}</p>
-                                <p class="end_pera"></p>
-                                <div class="share_row row">
-                                    <div class="col-sm-6 back_to"><a href="/aset"><i class="fa fa-arrow-left"></i>Kembali
-                                            Ke Halaman Utama</a></div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-
-                <!-- End left_sidebar -->
-                <div class="col-lg-4 right_sidebar">
+            <div class="row">
+                <div class="col-lg-3 shop_right_sidebar">
                     <div class="input-group">
                         <form action="{{ route('aset.cari') }}" method="GET">
-                            <input type="text" name="cari" class="form-control" placeholder="Search">
+                            <input type="text" name="cari" class="form-control" placeholder="Cari aset">
                         </form>
                         <div class="input-group-append" type="submit">
                             <span class="input-group-text"><i class="fa fa-search"></i></span>
                         </div>
                     </div>
-                    <div class="categories">
-                        <h3>Post Categories</h3>
-                        <ul class="cpost_categories">
+
+                    <div class="s_widget">
+                        <h4>Aset Kategori :</h4>
+                        <ul class="categories">
                             @foreach ($category_list as $result)
                                 <li>
                                     <a href="{{ route('aset.category', $result->slug) }}">{{ $result->name }}
@@ -69,8 +41,74 @@
                         </ul>
                     </div>
                 </div>
+
+                <div class="col-lg-9 shop_left_sidebar">
+                    <div class="row">
+                        @foreach ($data as $result)
+                            <div class="col-md-6 min_img">
+                                <img src="{{ asset($result->image) }}" alt="">
+                            </div>
+                            <div class="col-md-6 product_details">
+                                <h2>{{ $result->judul }}</h2>
+                                <h1>Post by:
+                                    {{ $result->users->name }}
+                                </h1>
+                                <h4>Tanggal: {{ \Carbon\Carbon::parse($result->created_at)->translatedFormat('d F Y') }}
+                                </h4>
+                                <h4>Kategori: {{ $result->category->name }}</h4>
+                                <p>Harga: @currency($result->harga)</p>
+                            </div>
+
+                            <div class="review-tab col-12">
+                                <ul class="nav nav-tabs">
+                                    <li><a data-toggle="tab" href="#home" class="active theme_btn">Deskripsi</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div id="home" class="tab-pane fade in active show">
+                                        <p>{!! $result->content !!}</p>
+                                    </div>
+                                </div>
+                            </div> <!-- /.review-tab -->
+                            <div class="col-12">
+                                <h2 class="r_heding">Detail Foto</h2>
+                            </div>
+                            <!-- shop_items -->
+                            <div class="col-md-4 col-sm-6">
+                                <div class="shop_items">
+                                    <a href="shop-details.html" class="shop_img"><img src="{{ asset($result->image_1) }}"
+                                            alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <div class="shop_items">
+                                    <a href="shop-details.html" class="shop_img"><img src="{{ asset($result->image_2) }}"
+                                            alt=""></a>
+                                </div>
+                            </div>
+                            <!-- shop_items -->
+                            <div class="col-md-4 col-sm-6">
+                                <div class="shop_items">
+                                    <a href="shop-details.html" class="shop_img"><img src="{{ asset($result->image_3) }}"
+                                            alt=""></a>
+                                </div>
+                            </div>
+                            <!-- shop_items -->
+                            <div class="col-md-4 col-sm-6">
+                                <div class="shop_items">
+                                    <a href="shop-details.html" class="shop_img"><img src="{{ asset($result->image_4) }}"
+                                            alt=""></a>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+
+                </div>
+            </div>
+            <div class="share_row row">
+                <div class="col-sm-6 back_to"><a href="/aset"><i class="fa fa-arrow-left"></i>
+                        Kembali Ke Halaman Utama</a></div>
             </div>
         </div>
     </section>
-    <!-- End Post section -->
+    <!-- End Shop with side bar -->
 @endsection

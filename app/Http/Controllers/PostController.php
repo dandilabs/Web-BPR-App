@@ -44,14 +44,15 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'judul' => 'required',
-            'category_id' => 'required',
-            'content' => 'required',
-            'image' => 'required',
-            'image_1' => 'required',
-            'image_2' => 'required',
-            'image_3' => 'required',
-            'image_4' => 'required'
+            'judul'         => 'required',
+            'category_id'   => 'required',
+            'content'       => 'required',
+            'harga'         => 'required',
+            'image'         => 'required',
+            'image_1'       => 'required',
+            'image_2'       => 'required',
+            'image_3'       => 'required',
+            'image_4'       => 'required'
         ]);
 
         $image = $request->image;
@@ -69,6 +70,7 @@ class PostController extends Controller
             'judul'             => $request->judul,
             'category_id'       => $request->category_id,
             'content'           => $request->content,
+            'harga'             => $request->harga,
             'image'             => 'public/uploads/posts/' . $new_image,
             'image_1'           => 'public/uploads/posts/' . $new_image_1,
             'image_2'           => 'public/uploads/posts/' . $new_image_2,

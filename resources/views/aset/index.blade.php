@@ -57,7 +57,7 @@
                         </div>
                     </div>
                     <div class="categories">
-                        <h3>Post Categories</h3>
+                        <h3>Aset Kategori</h3>
                         <ul class="cpost_categories">
                             @foreach ($category_list as $result)
                                 <li><a href="{{ route('aset.category', $result->slug) }}">

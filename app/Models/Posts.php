@@ -16,7 +16,7 @@ class Posts extends Model
     use HasFactory;
     protected $fillable = [
     'judul', 'category_id', 'content', 'image',
-    'slug','users_id','image_1','image_2','image_3','image_4'];
+    'slug','users_id','image_1','image_2','image_3','image_4','harga'];
 
     public function category()
     {

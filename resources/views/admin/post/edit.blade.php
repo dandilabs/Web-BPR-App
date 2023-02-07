@@ -36,31 +36,31 @@
                             <select name="category_id" class="form-control" id="">
                                 <option value="" holder>Select Category</option>
                                 @foreach ($category as $result)
-                                    <option value="{{ $result->id }}"
-                                        @if($post->category_id == $result->id)
-                                        selected
-                                        @endif
-                                        >{{ $result->name }}</option>
+                                    <option value="{{ $result->id }}" @if ($post->category_id == $result->id) selected @endif>
+                                        {{ $result->name }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="form-group">
                             <label>Select Tags</label>
                             <select class="form-control select2" name="tags[]" multiple="" data-height="100%">
-                                @foreach ($tags as $tag )
+                                @foreach ($tags as $tag)
                                     <option value="{{ $tag->id }}"
-                                        @foreach ($post->tags as $value )
-                                            @if($tag->id == $value->id)
+                                        @foreach ($post->tags as $value)
+                                            @if ($tag->id == $value->id)
                                                 selected
-                                            @endif
-                                        @endforeach
-                                        >{{ $tag->name }}</option>
+                                            @endif @endforeach>
+                                        {{ $tag->name }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="form-group">
                             <label>Content</label>
                             <textarea name="content" id="content" cols="60" rows="0">{{ $post->content }}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Price</label>
+                            <input type="number" class="form-control" value="{{ $post->harga }}" name="harga">
                         </div>
                         <div class="form-group">
                             <label>Image</label>

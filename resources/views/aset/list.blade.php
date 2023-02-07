@@ -24,7 +24,8 @@
                         @foreach ($data as $list)
                             <div class="news_item">
                                 <h6>{{ \Carbon\Carbon::parse($list->created_at)->translatedFormat('d F Y') }}</h6>
-                                <a href="{{ route('aset.list', $list->slug) }}" class="news_heding">{{ $list->judul }}</a>
+                                <a href="{{ route('aset.detail', $list->slug) }}"
+                                    class="news_heding">{{ $list->judul }}</a>
                                 <img src="{{ asset($list->image) }}" alt="">
                                 <p>post by {{ $list->users->name }}</p>
                             </div>
@@ -55,7 +56,7 @@
                         </div>
                     </div>
                     <div class="categories">
-                        <h3>Post Categories</h3>
+                        <h3>Aset Kategori</h3>
                         <ul class="cpost_categories">
                             @foreach ($category_list as $result)
                                 <li><a href="{{ route('aset.category', $result->slug) }}">

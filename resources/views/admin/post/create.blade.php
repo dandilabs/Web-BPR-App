@@ -52,6 +52,10 @@
                             <textarea name="content" id="content" cols="60" rows="0"></textarea>
                         </div>
                         <div class="form-group">
+                            <label>Price</label>
+                            <input type="number" class="form-control" name="harga">
+                        </div>
+                        <div class="form-group">
                             <label>Image</label>
                             <input type="file" class="form-control" name="image">
                         </div>
