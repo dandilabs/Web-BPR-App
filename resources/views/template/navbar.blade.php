@@ -17,6 +17,7 @@
                     <li><a href="{{ route('aset.list') }}">List Aset</a></li>
                 </ul>
             </li>
+            {{-- <li><a class="nav-link" href="/simulasi">Simulasi Kredit</a></li> --}}
             <li><a class="nav-link" href="/tentang-kami">Tentang Kami</a></li>
             <li><a class="nav-link" href="/hubungi">Hubungi Kami</a></li>
         </ul>

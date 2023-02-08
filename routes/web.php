@@ -73,6 +73,9 @@ Route::get('/deposito', function () {
 Route::get('/tentang-kami', function () {
     return view('tentang.kami');
 });
+Route::get('/simulasi', function () {
+    return view('simulasi.index');
+});
 
 //hubungi kami
 // Route::get('/hubungi-kami', function () {
