@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 07, 2023 at 07:17 AM
+-- Generation Time: Feb 08, 2023 at 10:19 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -20,6 +20,29 @@ SET time_zone = "+00:00";
 --
 -- Database: `bpr_app`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `categories`
+--
+
+CREATE TABLE `categories` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
+(1, 'PELATIHAN', 'pelatihan', '2023-02-08 07:17:36', '2023-02-08 07:17:36'),
+(2, 'LIBUR BERSAMA', 'libur-bersama', '2023-02-08 07:17:36', '2023-02-08 07:17:36'),
+(3, 'Liburan Bersama', 'liburan-bersama', '2023-02-08 07:25:33', '2023-02-08 07:27:18');
 
 -- --------------------------------------------------------
 
@@ -42,6 +65,28 @@ CREATE TABLE `category` (
 INSERT INTO `category` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
 (1, 'RUMAH', 'rumah', '2023-02-05 21:28:13', '2023-02-05 21:28:13'),
 (2, 'RUKO / KIOS', 'ruko-kios', '2023-02-05 23:43:07', '2023-02-05 23:43:07');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `category_news`
+--
+
+CREATE TABLE `category_news` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `category_news`
+--
+
+INSERT INTO `category_news` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
+(1, 'PELATIHAN', 'pelatihan', '2023-02-08 04:54:59', '2023-02-08 04:54:59'),
+(2, 'LIBUR BERSAMA', 'libur-bersama', '2023-02-08 04:55:06', '2023-02-08 04:55:06');
 
 -- --------------------------------------------------------
 
@@ -191,7 +236,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (21, '2023_01_30_094524_create_news_table', 5),
 (22, '2023_01_30_100523_create_news_tags_table', 6),
 (23, '2023_02_06_095529_add_image_table_posts', 7),
-(24, '2023_02_07_023612_add_price_table_post', 8);
+(24, '2023_02_07_023612_add_price_table_post', 8),
+(26, '2023_02_08_141143_create_categories_table', 9);
 
 -- --------------------------------------------------------
 
@@ -202,7 +248,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 CREATE TABLE `news` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `judul` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `category_id` int(11) NOT NULL,
+  `categories_id` int(11) NOT NULL,
   `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -210,6 +256,14 @@ CREATE TABLE `news` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `news`
+--
+
+INSERT INTO `news` (`id`, `judul`, `categories_id`, `content`, `slug`, `image`, `users_id`, `created_at`, `updated_at`) VALUES
+(1, 'PELATIHAN MANAJEMEN RESIKO KREDIT', 1, '<p>Manajemen risiko kredit, sementara itu, adalah&nbsp;<strong>praktik untuk memitigasi kerugian tersebut dengan memahami kecukupan modal bank dan cadangan kerugian pinjaman pada waktu tertentu</strong>&nbsp;&ndash; suatu proses yang telah lama menjadi tantangan bagi lembaga keuangan.</p>', 'pelatihan-manajemen-resiko-kredit', 'public/uploads/news/1675847437IMG20221126150305.jpg', 2, '2023-02-08 08:06:09', '2023-02-08 09:14:56'),
+(2, 'PELATIHAN APU PPT SELURUH STAFF', 1, '<h3><strong>Anti Pencucian Uang dan Pencegahan Pendanaan Terorisme (APU PPT)</strong></h3>\r\n\r\n<h2><strong>Tentang APU PPT</strong></h2>\r\n\r\n<h3>&nbsp;</h3>\r\n\r\n<h3>1.&nbsp; Visi, Misi, Fungsi dan Tugas Pokok</h3>\r\n\r\n<p><img alt=\"\" src=\"https://www.ojk.go.id/id/Pages/apu-ppt_1.png\" />Pembentukan Grup Penanganan Anti Pencucian Uang dan Pencegahan Pendanaan Terorisme (APU PPT) memiliki Misi dan Visi Yaitu :</p>\r\n\r\n<p><strong>Misi</strong>&nbsp;: Memperkuat serta mengembangkan pelaksanaan fungsi pengawasan, pengaturan dan koordinasi antar sektoral serta kerjasama antar lembaga dalam pencegahan Tindak Pidana Pencucian Uang-Tindak Pidana Pendanaan Terorisme (TPPU-TPPT) didukung oleh Sumber Daya Manusia (SDM) yang kompeten dan memiliki integritas.</p>\r\n\r\n<p><strong>Visi</strong>&nbsp;: Menjadi satuan kerja yang handal dan terpercaya di dalam melaksanakan aktivitas penanganan pencegahan TPPU-TPPT guna mendukung stabilitas sistem keuangan.</p>\r\n\r\n<p>Grup penganangan APU PPT mengemban tugas pokok dan menghasilkan produk pokok kegiatan yaitu :</p>\r\n\r\n<table cellspacing=\"0\" style=\"width:100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td><strong>​Tugas Pokok</strong></td>\r\n			<td><strong>​Produk Pokok</strong></td>\r\n		</tr>\r\n		<tr>\r\n			<td>​1.&nbsp; Memberikan rekomendasi dan melakukan koordinasi dengan pihak eksternal dalam upaya pencegahan TPPU/TPPT yang terkait dengan jasa keuangan<br />\r\n			2.&nbsp; Mewakili Dewan Komisioner OJK dalam pertemuan, sidang, forum, dan/atau pelatihan terkait dengan pencegahan TPPU dan TPPT baik yang diselenggarakan oleh lembaga di dalam negeri maupun di luar negeri.<br />\r\n			3.&nbsp; Pertemuan rutin dengan pihak eksternal dan internal OJK untuk membahas isu-isu terkini terkait APU-PPT<br />\r\n			4.&nbsp; Melakukan koordinasi perencanaan penanganan APU-PPT di OJK<br />\r\n			5.&nbsp;&nbsp;Melalukan pengaturan&nbsp;&nbsp;dan pengembangan terkait fungsi penanganan APU-PPT Sektor Jasa Keuangan<br />\r\n			6.&nbsp; Melakukan kajian-kajian, penyusunan tipologi penilaian resiko Penggunaan Jasa Keuangan (PJK) terkait pencegahan APU-PPT di sektor jasa keuangan<br />\r\n			7.&nbsp; Memberikan rekomentasi kepada Dewan Komisioner OJK mengenai arah dan kebijakan pencegahan APU-PPT yang terkait dengan jasa keuangan<br />\r\n			8.&nbsp; Melakukan koordinasi dengan pengawas sektoral dalam rangka pengendalian kualitas dan monitoring pengawasan APU-PPT sektor perbankan, pasar modal dan IKNB melalui Satuan Tugas yang dibentuk oleh Dewan Komisioner<br />\r\n			9.&nbsp; Melakukan penyusunan kompilasi laporan pengawasan APU-PPT<br />\r\n			10.&nbsp; Membangun sistem database terkait APU-PPT<br />\r\n			11.&nbsp; Melakukan analisa laporan industri dan pengelolaan database dalam rangka penanganan APU-PPT bekerja sama dengan satuan kerja, instansi dan pihak terkait<br />\r\n			12. Melakukan pengembangan kapasitas SDM dalam bidang APU-PPT bekerja sama dengan unit lain baik internal maupun eksternal<br />\r\n			13.&nbsp; Mengelola administrasi Grup</td>\r\n			<td>​1. Hasil rekomendasi dan melakukan koordinasi dengan pihak eksternal dalam upaya pencegahan TPPU/TPPT yang terkait dengan jasa keuangan<br />\r\n			2.&nbsp; Laporan hasil pertemuan Dewan Komisioner OJK dalam pertemuan, sidang, forum, dan/atau pelatihan terkait dengan pencegahan TPPU dan TPPT baik yang diselenggarakan oleh lembaga di dalam negeri maupun di luar negeri<br />\r\n			3.&nbsp; Laporan hasil pertemuan rutin dengan pihak eksternal dan internal OJK untuk membahas isu-isu terkini terkait APU-PPT<br />\r\n			4.&nbsp; Laporan hasil koordinasi perencanaan penanganan APU-PPT di OJK<br />\r\n			5.&nbsp; Hasil analisa dan rekomendasi pengaturan dan pengembangan terkait fungsi penanganan APU-PPT Sektor Jasa Keuangan<br />\r\n			6.&nbsp; Hasil kajian-kajian, penyusunan tipologi penilaian resiko Pengguna Jasa Keuangan (PJK) terkait pencegahan APU-PPT di sektor jasa keuangan<br />\r\n			7.&nbsp; Hasil rekomendasi kepada Dewan Komisioner OJK mengenai arah dan kebijakan pencegahan APU-PPT yang terkait dengan jasa keuangan<br />\r\n			8.&nbsp; Mekanisme koordinasi dengan pengawas sektoral dalam<br />\r\n			rangka pengendalian kualitas dan monitoring pengawasan APU-PPT sektor perbankan, pasar modal dan IKNB melalui Satuan Tugas yang dibentuk oleh Dewan Komisioner<br />\r\n			9.&nbsp; Hasil kompilasi laporan pengawasan APU-PPT<br />\r\n			10.&nbsp; Sistem database terkait APU-PPT<br />\r\n			11.&nbsp; Hasil analisa laporan industri dan pengelolaan database dalam rangka penanganan APU PPT bekerja sama dengan satuan kerja, instansi dan pihak terkait<br />\r\n			12.&nbsp; Hasil pengembangan kapasitas SDM dalam bidang APU-PPT bekerja sama dengan unit lain baik internal maupun eksternal<br />\r\n			13.&nbsp; Hasil pengelolaan administrasi Grup dari sisi i.e SDM, logistik, MIKU</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<h3>2.&nbsp; Struktur Organisasi</h3>\r\n\r\n<p><img alt=\"\" src=\"https://www.ojk.go.id/id/Pages/apu-ppt_2.png\" /></p>', 'pelatihan-apu-ppt-seluruh-staff', 'public/uploads/news/16758475292023_02_03_08_44_IMG_3991.JPG', 2, '2023-02-08 09:12:09', '2023-02-08 09:12:09');
 
 -- --------------------------------------------------------
 
@@ -224,6 +278,16 @@ CREATE TABLE `news_tags` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `news_tags`
+--
+
+INSERT INTO `news_tags` (`id`, `news_id`, `tags_id`, `created_at`, `updated_at`) VALUES
+(1, 1, 3, NULL, NULL),
+(2, 1, 1, NULL, NULL),
+(3, 1, 2, NULL, NULL),
+(4, 2, 3, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -252,14 +316,6 @@ CREATE TABLE `pengaduan` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `no_telp` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `pengaduan`
---
-
-INSERT INTO `pengaduan` (`id`, `nama`, `email`, `pesan`, `created_at`, `updated_at`, `no_telp`) VALUES
-(2, 'Dandi Hermawan', 'dandihermawan87@gmail.com', 'Saya ingin menanyakan terkati informasi Pengajuan Kredit', '2023-01-31 23:38:08', '2023-01-31 23:38:08', '089699451818'),
-(3, 'Dendi Hermawan', 'dandihermawan87@gmail.com', 'Dadadad', '2023-02-01 21:51:20', '2023-02-01 21:51:20', '983131312');
 
 -- --------------------------------------------------------
 
@@ -309,13 +365,13 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `judul`, `category_id`, `content`, `image`, `created_at`, `updated_at`, `slug`, `deleted_at`, `users_id`, `image_1`, `image_2`, `image_3`, `image_4`, `harga`) VALUES
-(1, 'RUKO / KIOS', 2, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<p>Lokasi : PERUMAHAN TAMAN ANGGREK Blok. Kios No. 2 Desa Rawakalong, Kecamatan Gunung Sindur, Kota BOGOR</p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SHGB&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>50 </strong>m2 &nbsp;</li>\r\n	<li>Luas bangunan &nbsp;: <strong>&plusmn; 70</strong> m2</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Kontruksi Bangunan : pondasi batu kali &amp; Cor beton, dinding batako,rangka atap baja ringan, genteng glazur, keramik 30 X 30,kusen jendela alumunium, rolling door.</li>\r\n	<li>Lokasi dekat dengan BSD,dekat dengan kantor pemda pamulang, dekat kampus Unpam,dekat Ciputat, Dll</li>\r\n</ul>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<ul>\r\n	<li>PT. BPR RIZKY BAROKAH (&nbsp;021-7457667 / 22213065 )</li>\r\n</ul>', 'public/uploads/posts/16757377401.png', '2023-02-06 19:42:20', '2023-02-06 19:42:20', 'ruko-kios', NULL, 2, 'public/uploads/posts/16757377402.png', 'public/uploads/posts/16757377403.png', 'public/uploads/posts/16757377404.png', 'public/uploads/posts/16757377405.png', '350000000'),
-(2, 'RUMAH DI JUAL', 1, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<p><strong>Lokasi : </strong><strong>Jl. </strong><strong>Mujahir III</strong><strong> No.</strong><strong>165</strong><strong> Rt.00</strong><strong>4</strong><strong>/00</strong><strong>9</strong><strong>&nbsp; </strong><strong>Kel.</strong><strong> </strong><strong>Depok Jaya</strong><strong> Kec. </strong><strong>Pancoran Mas Depok</strong><strong> &ndash; Jawa Barat</strong></p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SHM&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>103</strong><strong> </strong>m2 &nbsp;</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Luas bangunan &nbsp;: <strong>&nbsp;&nbsp;94</strong> m2</li>\r\n	<li>Rumah dengan Teras, R. Tamu, R. Keluarga,Kamar Tidur 3, Kamar mandi 1, R. Makan &amp; Dapur.</li>\r\n	<li>Lokasi dekat pusat kota, Sekolah, Kampus, Pusat belanja, Pasar, Kantor Pemerintah.</li>\r\n</ul>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<ul>\r\n	<li>PT. BPR RIZKY BAROKAH (&nbsp;021-222 13 065 )</li>\r\n</ul>', 'public/uploads/posts/16757385936.png', '2023-02-06 19:56:33', '2023-02-06 19:56:33', 'rumah-di-jual', NULL, 2, 'public/uploads/posts/16757385937.png', 'public/uploads/posts/16757385938.png', 'public/uploads/posts/16757385939.png', 'public/uploads/posts/167573859310.png', '400000000'),
-(3, 'RUMAH DI JUAL SIAP HUNI', 1, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<p>Lokasi : Jl. Pondok Serut Gg. Masjid III No.101 Rt.001/003 Kel. Paku Jaya Kec. Serpong Utara, Tangerang Selatan - Banten</p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SH</strong><strong>GB</strong><strong>&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>208</strong><strong> </strong>m2 &nbsp;</li>\r\n	<li>Luas bangunan &nbsp;: <strong>&plusmn; 32</strong><strong>0</strong> m2</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Rumah Kontrakan 2 Lantai terdiri dari : 5 pintu untuk latar dasar dan 8 pintu untuk lantai 2,</li>\r\n	<li>Lokasi berdekatan dengan Perumahan Graha Raya, Masjid Nurul Hikmah, SDN Pakujaya 2, Perumahan Parbu Residence, Akses Tol, Dll.</li>\r\n</ul>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<ul>\r\n	<li>PT. BPR RIZKY BAROKAH (&nbsp;021-7457667 / 22213065)</li>\r\n</ul>', 'public/uploads/posts/167574051411.png', '2023-02-06 20:28:34', '2023-02-06 20:30:26', 'rumah-di-jual-siap-huni', NULL, 2, 'public/uploads/posts/167574051412.png', 'public/uploads/posts/167574051413.png', 'public/uploads/posts/167574051414.png', 'public/uploads/posts/167574051415.png', '1600000000'),
-(4, 'RUMAH DI JUAL ADA KOLAM RENANG', 1, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<p>Lokasi : Jl. Panda Raya No.234 Rt.005/005 Kel. Pondok Ranji, Kec. Ciputat Timur, Tangerang Selatan - Banten</p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SHM&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>410 </strong>m2 &nbsp;</li>\r\n	<li>Luas bangunan &nbsp;: <strong>&plusmn; 324</strong> m2</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Rumah 2 Lantai, R.Keluarga, R.Tamu, K. Tidur 6, K. Mandi 6,Kolam renang &amp; Taman.</li>\r\n	<li>Lokasi berdekatan dengan bintaro sek.7, dekat BXC Mall, Sta.Pondok Ranji, Pasar Modern, Kampus / Sekolah, RS Premier, Akses Tol Bintaro, Dll.</li>\r\n</ul>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<ul>\r\n	<li>PT. BPR RIZKY BAROKAH ( 021-22213065 )</li>\r\n</ul>', 'public/uploads/posts/167574144416.png', '2023-02-06 20:44:04', '2023-02-06 20:44:23', 'rumah-di-jual-ada-kolam-renang', NULL, 2, 'public/uploads/posts/167574144417.png', 'public/uploads/posts/167574144418.png', 'public/uploads/posts/167574144419.png', 'public/uploads/posts/167574144420.png', '1900000000'),
-(5, 'RUMAH DI JUAL SIAP PAKAI', 1, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<p><strong>Lokasi : </strong><strong>Jl. </strong><strong>Buaran I</strong><strong> No.</strong><strong>33</strong><strong> Rt.00</strong><strong>9</strong><strong>/0</strong><strong>12</strong><strong>&nbsp; </strong><strong>Kel.</strong><strong> </strong><strong>Klender</strong><strong> Kec. </strong><strong>Duren sawit, Jakarta Timur</strong></p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SHM&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>84</strong><strong> </strong>m2 &nbsp;</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Luas bangunan &nbsp;: <strong>84</strong> m2</li>\r\n	<li>Rumah dengan Teras, R. Tamu, R. Keluarga,Kamar Tidur, Kamar mandi 1, R. Makan &amp; Dapur.</li>\r\n	<li>Lokasi dekat pusat kota, Sekolah, Kampus, Pusat belanja, Pasar, Kantor Pemerintah.</li>\r\n</ul>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<ul>\r\n	<li>PT. BPR RIZKY BAROKAH ( 021-22213065 )</li>\r\n</ul>', 'public/uploads/posts/167574177421.png', '2023-02-06 20:49:34', '2023-02-06 20:49:34', 'rumah-di-jual-siap-pakai', NULL, 2, 'public/uploads/posts/167574177422.png', 'public/uploads/posts/167574177423.png', 'public/uploads/posts/167574177424.png', 'public/uploads/posts/167574177425.png', '800000000'),
-(6, 'RUMAH DI JUAL LAYAK PAKAI', 1, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<p><strong>Lokasi : Jl. Sukasari I no. 12 Rt. 01 / 02 Kel. Tegal Munjul Kec. Purwakarta &ndash; Jawa Barat</strong></p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SHM&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>163 </strong>m2 &nbsp;</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Luas bangunan &nbsp;: <strong>129</strong> m2</li>\r\n	<li>Rumah di pinggir jalan, Carpot, Teras, Kolam Belakang &amp; Air mancur, R. Tamu, R. Keluarga,Kamar Tidur 3, Kamar mandi 3, R. Makan &amp; Dapur.</li>\r\n	<li>Lokasi dekat pusat kota, Sekolah, Kampus, Pusat belanja Giant, Jogja, Pasar, Kantor Pemerintah, RSUD, Tol Sadang.</li>\r\n</ul>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<p>PT. BPR RIZKY BAROKAH ( 021-222 13 065 )</p>', 'public/uploads/posts/167574246626.png', '2023-02-06 21:01:06', '2023-02-06 21:01:06', 'rumah-di-jual-layak-pakai', NULL, 2, 'public/uploads/posts/167574246627.png', 'public/uploads/posts/167574246628.png', 'public/uploads/posts/167574246629.png', 'public/uploads/posts/167574246627.png', '570000000'),
-(7, 'RUMAH DI JUAL DENGAN HALAMAN DEPAN LUAS', 1, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<p>Lokasi : Jl. Malaka No.49 Rt.003/001 Kel. Peusar, Kec. Panongan Kabupaten Tangerang - Banten</p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SHM&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>1.009 </strong>m2 &nbsp;</li>\r\n	<li>Luas bangunan &nbsp;: <strong>&plusmn; 252</strong> m2</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Rumah 1 &frac12; Lantai, R.Keluarga, R.Tamu, K. Tidur 6, K. Mandi 3,Kolam renang &amp; Taman.</li>\r\n	<li>Lokasi Belakan Citra Raya, dekat dengan Bizzpoint, Pasar, Sekolah, kantor pemerintah, akses tol Cikupa, fasilitas umum lengkap,Dll.</li>\r\n</ul>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<ul>\r\n	<li>PT. BPR RIZKY BAROKAH (&nbsp;021-7457667 )</li>\r\n</ul>', 'public/uploads/posts/167574325730.png', '2023-02-06 21:14:17', '2023-02-06 21:14:17', 'rumah-di-jual-dengan-halaman-depan-luas', NULL, 2, 'public/uploads/posts/167574325731.png', 'public/uploads/posts/167574325732.png', 'public/uploads/posts/167574325733.png', 'public/uploads/posts/167574325734.png', '1800000000');
+(1, 'RUKO / KIOS', 2, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SHGB&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>50 </strong>m2 &nbsp;</li>\r\n	<li>Luas bangunan &nbsp;: <strong>&plusmn; 70</strong> m2</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Kontruksi Bangunan : pondasi batu kali &amp; Cor beton, dinding batako,rangka atap baja ringan, genteng glazur, keramik 30 X 30,kusen jendela alumunium, rolling door.</li>\r\n	<li>Lokasi dekat dengan BSD,dekat dengan kantor pemda pamulang, dekat kampus Unpam,dekat Ciputat, Dll</li>\r\n</ul>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<ul>\r\n	<li>PT. BPR RIZKY BAROKAH (&nbsp;021-7457667 / 22213065 )</li>\r\n</ul>', 'public/uploads/posts/16757377401.png', '2023-02-06 19:42:20', '2023-02-07 09:28:56', 'ruko-kios', NULL, 2, 'public/uploads/posts/16757377402.png', 'public/uploads/posts/16757377403.png', 'public/uploads/posts/16757377404.png', 'public/uploads/posts/16757377405.png', '350000000'),
+(2, 'RUMAH DI JUAL', 1, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SHM&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>103</strong><strong> </strong>m2 &nbsp;</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Luas bangunan &nbsp;: <strong>&nbsp;&nbsp;94</strong> m2</li>\r\n	<li>Rumah dengan Teras, R. Tamu, R. Keluarga,Kamar Tidur 3, Kamar mandi 1, R. Makan &amp; Dapur.</li>\r\n	<li>Lokasi dekat pusat kota, Sekolah, Kampus, Pusat belanja, Pasar, Kantor Pemerintah.</li>\r\n</ul>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<ul>\r\n	<li>PT. BPR RIZKY BAROKAH (&nbsp;021-222 13 065 )</li>\r\n</ul>', 'public/uploads/posts/16757385936.png', '2023-02-06 19:56:33', '2023-02-07 09:29:28', 'rumah-di-jual', NULL, 2, 'public/uploads/posts/16757385937.png', 'public/uploads/posts/16757385938.png', 'public/uploads/posts/16757385939.png', 'public/uploads/posts/167573859310.png', '400000000'),
+(3, 'RUMAH DI JUAL SIAP HUNI', 1, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SH</strong><strong>GB</strong><strong>&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>208</strong><strong> </strong>m2 &nbsp;</li>\r\n	<li>Luas bangunan &nbsp;: <strong>&plusmn; 32</strong><strong>0</strong> m2</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Rumah Kontrakan 2 Lantai terdiri dari : 5 pintu untuk latar dasar dan 8 pintu untuk lantai 2,</li>\r\n	<li>Lokasi berdekatan dengan Perumahan Graha Raya, Masjid Nurul Hikmah, SDN Pakujaya 2, Perumahan Parbu Residence, Akses Tol, Dll.</li>\r\n</ul>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<ul>\r\n	<li>PT. BPR RIZKY BAROKAH (&nbsp;021-7457667 / 22213065)</li>\r\n</ul>', 'public/uploads/posts/167574051411.png', '2023-02-06 20:28:34', '2023-02-07 09:29:56', 'rumah-di-jual-siap-huni', NULL, 2, 'public/uploads/posts/167574051412.png', 'public/uploads/posts/167574051413.png', 'public/uploads/posts/167574051414.png', 'public/uploads/posts/167574051415.png', '1600000000'),
+(4, 'RUMAH DI JUAL ADA KOLAM RENANG', 1, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SHM&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>410 </strong>m2 &nbsp;</li>\r\n	<li>Luas bangunan &nbsp;: <strong>&plusmn; 324</strong> m2</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Rumah 2 Lantai, R.Keluarga, R.Tamu, K. Tidur 6, K. Mandi 6,Kolam renang &amp; Taman.</li>\r\n	<li>Lokasi berdekatan dengan bintaro sek.7, dekat BXC Mall, Sta.Pondok Ranji, Pasar Modern, Kampus / Sekolah, RS Premier, Akses Tol Bintaro, Dll.</li>\r\n</ul>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<ul>\r\n	<li>PT. BPR RIZKY BAROKAH ( 021-22213065 )</li>\r\n</ul>', 'public/uploads/posts/167574144416.png', '2023-02-06 20:44:04', '2023-02-07 09:30:07', 'rumah-di-jual-ada-kolam-renang', NULL, 2, 'public/uploads/posts/167574144417.png', 'public/uploads/posts/167574144418.png', 'public/uploads/posts/167574144419.png', 'public/uploads/posts/167574144420.png', '1900000000'),
+(5, 'RUMAH DI JUAL SIAP PAKAI', 1, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SHM&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>84</strong><strong> </strong>m2 &nbsp;</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Luas bangunan &nbsp;: <strong>84</strong> m2</li>\r\n	<li>Rumah dengan Teras, R. Tamu, R. Keluarga,Kamar Tidur, Kamar mandi 1, R. Makan &amp; Dapur.</li>\r\n	<li>Lokasi dekat pusat kota, Sekolah, Kampus, Pusat belanja, Pasar, Kantor Pemerintah.</li>\r\n</ul>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<ul>\r\n	<li>PT. BPR RIZKY BAROKAH ( 021-22213065 )</li>\r\n</ul>', 'public/uploads/posts/167574177421.png', '2023-02-06 20:49:34', '2023-02-07 09:30:29', 'rumah-di-jual-siap-pakai', NULL, 2, 'public/uploads/posts/167574177422.png', 'public/uploads/posts/167574177423.png', 'public/uploads/posts/167574177424.png', 'public/uploads/posts/167574177425.png', '800000000'),
+(6, 'RUMAH DI JUAL LAYAK PAKAI', 1, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SHM&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>163 </strong>m2 &nbsp;</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Luas bangunan &nbsp;: <strong>129</strong> m2</li>\r\n	<li>Rumah di pinggir jalan, Carpot, Teras, Kolam Belakang &amp; Air mancur, R. Tamu, R. Keluarga,Kamar Tidur 3, Kamar mandi 3, R. Makan &amp; Dapur.</li>\r\n	<li>Lokasi dekat pusat kota, Sekolah, Kampus, Pusat belanja Giant, Jogja, Pasar, Kantor Pemerintah, RSUD, Tol Sadang.</li>\r\n</ul>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<p>PT. BPR RIZKY BAROKAH ( 021-222 13 065 )</p>', 'public/uploads/posts/167574246626.png', '2023-02-06 21:01:06', '2023-02-07 09:30:51', 'rumah-di-jual-layak-pakai', NULL, 2, 'public/uploads/posts/167574246627.png', 'public/uploads/posts/167574246628.png', 'public/uploads/posts/167574246629.png', 'public/uploads/posts/167574246627.png', '570000000'),
+(7, 'RUMAH DI JUAL DENGAN HALAMAN DEPAN LUAS', 1, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SHM&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>1.009 </strong>m2 &nbsp;</li>\r\n	<li>Luas bangunan &nbsp;: <strong>&plusmn; 252</strong> m2</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Rumah 1 &frac12; Lantai, R.Keluarga, R.Tamu, K. Tidur 6, K. Mandi 3,Kolam renang &amp; Taman.</li>\r\n	<li>Lokasi Belakan Citra Raya, dekat dengan Bizzpoint, Pasar, Sekolah, kantor pemerintah, akses tol Cikupa, fasilitas umum lengkap,Dll.</li>\r\n</ul>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<ul>\r\n	<li>PT. BPR RIZKY BAROKAH (&nbsp;021-7457667 )</li>\r\n</ul>', 'public/uploads/posts/167574325730.png', '2023-02-06 21:14:17', '2023-02-07 09:31:01', 'rumah-di-jual-dengan-halaman-depan-luas', NULL, 2, 'public/uploads/posts/167574325731.png', 'public/uploads/posts/167574325732.png', 'public/uploads/posts/167574325733.png', 'public/uploads/posts/167574325734.png', '1800000000');
 
 -- --------------------------------------------------------
 
@@ -364,7 +420,8 @@ CREATE TABLE `tags` (
 
 INSERT INTO `tags` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
 (1, 'RUMAH', 'rumah', '2023-02-05 21:28:24', '2023-02-05 21:28:24'),
-(2, 'RUKO / KIOS', 'ruko-kios', '2023-02-05 23:43:47', '2023-02-05 23:44:24');
+(2, 'RUKO / KIOS', 'ruko-kios', '2023-02-05 23:43:47', '2023-02-05 23:44:24'),
+(3, 'PELATIHAN', 'pelatihan', '2023-02-08 01:21:34', '2023-02-08 01:21:34');
 
 -- --------------------------------------------------------
 
@@ -389,16 +446,28 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `type`) VALUES
-(2, 'admin', 'dandihermawan87@gmail.com', NULL, '$2y$10$daCpKTcV.SBOXgQyXhgS/.IpoisstJuM8kyepf973vJlUUTzDY/l6', NULL, '2023-01-24 19:49:42', '2023-02-05 20:08:44', 1);
+(2, 'BPR RIZKY BAROKAH', 'dandihermawan87@gmail.com', NULL, '$2y$10$daCpKTcV.SBOXgQyXhgS/.IpoisstJuM8kyepf973vJlUUTzDY/l6', NULL, '2023-01-24 19:49:42', '2023-02-08 08:15:10', 1);
 
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indexes for table `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `category`
 --
 ALTER TABLE `category`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `category_news`
+--
+ALTER TABLE `category_news`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -500,9 +569,21 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `category_news`
+--
+ALTER TABLE `category_news`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
@@ -539,25 +620,25 @@ ALTER TABLE `kredits`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `news_tags`
 --
 ALTER TABLE `news_tags`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `pengaduan`
 --
 ALTER TABLE `pengaduan`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -581,7 +662,7 @@ ALTER TABLE `posts_tags`
 -- AUTO_INCREMENT for table `tags`
 --
 ALTER TABLE `tags`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
