@@ -184,7 +184,7 @@
                 <!-- End left_sidebar -->
                 <div class="col-lg-4 right_sidebar">
                     <!-- Latest Bitcoin News -->
-                    {{-- <div class="latest_news_widget">
+                    <div class="latest_news_widget">
                         <h2>Informasi Terbaru</h2>
                         @foreach ($news as $info)
                             <div class="widget">
@@ -195,7 +195,7 @@
                             </div>
                         @endforeach
                         <a href="#" class="load_more_btn">Selanjutnya..</a>
-                    </div> --}}
+                    </div>
                     <div class="categories">
                         <h3>Aset Kategori</h3>
                         <ul class="cpost_categories">

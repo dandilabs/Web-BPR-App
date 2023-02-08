@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categories;
 use App\Models\News;
 use App\Models\Tags;
-use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -26,14 +26,14 @@ class NewsController extends Controller
     {
         $data = News::where('slug', $slug)->get();
         $tags = Tags::all();
-        $category_list = Category::all();
+        $category_list = Categories::all();
         return view('news.detail', compact('data','tags','category_list'));
     }
 
     public function list_news()
     {
         $data = News::latest()->paginate(6);
-        $category_list = Category::all();
+        $category_list = Categories::all();
         return view('news.list', compact('data','category_list'));
     }
     /**
@@ -43,7 +43,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-        $category   = Category::all();
+        $category   = Categories::all();
         $tags       = Tags::all();
         return view('admin.news.create', compact('category', 'tags'));
     }
@@ -57,27 +57,27 @@ class NewsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'judul' => 'required',
-            'category_id' => 'required',
-            'content' => 'required',
-            'image' => 'required'
+            'judul'             => 'required',
+            'categories_id'     => 'required',
+            'content'           => 'required',
+            'image'             => 'required'
         ]);
 
         $image = $request->image;
         $new_image = time().$image->getClientOriginalName();
 
         $news = News::create([
-            'judul'         => $request->judul,
-            'category_id'   => $request->category_id,
-            'content'       => $request->content,
-            'image'         => 'public/uploads/news/' . $new_image,
-            'slug'          => Str::slug($request->judul),
-            'users_id'      => Auth::id()
+            'judul'              => $request->judul,
+            'categories_id'      => $request->categories_id,
+            'content'            => $request->content,
+            'image'              => 'public/uploads/news/' . $new_image,
+            'slug'               => Str::slug($request->judul),
+            'users_id'           => Auth::id()
         ]);
         $news->tags()->attach($request->tags);
         $image->move('public/uploads/news/', $new_image);
 
-        return redirect()->back()->with('success', 'Posting success upload');
+        return redirect()->back()->with('success', 'News success upload');
     }
 
     /**
@@ -99,7 +99,10 @@ class NewsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Categories::all();
+        $tags = Tags::all();
+        $new = News::findOrFail($id);
+        return view('admin.news.edit', compact('new', 'tags','category'));
     }
 
     /**
@@ -111,7 +114,36 @@ class NewsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'judul' => 'required',
+            'categories_id' => 'required',
+            'content' => 'required'
+        ]);
+
+        $post = News::findOrfail($id);
+        if($request->has('image')) {
+            $image = $request->image;
+            $new_image = time().$image->getClientOriginalName();
+            $image->move('public/uploads/news/', $new_image);
+            $post_data = [
+                'judul'             => $request->judul,
+                'categories_id'     => $request->categories_id,
+                'content'           => $request->content,
+                'image'             => 'public/uploads/news/' . $new_image,
+                'slug'              => Str::slug($request->judul)
+            ];
+        }
+        else {
+            $post_data = [
+                'judul'             => $request->judul,
+                'categories_id'     => $request->categories_id,
+                'content'           => $request->content,
+                'slug'              => Str::slug($request->judul)
+            ];
+        }
+        $post->tags()->sync($request->tags);
+        $post->update($post_data);
+        return redirect()->route('new.index')->with('success', 'News success update');
     }
 
     /**

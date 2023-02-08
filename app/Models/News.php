@@ -2,17 +2,20 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Tags;
+use App\Models\User;
+use App\Models\Categories;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class News extends Model
 {
     use HasFactory;
-    protected $fillable = ['judul', 'category_id', 'content', 'image','slug','users_id'];
+    protected $fillable = ['judul', 'categories_id', 'content', 'image','slug','users_id'];
 
-    public function category()
+    public function categories()
     {
-        return $this->BelongsTo(Category::class);
+        return $this->BelongsTo(Categories::class);
     }
 
     public function tags()

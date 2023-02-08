@@ -31,8 +31,8 @@
                             <input type="text" class="form-control" name="judul">
                         </div>
                         <div class="form-group">
-                            <label>Category</label>
-                            <select name="category_id" class="form-control" id="">
+                            <label>News Category</label>
+                            <select name="categories_id" class="form-control" id="">
                                 <option value="" holder>Select Category</option>
                                 @foreach ($category as $result)
                                     <option value="{{ $result->id }}">{{ $result->name }}</option>

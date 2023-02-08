@@ -4,10 +4,10 @@
     <!-- Pages Heder Area -->
     <div class="container">
         <div class="pages_heder">
-            <h2>Informasi Detail</h2>
+            <h2>Pelatihan Detail</h2>
             <ol class="breadcrumb">
                 <li><a href="/">Beranda</a></li>
-                <li><a href="/aset">Informasi</a></li>
+                <li><a href="#">Informasi</a></li>
                 <li><a href="#" class="active">Informasi Detail</a></li>
             </ol>
         </div>
@@ -25,37 +25,20 @@
                         @foreach ($data as $result)
                             <div class="news_item news_details">
                                 <h6><span>{{ \Carbon\Carbon::parse($result->created_at)->translatedFormat('d F Y') }}</span>
-                                    <a href="#">Post by :
+                                    <a href="#">
                                         {{ $result->users->name }}</a> <a href="#"
-                                        class="investing">{{ $result->category->name }}</a></h6>
+                                        class="investing">{{ $result->categories->name }}</a>
+                                </h6>
                                 <a href="news-details.html" class="news_heding">{{ $result->judul }}</a>
                                 <img src="{{ asset($result->image) }}" alt="">
                                 <p class="fast_p">{!! $result->content !!}</p>
                                 <p class="end_pera"></p>
                                 <div class="share_row row">
-                                    <div class="col-sm-6 back_to"><a href="/aset"><i class="fa fa-arrow-left"></i>Back to
-                                            blog</a></div>
+                                    <div class="col-sm-6 back_to"><a href="/"><i class="fa fa-arrow-left"></i> Kembali
+                                            Ke Beranda</a></div>
                                 </div>
                             </div>
                         @endforeach
-                        <div class="leave_reply">
-                            <h2>Leave a Reply</h2>
-                            <form class="row login_from">
-                                <div class="form-group col-12">
-                                    <textarea class="form-control" id="message" name="message" placeholder="Your Comment"></textarea>
-                                </div>
-                                <div class="form-group col-12">
-                                    <input type="text" class="form-control" placeholder="Name">
-                                </div>
-                                <div class="form-group col-12">
-                                    <input type="email" class="form-control" name="email" placeholder="Email">
-                                </div>
-                                <div class="form-group larg_btn col-12">
-                                    <button class="sm_btn" type="submit">Submit Reply <i
-                                            class="fa fa-arrow-right"></i></button>
-                                </div>
-                            </form>
-                        </div>
                     </div>
                 </div>
 
@@ -68,12 +51,12 @@
                         </div>
                     </div>
                     <div class="categories">
-                        <h3>Post Categories</h3>
+                        <h3>Informasi Kategori</h3>
                         <ul class="cpost_categories">
                             @foreach ($category_list as $result)
                                 <li>
-                                    <a href="{{ route('aset.category', $result->slug) }}">{{ $result->name }}
-                                        <span>{{ $result->posts->count() }}</span>
+                                    <a href="{{ route('news.categories', $result->slug) }}">{{ $result->name }}
+                                        <span>{{ $result->news->count() }}</span>
                                     </a>
                                 </li>
                             @endforeach

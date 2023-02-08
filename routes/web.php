@@ -14,6 +14,7 @@ use App\Http\Controllers\KreditController;
 use App\Http\Controllers\JaminanController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PengaduanController;
+use App\Http\Controllers\CategoriesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,7 @@ Auth::routes([
 
 Route::get('/', 'App\Http\Controllers\BlogController@index');
 Route::get('/news-detail/{slug}', 'App\Http\Controllers\NewsController@detail_news')->name('news.detail');
+Route::get('/list-categories/{category}','App\Http\Controllers\NewsController@list_category')->name('news.categories');
 Route::get('/aset', 'App\Http\Controllers\AsetController@index');
 Route::get('/aset-detail/{slug}', 'App\Http\Controllers\AsetController@detail_blog')->name('aset.detail');
 Route::get('/list-post','App\Http\Controllers\AsetController@list_blog')->name('aset.list');
@@ -85,6 +87,7 @@ Route::group(['middleware' => 'auth'], function(){
         return view('layouts.dashboard');
     });
     Route::resource('/category', CategoryController::class);
+    Route::resource('/categories', CategoriesController::class);
     Route::resource('/tag', TagController::class);
 
     Route::get('/post/tampil_hapus','App\Http\Controllers\PostController@tampil_hapus')->name('post.tampil_hapus');

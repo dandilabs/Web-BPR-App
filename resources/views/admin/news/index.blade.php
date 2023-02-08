@@ -29,7 +29,7 @@
                 <tr>
                     <td>{{ $result + $news->firstitem() }}</td>
                     <td>{{ $hasil->judul }}</td>
-                    <td>{{ $hasil->category->name }}</td>
+                    <td>{{ $hasil->categories->name }}</td>
                     <td>
                         @foreach ($hasil->tags as $tag)
                             <ul>

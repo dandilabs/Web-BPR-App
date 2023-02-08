@@ -27,6 +27,7 @@
                     <span>Category</span></a>
                 <ul class="dropdown-menu">
                     <li><a class="nav-link" href="{{ route('category.index') }}">List Category</a></li>
+                    <li><a class="nav-link" href="{{ route('categories.index') }}">List News Category</a></li>
                 </ul>
             </li>
             <li class="nav-item dropdown">
