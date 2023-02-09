@@ -12,13 +12,13 @@
             @endforeach
 
         @endif
-
-        @if (Session::has('success'))
+        @include('sweetalert::alert')
+        {{-- @if (Session::has('success'))
             <div class="alert alert-success" role="alert">
                 <button type="button" class="close" data-dismiss="alert">×</button>
                 {{ Session('success') }}
             </div>
-        @endif
+        @endif --}}
     </div>
 
     <!-- Pages Heder Area -->

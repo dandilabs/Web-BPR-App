@@ -55,7 +55,7 @@ class PengaduanController extends Controller
             'pesan'         => $request->pesan,
             'no_telp'       => $request->no_telp
         ]);
-        return redirect()->back()->with('success' ,'Pesan berhasil di kirim, Mohon tunggu ya');
+        return redirect()->route('hubungi.kami')->with('success' ,'Pesan berhasil di kirim, Mohon tunggu ya');
     }
     
 
@@ -103,6 +103,6 @@ class PengaduanController extends Controller
     {
         $data = Pengaduan::findOrFail($id);
         $data->delete();
-        return redirect()->back()->with('success', 'Your Information Success deleted');
+        return redirect()->route('pengaduan.index')->with('toast_success', 'Your Information Success deleted');
     }
 }

@@ -30,7 +30,7 @@
     <div id="carouselExampleIndicators" class="carousel slide banner_slider col-12" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="{{ asset('vendor/images/produk/kredit.png') }}" alt="First slide">
+                <img src="{{ asset('vendor/images/produk/15.png') }}" alt="First slide">
                 <div class="slider_caption">
                     <h6 class="wow fadeInUp animated">
                         Hari : {{ \Carbon\Carbon::now()->translatedFormat('l, d F Y') }}
@@ -63,7 +63,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="{{ asset('vendor/images/produk/deposit.png') }}" alt="Second slide">
+                <img src="{{ asset('vendor/images/produk/kredits.png') }}" alt="Second slide">
                 <div class="slider_caption">
                     <h6 class="wow fadeInUp animated">
                         Hari : {{ \Carbon\Carbon::now()->translatedFormat('l, d F Y') }}
@@ -102,33 +102,6 @@
                 <!-- Left_sidebar -->
                 <div class="col-lg-8 left_sidebar">
                     <!-- Feature Post Area-->
-                    <div class="row feature_post_area">
-                        <div class="col-12">
-                            <div class="feature_tittle">
-                                <h2>Aset Lelangan</h2>
-                                <a href="/aset">View More <i class="fa fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                        @foreach ($data as $aset)
-                            <div class="col-12">
-                                <div class="media feature_post">
-                                    <div class="feture_img">
-                                        <a href="{{ route('aset.detail', $aset->slug) }}"><img src="{{ $aset->image }}"
-                                                width="250"></a>
-                                    </div>
-                                    <div class="media-body feture_content">
-                                        <a href="{{ route('aset.detail', $aset->slug) }}"
-                                            class="f_heding">{{ $aset->judul }}</a>
-                                        <h6>{{ \Carbon\Carbon::parse($aset->created_at)->translatedFormat('l, d F Y') }}
-                                            <span>|</span><a href="http://emran-khan.com/">{{ $aset->users->name }}</a>
-                                        </h6>
-                                        <p>{{ $aset->category->name }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                    <!-- Watch It Area-->
                     <div class="row watch_it_area mt-3">
                         <!--ethereum_price_posts -->
                         <div class="col-12">
@@ -180,6 +153,34 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="row feature_post_area">
+                        <div class="col-12">
+                            <div class="feature_tittle">
+                                <h2>Aset Menarik</h2>
+                                <a href="/aset">View More <i class="fa fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        @foreach ($data as $aset)
+                            <div class="col-12">
+                                <div class="media feature_post">
+                                    <div class="feture_img">
+                                        <a href="{{ route('aset.detail', $aset->slug) }}"><img src="{{ $aset->image }}"
+                                                width="250"></a>
+                                    </div>
+                                    <div class="media-body feture_content">
+                                        <a href="{{ route('aset.detail', $aset->slug) }}"
+                                            class="f_heding">{{ $aset->judul }}</a>
+                                        <h6>{{ \Carbon\Carbon::parse($aset->created_at)->translatedFormat('l, d F Y') }}
+                                            <span>|</span><a href="http://emran-khan.com/">{{ $aset->users->name }}</a>
+                                        </h6>
+                                        <p>{{ $aset->category->name }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    <!-- Watch It Area-->
                 </div>
                 <!-- End left_sidebar -->
                 <div class="col-lg-4 right_sidebar">

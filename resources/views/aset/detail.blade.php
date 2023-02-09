@@ -66,10 +66,10 @@
                                 <h1>
                                     {{ $result->users->name }}
                                 </h1>
-                                <h4>Tanggal: {{ \Carbon\Carbon::parse($result->created_at)->translatedFormat('l, d F Y') }}
+                                {{-- <h4>Tanggal: {{ \Carbon\Carbon::parse($result->created_at)->translatedFormat('l, d F Y') }} --}}
                                 </h4>
                                 <h4>Kategori: {{ $result->category->name }}</h4>
-                                <p>Harga: @currency($result->harga),-</p>
+                                {{-- <p>Harga: @currency($result->harga),-</p> --}}
                             </div>
 
                             <div class="review-tab col-12">

@@ -10,11 +10,13 @@
                 </div>
             @endforeach
         @endif
-        @if (Session::has('success'))
+
+        @include('sweetalert::alert')
+        {{-- @if (Session::has('success'))
             <div class="alert alert-success" role="alert">
                 {{ Session('success') }}
             </div>
-        @endif
+        @endif --}}
 
         <div class="pages_heder">
             <h2>Hubungi Kami</h2>

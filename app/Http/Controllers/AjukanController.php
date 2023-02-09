@@ -68,7 +68,7 @@ class AjukanController extends Controller
             'no_ktp'            => $request->no_ktp,
             'no_telp'           => $request->no_telp
         ]);
-        return redirect()->back()->with('success' ,'Pengajuan Kredit Berhasil, Silahkan tunggu 1-2 hari kerja');
+        return redirect()->route('kredit.ajukan')->with('success' ,'Pengajuan Kredit Berhasil, Silahkan tunggu 1-2 hari kerja');
     }
 
     /**
