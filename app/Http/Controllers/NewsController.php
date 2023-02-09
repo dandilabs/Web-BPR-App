@@ -154,6 +154,8 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $new = News::findOrFail($id);
+        $new->delete();
+        return redirect()->back()->with('success', 'News success deleted, (Check in trash post) ');
     }
 }

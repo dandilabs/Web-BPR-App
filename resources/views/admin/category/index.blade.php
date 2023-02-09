@@ -2,12 +2,7 @@
 @section('title', 'Category')
 @section('sub', 'Category')
 @section('content')
-
-    @if (Session::has('success'))
-        <div class="alert alert-success" role="alert">
-            {{ Session('success') }}
-        </div>
-    @endif
+    @include('sweetalert::alert')
 
     <a href="{{ route('category.create') }}" class="btn btn-sm btn-primary">
         <i class="fas fa-pen"></i> Add Category

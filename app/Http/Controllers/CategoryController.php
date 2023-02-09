@@ -45,7 +45,7 @@ class CategoryController extends Controller
             'name' => $request->name,
             'slug' => Str::slug($request->name),
         ]);
-        return redirect()->back()->with('success' ,'Add Category Success');
+        return redirect()->route('category.index')->with('success' ,'Add Category Success');
     }
 
     /**
@@ -103,6 +103,6 @@ class CategoryController extends Controller
     {
         $categories = Category::findOrFail($id);
         $categories->delete();
-        return redirect()->back()->with('success', 'Category Success deleted');
+        return redirect()->route('category.index')->with('success', 'Category Success deleted');
     }
 }
