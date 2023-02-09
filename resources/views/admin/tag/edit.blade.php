@@ -2,15 +2,15 @@
 @section('title', 'Edit')
 @section('sub', 'Edit Tag')
 @section('content')
-
-    @if (count($errors) > 0)
+    @include('sweetalert::alert')
+    {{-- @if (count($errors) > 0)
         @foreach ($errors->all() as $error)
             <div class="alert alert-danger" role="alert">
                 {{ $error }}
             </div>
         @endforeach
 
-    @endif
+    @endif --}}
 
     @if (Session::has('success'))
         <div class="alert alert-success" role="alert">

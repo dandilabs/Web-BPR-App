@@ -18,7 +18,7 @@
         <div class="container">
             <h2>Produk simpanan nasabah pada BPR yang ditujukan untuk masyarakat umum (perorangan dan Lembaga) yang
                 penarikannya dapat dilakukan pada waktu tertentu sesuai jangka waktu yang disepakati dengan
-                prosentasi bunga yang lebih besar dari tabungan dan dapat dijadikan sebagai agunan kredit serta
+                prosentasi bunga yang menarik dan dapat dijadikan sebagai agunan kredit serta
                 dapat memberikan kenyamanan pengaturan jangka waktu penempatan deposito dengan pelayanan yang cepat
                 dan mudah.</h2>
             <img src="{{ asset('vendor/images/produk/deposito.png') }}" alt="">

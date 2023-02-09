@@ -46,7 +46,7 @@ class TagController extends Controller
             'slug' => Str::slug($request->name)
         ]);
 
-        return redirect()->back()->with('success' ,'Add Tags Success');
+        return redirect()->route('tag.index')->with('toast_success' ,'Add Tags Success');
     }
 
     /**
@@ -91,7 +91,7 @@ class TagController extends Controller
         ];
 
         Tags::whereId($id)->update($tag_data);
-        return redirect()->route('tag.index')->with('success', 'Tag Success updated');
+        return redirect()->route('tag.index')->with('toast_success', 'Tag Success updated');
     }
 
     /**
@@ -104,6 +104,6 @@ class TagController extends Controller
     {
         $tag = Tags::findOrFail($id);
         $tag->delete();
-        return redirect()->back()->with('success', 'Tag Success deleted');
+        return redirect()->route('tag.index')->with('toast_success', 'Tag Success deleted');
     }
 }

@@ -44,7 +44,7 @@ class JaminanController extends Controller
             'name' => $request->name,
             'slug' => Str::slug($request->name),
         ]);
-        return redirect()->back()->with('success' ,'Add Jaminan Success');
+        return redirect()->route('jaminan.index')->with('toast_success' ,'Add Jaminan Success');
     }
 
     /**
@@ -89,7 +89,7 @@ class JaminanController extends Controller
         ];
 
         Jaminan::whereId($id)->update($jaminan_data);
-        return redirect()->route('jaminan.index')->with('success', 'Jaminan Success updated');
+        return redirect()->route('jaminan.index')->with('toast_success', 'Jaminan Success updated');
     }
 
     /**
@@ -102,6 +102,6 @@ class JaminanController extends Controller
     {
         $jaminan = Jaminan::findOrFail($id);
         $jaminan->delete();
-        return redirect()->back()->with('success', 'Jaminan Success deleted');
+        return redirect()->route('jaminan.index')->with('toast_success', 'Jaminan Success deleted');
     }
 }

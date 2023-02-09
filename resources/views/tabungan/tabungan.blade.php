@@ -19,7 +19,7 @@
             <h2>
                 Produk simpanan yang ditujukan untuk masyarakat umum (pelajar, perorangan dan Lembaga) yang
                 penyetorannya dapat dilakukan secara berulang-ulang dan penarikannya dapat dilakukan setiap saat
-                dengan syarat tertentu dengan prosentasi bunga yang lebih kecil dari deposito dan dapat dijadikan
+                dengan syarat tertentu dengan prosentasi bunga menarik dan dapat dijadikan
                 sebagai agunan kredit serta dapat mewujudkan setiap impian anda dan keluarga dalam menabung untuk
                 masa depan .
             </h2>

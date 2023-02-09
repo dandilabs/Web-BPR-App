@@ -87,7 +87,7 @@ class PostController extends Controller
         $image_3->move('public/uploads/posts/', $new_image_3);
         $image_4->move('public/uploads/posts/', $new_image_4);
 
-        return redirect()->back()->with('success', 'Posting success upload');
+        return redirect()->route('post.index')->with('toast_success', 'Posting success upload');
     }
 
     /**
@@ -153,7 +153,7 @@ class PostController extends Controller
         }
         $post->tags()->sync($request->tags);
         $post->update($post_data);
-        return redirect()->route('post.index')->with('success', 'Posting success update');
+        return redirect()->route('post.index')->with('toast_success', 'Posting success update');
     }
 
     /**
@@ -166,7 +166,7 @@ class PostController extends Controller
     {
         $post = Posts::findOrFail($id);
         $post->delete();
-        return redirect()->back()->with('success', 'Post success deleted, (Check in trash post) ');
+        return redirect()->route('post.index')->with('toast_success', 'Post success deleted, (Check in trash post) ');
     }
 
     public function tampil_hapus()
@@ -178,12 +178,12 @@ class PostController extends Controller
     public function restore($id){
         $post = Posts::withTrashed()->where('id', $id)->first();
         $post->restore();
-        return redirect()->back()->with('success', 'Post success in restore (list post)');
+        return redirect()->route('post.tampil_hapus')->with('toast_success', 'Post success in restore (list post)');
     }
 
     public function kill($id){
         $post = Posts::withTrashed()->where('id', $id)->first();
         $post->forceDelete();
-        return redirect()->back()->with('success', 'Post success delete permanent');
+        return redirect()->route('post.tampil_hapus')->with('toast_success', 'Post success delete permanent');
     }
 }

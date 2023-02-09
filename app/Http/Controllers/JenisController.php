@@ -44,7 +44,7 @@ class JenisController extends Controller
             'name' => $request->name,
             'slug' => Str::slug($request->name),
         ]);
-        return redirect()->back()->with('success' ,'Add Jenis Success');
+        return redirect()->route('jenis.index')->with('toast_success' ,'Add Jenis Success');
     }
 
     /**
@@ -89,7 +89,7 @@ class JenisController extends Controller
         ];
 
         Jenis::whereId($id)->update($jenis_data);
-        return redirect()->route('jenis.index')->with('success', 'Jenis Success updated');
+        return redirect()->route('jenis.index')->with('toast_success', 'Jenis Success updated');
     }
 
     /**
@@ -102,6 +102,6 @@ class JenisController extends Controller
     {
         $data = Jenis::findOrFail($id);
         $data->delete();
-        return redirect()->back()->with('success', 'Jenis Success deleted');
+        return redirect()->route('jenis.index')->with('toast_success', 'Jenis Success deleted');
     }
 }
