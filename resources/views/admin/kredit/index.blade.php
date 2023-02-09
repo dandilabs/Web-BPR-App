@@ -10,6 +10,9 @@
             {{ Session('success') }}
         </div>
     @endif --}}
+    <a href="{{ route('kredit.cetak') }}" target="_blank" class="btn btn-sm btn-primary">
+        <i class="fas fa-print"></i> Cetak
+    </a>
     <div class="container">
         <div class="row">
             <table class="table mt-3">

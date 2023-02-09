@@ -102,7 +102,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::resource('/jenis', JenisController::class);
     Route::resource('/jaminan', JaminanController::class);
     Route::resource('/pengaduan', PengaduanController::class);
-    
+    Route::get('/cetak', [App\Http\Controllers\KreditController::class, 'cetakKredit'])->name('kredit.cetak');
     Route::resource('/user', UserController::class);
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 });

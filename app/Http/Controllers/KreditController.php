@@ -20,6 +20,11 @@ class KreditController extends Controller
         $data = Kredits::paginate(10);
         return view('admin.kredit.index', compact('data'));
     }
+    public function cetakKredit()
+    {
+        $data = Kredits::all();
+        return view('admin.kredit.cetak', compact('data'));
+    }
     /**
      * Show the form for creating a new resource.
      *
