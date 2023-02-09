@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 08, 2023 at 12:35 PM
+-- Generation Time: Feb 09, 2023 at 09:28 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -196,6 +196,13 @@ CREATE TABLE `kredits` (
   `gender_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `kredits`
+--
+
+INSERT INTO `kredits` (`id`, `nama`, `jenis_id`, `jaminan_id`, `tempat_lahir`, `tanggal_lahir`, `jumlah_pinjaman`, `no_ktp`, `no_telp`, `created_at`, `updated_at`, `gender_id`) VALUES
+(3, 'Dandi Hermawan', 2, 2, 'Jakarta', '2023-02-09', '15000000', '3674030108980005', '089699451818', '2023-02-09 08:20:20', '2023-02-09 08:20:20', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -316,6 +323,13 @@ CREATE TABLE `pengaduan` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `no_telp` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `pengaduan`
+--
+
+INSERT INTO `pengaduan` (`id`, `nama`, `email`, `pesan`, `created_at`, `updated_at`, `no_telp`) VALUES
+(2, 'Dandi Hermawan', 'dandihermawan87@gmail.com', 'Saya ingin mengajukan kredit, apa saja yg harus aya siapkan', '2023-02-09 08:22:10', '2023-02-09 08:22:10', '089699451818');
 
 -- --------------------------------------------------------
 
@@ -578,7 +592,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `category_news`
@@ -608,13 +622,13 @@ ALTER TABLE `jaminan`
 -- AUTO_INCREMENT for table `jenis`
 --
 ALTER TABLE `jenis`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `kredits`
 --
 ALTER TABLE `kredits`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -638,7 +652,7 @@ ALTER TABLE `news_tags`
 -- AUTO_INCREMENT for table `pengaduan`
 --
 ALTER TABLE `pengaduan`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
