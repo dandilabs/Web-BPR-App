@@ -15,6 +15,7 @@ use App\Http\Controllers\JaminanController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PengaduanController;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -86,9 +87,10 @@ Route::post('/proses_pengaduan','App\Http\Controllers\PengaduanController@proses
 //end hubungi
 Route::group(['middleware' => 'auth'], function(){
     //dashboard
-    Route::get('/dashboard', function () {
-        return view('layouts.dashboard');
-    });
+    Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')->name('layouts.dashboard');
+    // Route::get('/dashboard', function () {
+    //     return view('layouts.dashboard');
+    // });
     Route::resource('/category', CategoryController::class);
     Route::resource('/categories', CategoriesController::class);
     Route::resource('/tag', TagController::class);
@@ -103,6 +105,8 @@ Route::group(['middleware' => 'auth'], function(){
     Route::resource('/jaminan', JaminanController::class);
     Route::resource('/pengaduan', PengaduanController::class);
     Route::get('/cetak', [App\Http\Controllers\KreditController::class, 'cetakKredit'])->name('kredit.cetak');
+    Route::get('/cetak-tanggal', [App\Http\Controllers\KreditController::class, 'cetakTanggal'])->name('kredit.cetak-tanggal');
+    // Route::get('/cetak-pertanggal/{tglawal}/{tglakhir}', [App\Http\Controllers\KreditController::class, 'cetakKreditPertanggal'])->name('kredit.cetak-pertanggal');
     Route::resource('/user', UserController::class);
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 });

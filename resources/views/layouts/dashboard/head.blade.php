@@ -8,6 +8,13 @@
 
 <!-- CSS Libraries -->
 <link rel="shortcut icon" href="{{ asset('vendor/images/logo-bpr.png') }}" type="image/x-icon">
+<link rel="stylesheet" href="{{ asset('assets/modules/bootstrap-daterangepicker/daterangepicker.css') }}">
+<link rel="stylesheet"
+    href="{{ asset('assets/modules/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/modules/jquery-selectric/selectric.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/modules/bootstrap-timepicker/css/bootstrap-timepicker.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css') }}">
+
 
 <!-- Template CSS -->
 <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">

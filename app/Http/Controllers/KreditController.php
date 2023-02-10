@@ -18,13 +18,25 @@ class KreditController extends Controller
     public function index()
     {
         $data = Kredits::paginate(10);
-        return view('admin.kredit.index', compact('data'));
+        $count = Kredits::count();
+        return view('admin.kredit.index', compact('data','count'));
     }
     public function cetakKredit()
     {
         $data = Kredits::all();
         return view('admin.kredit.cetak', compact('data'));
     }
+
+    public function cetakTanggal()
+    {
+        return view('admin.kredit.cetak-tanggal');
+    }
+
+    // public function cetakKreditPertanggal($tglawal,$tglakhir)
+    // {
+    //     $cetakPertanggal = Kredits::latest('created_at',[$tglawal, $tglakhir])->get();
+    //     return view('admin.kredit.cetak-pertanggal', compact('cetakPertanggal'));
+    // }
     /**
      * Show the form for creating a new resource.
      *

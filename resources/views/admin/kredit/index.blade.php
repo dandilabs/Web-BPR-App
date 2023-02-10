@@ -13,6 +13,9 @@
     <a href="{{ route('kredit.cetak') }}" target="_blank" class="btn btn-sm btn-primary">
         <i class="fas fa-print"></i> Cetak
     </a>
+    {{-- <a href="{{ route('kredit.cetak-tanggal') }}" class="btn btn-sm btn-primary">
+        <i class="fas fa-calendar"></i> Cetak Pertanggal
+    </a> --}}
     <div class="container">
         <div class="row">
             <table class="table mt-3">
