@@ -13,9 +13,10 @@ use App\Http\Controllers\AjukanController;
 use App\Http\Controllers\KreditController;
 use App\Http\Controllers\JaminanController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\PengaduanController;
-use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PengaduanController;
+use App\Http\Controllers\PublikasiController;
+use App\Http\Controllers\CategoriesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,6 +75,7 @@ Route::get('/deposito', function () {
 Route::get('/tentang-kami', function () {
     return view('tentang.kami');
 });
+Route::get('/laporan', 'App\Http\Controllers\PublikasiController@data')->name('laporan.publikasi');
 Route::get('/simulasi', function () {
     return view('simulasi.index');
 });
@@ -104,6 +106,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::resource('/jenis', JenisController::class);
     Route::resource('/jaminan', JaminanController::class);
     Route::resource('/pengaduan', PengaduanController::class);
+    Route::resource('/publikasi', PublikasiController::class);
     Route::get('/cetak', [App\Http\Controllers\KreditController::class, 'cetakKredit'])->name('kredit.cetak');
     Route::get('/cetak-tanggal', [App\Http\Controllers\KreditController::class, 'cetakTanggal'])->name('kredit.cetak-tanggal');
     // Route::get('/cetak-pertanggal/{tglawal}/{tglakhir}', [App\Http\Controllers\KreditController::class, 'cetakKreditPertanggal'])->name('kredit.cetak-pertanggal');

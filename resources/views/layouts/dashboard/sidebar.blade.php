@@ -88,6 +88,14 @@
                     <li><a class="nav-link" href="{{ route('pengaduan.index') }}">List Information</a></li>
                 </ul>
             </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
+                    <i class="far fa-file"></i> <span>Laporan</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="{{ route('publikasi.index') }}">List Publikasi</a></li>
+                </ul>
+            </li>
         </ul>
 
         <div class="mt-4 mb-4 p-3 hide-sidebar-mini">

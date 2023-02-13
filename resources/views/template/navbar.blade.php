@@ -18,7 +18,12 @@
                 </ul>
             </li>
             {{-- <li><a class="nav-link" href="/simulasi">Simulasi Kredit</a></li> --}}
-            <li><a class="nav-link" href="/tentang-kami">Tentang Kami</a></li>
+            <li class="dropdown">
+                <a class="nav-link" href="/tentang-kami">Tentang Kami</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/laporan">Laporan Publikasi</a></li>
+                </ul>
+            </li>
             <li><a class="nav-link" href="/hubungi">Hubungi Kami</a></li>
         </ul>
     </div>

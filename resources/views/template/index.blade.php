@@ -49,6 +49,8 @@
                             src="{{ asset('vendor/images/instagram.svg') }}" class="center" width="30"></a></li>
                 <li><a href="https://www.facebook.com/bpr.rizkybarokah.7"><img
                             src="{{ asset('vendor/images/facebook.svg') }}" class="center" width="30"></a></li>
+                <li><a href="https://api.whatsapp.com/send?phone=6281288956562&fbclid=PAAaZPRsktdx7uffMDU0Frw5P5oQp2HqDdi1VIdrcBMSNRWos3Crs9pxoWEcY"><img
+                            src="{{ asset('vendor/images/whatsapp.svg') }}" class="center" width="30"></a></li>
             </ul>
         </div>
     </section>
@@ -71,7 +73,8 @@
                             <br>Pondok Aren - Tangerang Selatan
                         </p>
                         <i class="fa-solid fa-phone"></i>
-                        <p>Telp (021) 7457667 - 22213065</p>
+                        <p>Telp (021) 22213065</p>
+                        <p>Wa (62) 812 8895 6562</p>
                         <p>Email rizky_barokah@yahoo.com</p>
                     </address>
                 </div>
