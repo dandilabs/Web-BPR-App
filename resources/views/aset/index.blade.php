@@ -26,7 +26,7 @@
                                 <a href="{{ route('aset.detail', $aset->slug) }}"
                                     class="news_heding">{{ $aset->judul }}</a>
                                 <img src="{{ $aset->image }}" alt="">
-                                <p>post by {{ $aset->users->name }}</p>
+                                <p> <strong>{{ $aset->users->name }}</strong></p>
                                 <a href="{{ route('aset.detail', $aset->slug) }}" class="red_btn">Lanjutkan Membaca <i
                                         class="fa fa-arrow-right"></i></a>
                             </div>
