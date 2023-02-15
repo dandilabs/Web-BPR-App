@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 15, 2023 at 05:00 AM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Generation Time: Feb 15, 2023 at 07:24 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.0.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,8 +29,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `categories` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -40,9 +40,7 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
-(1, 'PELATIHAN', 'pelatihan', '2023-02-08 07:17:36', '2023-02-08 07:17:36'),
-(2, 'LIBUR BERSAMA', 'libur-bersama', '2023-02-08 07:17:36', '2023-02-08 07:17:36'),
-(3, 'Liburan Bersama', 'liburan-bersama', '2023-02-08 07:25:33', '2023-02-08 07:27:18');
+(1, 'PELATIHAN', 'pelatihan', '2023-02-08 07:17:36', '2023-02-08 07:17:36');
 
 -- --------------------------------------------------------
 
@@ -52,8 +50,8 @@ INSERT INTO `categories` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALU
 
 CREATE TABLE `category` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -69,38 +67,16 @@ INSERT INTO `category` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `category_news`
---
-
-CREATE TABLE `category_news` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `category_news`
---
-
-INSERT INTO `category_news` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
-(1, 'PELATIHAN', 'pelatihan', '2023-02-08 04:54:59', '2023-02-08 04:54:59'),
-(2, 'LIBUR BERSAMA', 'libur-bersama', '2023-02-08 04:55:06', '2023-02-08 04:55:06');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `failed_jobs`
 --
 
 CREATE TABLE `failed_jobs` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `uuid` varchar(255) NOT NULL,
+  `connection` text NOT NULL,
+  `queue` text NOT NULL,
+  `payload` longtext NOT NULL,
+  `exception` longtext NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -112,7 +88,7 @@ CREATE TABLE `failed_jobs` (
 
 CREATE TABLE `gender` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `jenis_kelamin` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `jenis_kelamin` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -133,8 +109,8 @@ INSERT INTO `gender` (`id`, `jenis_kelamin`, `created_at`, `updated_at`) VALUES
 
 CREATE TABLE `jaminan` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -156,8 +132,8 @@ INSERT INTO `jaminan` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
 
 CREATE TABLE `jenis` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -183,26 +159,18 @@ INSERT INTO `jenis` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
 
 CREATE TABLE `kredits` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nama` varchar(255) NOT NULL,
   `jenis_id` int(11) NOT NULL,
   `jaminan_id` int(11) NOT NULL,
-  `tempat_lahir` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tempat_lahir` varchar(255) NOT NULL,
   `tanggal_lahir` date NOT NULL,
-  `jumlah_pinjaman` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `no_ktp` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `no_telp` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `jumlah_pinjaman` varchar(255) NOT NULL,
+  `no_ktp` varchar(255) NOT NULL,
+  `no_telp` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `gender_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `kredits`
---
-
-INSERT INTO `kredits` (`id`, `nama`, `jenis_id`, `jaminan_id`, `tempat_lahir`, `tanggal_lahir`, `jumlah_pinjaman`, `no_ktp`, `no_telp`, `created_at`, `updated_at`, `gender_id`) VALUES
-(3, 'Dandi Hermawan', 2, 2, 'Jakarta', '2023-02-09', '15000000', '3674030108980005', '089699451818', '2023-02-09 08:20:20', '2023-02-09 08:20:20', 1),
-(5, 'adadadada', 2, 1, 'Jakarta', '2023-02-10', '1313131', '131313131', '131313131', '2023-02-10 07:21:33', '2023-02-10 07:21:33', 2);
 
 -- --------------------------------------------------------
 
@@ -212,7 +180,7 @@ INSERT INTO `kredits` (`id`, `nama`, `jenis_id`, `jaminan_id`, `tempat_lahir`, `
 
 CREATE TABLE `migrations` (
   `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `migration` varchar(255) NOT NULL,
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -257,11 +225,11 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 
 CREATE TABLE `news` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `judul` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `judul` varchar(255) NOT NULL,
   `categories_id` int(11) NOT NULL,
-  `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `content` text NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
   `users_id` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -306,8 +274,8 @@ INSERT INTO `news_tags` (`id`, `news_id`, `tags_id`, `created_at`, `updated_at`)
 --
 
 CREATE TABLE `password_resets` (
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `token` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -319,20 +287,13 @@ CREATE TABLE `password_resets` (
 
 CREATE TABLE `pengaduan` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `pesan` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `pesan` text NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `no_telp` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `no_telp` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `pengaduan`
---
-
-INSERT INTO `pengaduan` (`id`, `nama`, `email`, `pesan`, `created_at`, `updated_at`, `no_telp`) VALUES
-(2, 'Dandi Hermawan', 'dandihermawan87@gmail.com', 'Saya ingin mengajukan kredit, apa saja yg harus aya siapkan', '2023-02-09 08:22:10', '2023-02-09 08:22:10', '089699451818');
 
 -- --------------------------------------------------------
 
@@ -342,11 +303,11 @@ INSERT INTO `pengaduan` (`id`, `nama`, `email`, `pesan`, `created_at`, `updated_
 
 CREATE TABLE `personal_access_tokens` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tokenable_type` varchar(255) NOT NULL,
   `tokenable_id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `abilities` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `token` varchar(64) NOT NULL,
+  `abilities` text DEFAULT NULL,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `expires_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -361,20 +322,20 @@ CREATE TABLE `personal_access_tokens` (
 
 CREATE TABLE `posts` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `judul` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `judul` varchar(255) NOT NULL,
   `category_id` int(11) NOT NULL,
-  `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `content` text NOT NULL,
+  `image` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) NOT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   `users_id` int(11) NOT NULL,
-  `image_1` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image_2` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image_3` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image_4` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `harga` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `image_1` varchar(255) NOT NULL,
+  `image_2` varchar(255) NOT NULL,
+  `image_3` varchar(255) NOT NULL,
+  `image_4` varchar(255) NOT NULL,
+  `harga` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -382,14 +343,15 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `judul`, `category_id`, `content`, `image`, `created_at`, `updated_at`, `slug`, `deleted_at`, `users_id`, `image_1`, `image_2`, `image_3`, `image_4`, `harga`) VALUES
-(1, 'RUKO / KIOS', 2, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SHGB&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>50 </strong>m2 &nbsp;</li>\r\n	<li>Luas bangunan &nbsp;: <strong>&plusmn; 70</strong> m2</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Kontruksi Bangunan : pondasi batu kali &amp; Cor beton, dinding batako,rangka atap baja ringan, genteng glazur, keramik 30 X 30,kusen jendela alumunium, rolling door.</li>\r\n	<li>Lokasi dekat dengan BSD,dekat dengan kantor pemda pamulang, dekat kampus Unpam,dekat Ciputat, Dll</li>\r\n</ul>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<ul>\r\n	<li>PT. BPR RIZKY BAROKAH (+62 821-1111-3976)</li>\r\n</ul>', 'public/uploads/posts/16757377401.png', '2023-02-06 19:42:20', '2023-02-13 06:56:59', 'ruko-kios', NULL, 2, 'public/uploads/posts/16757377402.png', 'public/uploads/posts/16757377403.png', 'public/uploads/posts/16757377404.png', 'public/uploads/posts/16757377405.png', '350000000'),
-(2, 'RUMAH DI JUAL', 1, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SHM&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>103</strong><strong> </strong>m2 &nbsp;</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Luas bangunan &nbsp;: <strong>&nbsp;&nbsp;94</strong> m2</li>\r\n	<li>Rumah dengan Teras, R. Tamu, R. Keluarga,Kamar Tidur 3, Kamar mandi 1, R. Makan &amp; Dapur.</li>\r\n	<li>Lokasi dekat pusat kota, Sekolah, Kampus, Pusat belanja, Pasar, Kantor Pemerintah.</li>\r\n</ul>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<ul>\r\n	<li>PT. BPR RIZKY BAROKAH (+62 821-1111-3976)</li>\r\n</ul>', 'public/uploads/posts/16757385936.png', '2023-02-06 19:56:33', '2023-02-13 06:57:27', 'rumah-di-jual', NULL, 2, 'public/uploads/posts/16757385937.png', 'public/uploads/posts/16757385938.png', 'public/uploads/posts/16757385939.png', 'public/uploads/posts/167573859310.png', '400000000'),
+(1, 'RUKO / KIOS DI JUAL DAERAH GUNUNG SINDUR', 2, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SHGB&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>50 </strong>m2 &nbsp;</li>\r\n	<li>Luas bangunan &nbsp;: <strong>&plusmn; 70</strong> m2</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Kontruksi Bangunan : pondasi batu kali &amp; Cor beton, dinding batako,rangka atap baja ringan, genteng glazur, keramik 30 X 30,kusen jendela alumunium, rolling door.</li>\r\n	<li>Lokasi dekat dengan BSD,dekat dengan kantor pemda pamulang, dekat kampus Unpam,dekat Ciputat, Dll</li>\r\n</ul>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<ul>\r\n	<li>PT. BPR RIZKY BAROKAH (+62 821-1111-3976)</li>\r\n</ul>', 'public/uploads/posts/16757377401.png', '2023-02-06 19:42:20', '2023-02-15 05:30:39', 'ruko-kios-di-jual-daerah-gunung-sindur', NULL, 2, 'public/uploads/posts/16757377402.png', 'public/uploads/posts/16757377403.png', 'public/uploads/posts/16757377404.png', 'public/uploads/posts/16757377405.png', '350000000'),
+(2, 'RUMAH DI JUAL DAERAH DEPOK JAYA', 1, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SHM&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>103</strong><strong> </strong>m2 &nbsp;</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Luas bangunan &nbsp;: <strong>&nbsp;&nbsp;94</strong> m2</li>\r\n	<li>Rumah dengan Teras, R. Tamu, R. Keluarga,Kamar Tidur 3, Kamar mandi 1, R. Makan &amp; Dapur.</li>\r\n	<li>Lokasi dekat pusat kota, Sekolah, Kampus, Pusat belanja, Pasar, Kantor Pemerintah.</li>\r\n</ul>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<ul>\r\n	<li>PT. BPR RIZKY BAROKAH (+62 821-1111-3976)</li>\r\n</ul>', 'public/uploads/posts/16757385936.png', '2023-02-06 19:56:33', '2023-02-15 05:30:46', 'rumah-di-jual-daerah-depok-jaya', NULL, 2, 'public/uploads/posts/16757385937.png', 'public/uploads/posts/16757385938.png', 'public/uploads/posts/16757385939.png', 'public/uploads/posts/167573859310.png', '400000000'),
 (3, 'RUMAH DI JUAL SIAP HUNI', 1, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SH</strong><strong>GB</strong><strong>&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>208</strong><strong> </strong>m2 &nbsp;</li>\r\n	<li>Luas bangunan &nbsp;: <strong>&plusmn; 32</strong><strong>0</strong> m2</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Rumah Kontrakan 2 Lantai terdiri dari : 5 pintu untuk latar dasar dan 8 pintu untuk lantai 2,</li>\r\n	<li>Lokasi berdekatan dengan Perumahan Graha Raya, Masjid Nurul Hikmah, SDN Pakujaya 2, Perumahan Parbu Residence, Akses Tol, Dll.</li>\r\n</ul>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<ul>\r\n	<li>PT. BPR RIZKY BAROKAH (+62 821-1111-3976)</li>\r\n</ul>', 'public/uploads/posts/167574051411.png', '2023-02-06 20:28:34', '2023-02-13 10:59:03', 'rumah-di-jual-siap-huni', '2023-02-13 10:59:03', 2, 'public/uploads/posts/167574051412.png', 'public/uploads/posts/167574051413.png', 'public/uploads/posts/167574051414.png', 'public/uploads/posts/167574051415.png', '1600000000'),
-(4, 'RUMAH DI JUAL ADA KOLAM RENANG', 1, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SHM&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>410 </strong>m2 &nbsp;</li>\r\n	<li>Luas bangunan &nbsp;: <strong>&plusmn; 324</strong> m2</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Rumah 2 Lantai, R.Keluarga, R.Tamu, K. Tidur 6, K. Mandi 6,Kolam renang &amp; Taman.</li>\r\n	<li>Lokasi berdekatan dengan bintaro sek.7, dekat BXC Mall, Sta.Pondok Ranji, Pasar Modern, Kampus / Sekolah, RS Premier, Akses Tol Bintaro, Dll.</li>\r\n</ul>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<ul>\r\n	<li>PT. BPR RIZKY BAROKAH ( 021-22213065 )</li>\r\n</ul>', 'public/uploads/posts/167574144416.png', '2023-02-06 20:44:04', '2023-02-07 09:30:07', 'rumah-di-jual-ada-kolam-renang', NULL, 2, 'public/uploads/posts/167574144417.png', 'public/uploads/posts/167574144418.png', 'public/uploads/posts/167574144419.png', 'public/uploads/posts/167574144420.png', '1900000000'),
-(5, 'RUMAH DI JUAL SIAP PAKAI', 1, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SHM&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>84</strong><strong> </strong>m2 &nbsp;</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Luas bangunan &nbsp;: <strong>84</strong> m2</li>\r\n	<li>Rumah dengan Teras, R. Tamu, R. Keluarga,Kamar Tidur, Kamar mandi 1, R. Makan &amp; Dapur.</li>\r\n	<li>Lokasi dekat pusat kota, Sekolah, Kampus, Pusat belanja, Pasar, Kantor Pemerintah.</li>\r\n</ul>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<ul>\r\n	<li>PT. BPR RIZKY BAROKAH (+62 821-1111-3976)</li>\r\n</ul>', 'public/uploads/posts/167574177421.png', '2023-02-06 20:49:34', '2023-02-13 06:57:56', 'rumah-di-jual-siap-pakai', NULL, 2, 'public/uploads/posts/167574177422.png', 'public/uploads/posts/167574177423.png', 'public/uploads/posts/167574177424.png', 'public/uploads/posts/167574177425.png', '800000000'),
-(6, 'RUMAH DI JUAL LAYAK PAKAI', 1, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SHM&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>163 </strong>m2 &nbsp;</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Luas bangunan &nbsp;: <strong>129</strong> m2</li>\r\n	<li>Rumah di pinggir jalan, Carpot, Teras, Kolam Belakang &amp; Air mancur, R. Tamu, R. Keluarga,Kamar Tidur 3, Kamar mandi 3, R. Makan &amp; Dapur.</li>\r\n	<li>Lokasi dekat pusat kota, Sekolah, Kampus, Pusat belanja Giant, Jogja, Pasar, Kantor Pemerintah, RSUD, Tol Sadang.</li>\r\n</ul>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<p>PT. BPR RIZKY BAROKAH (+62 821-1111-3976)</p>', 'public/uploads/posts/167574246626.png', '2023-02-06 21:01:06', '2023-02-13 06:58:07', 'rumah-di-jual-layak-pakai', NULL, 2, 'public/uploads/posts/167574246627.png', 'public/uploads/posts/167574246628.png', 'public/uploads/posts/167574246629.png', 'public/uploads/posts/167574246627.png', '570000000'),
-(7, 'RUMAH DI JUAL DENGAN HALAMAN DEPAN LUAS', 1, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SHM&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>1.009 </strong>m2 &nbsp;</li>\r\n	<li>Luas bangunan &nbsp;: <strong>&plusmn; 252</strong> m2</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Rumah 1 &frac12; Lantai, R.Keluarga, R.Tamu, K. Tidur 6, K. Mandi 3,Kolam renang &amp; Taman.</li>\r\n	<li>Lokasi Belakan Citra Raya, dekat dengan Bizzpoint, Pasar, Sekolah, kantor pemerintah, akses tol Cikupa, fasilitas umum lengkap,Dll.</li>\r\n</ul>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<ul>\r\n	<li>PT. BPR RIZKY BAROKAH (+62 821-1111-3976)</li>\r\n</ul>', 'public/uploads/posts/167574325730.png', '2023-02-06 21:14:17', '2023-02-13 06:58:18', 'rumah-di-jual-dengan-halaman-depan-luas', NULL, 2, 'public/uploads/posts/167574325731.png', 'public/uploads/posts/167574325732.png', 'public/uploads/posts/167574325733.png', 'public/uploads/posts/167574325734.png', '1800000000'),
-(8, 'KONTRAKAN DI JUAL DAERAH PONDOK SERUT GRAHA', 1, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SH</strong><strong>GB</strong><strong>&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>208</strong><strong> </strong>m2 &nbsp;</li>\r\n	<li>Luas bangunan &nbsp;: <strong>&plusmn; 32</strong><strong>0</strong> m2</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Rumah Kontrakan 2 Lantai terdiri dari : 5 pintu untuk latar dasar dan 8 pintu untuk lantai 2,</li>\r\n	<li>Lokasi berdekatan dengan Perumahan Graha Raya, Masjid Nurul Hikmah, SDN Pakujaya 2, Perumahan Parbu Residence, Akses Tol, Dll.</li>\r\n</ul>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<ul>\r\n	<li>PT. BPR RIZKY BAROKAH (+62 821-1111-3976)</li>\r\n</ul>', 'public/uploads/posts/16762861152023_02_13_16_20_IMG_4383.JPG', '2023-02-13 11:01:55', '2023-02-13 11:01:55', 'kontrakan-di-jual-daerah-pondok-serut-graha', NULL, 2, 'public/uploads/posts/16762861152023_02_13_16_23_IMG_4390.JPG', 'public/uploads/posts/16762861152023_02_13_16_23_IMG_4391.JPG', 'public/uploads/posts/16762861152023_02_13_16_21_IMG_4387.JPG', 'public/uploads/posts/16762861152023_02_13_16_23_IMG_4390.JPG', '1600000000');
+(4, 'RUMAH DI JUAL DAERAH PONDOK RANJI', 1, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SHM&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>410 </strong>m2 &nbsp;</li>\r\n	<li>Luas bangunan &nbsp;: <strong>&plusmn; 324</strong> m2</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Rumah 2 Lantai, R.Keluarga, R.Tamu, K. Tidur 6, K. Mandi 6,Kolam renang &amp; Taman.</li>\r\n	<li>Lokasi berdekatan dengan bintaro sek.7, dekat BXC Mall, Sta.Pondok Ranji, Pasar Modern, Kampus / Sekolah, RS Premier, Akses Tol Bintaro, Dll.</li>\r\n</ul>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<ul>\r\n	<li>PT. BPR RIZKY BAROKAH (+62 821-1111-3976)</li>\r\n</ul>', 'public/uploads/posts/167574144416.png', '2023-02-06 20:44:04', '2023-02-15 05:30:53', 'rumah-di-jual-daerah-pondok-ranji', NULL, 2, 'public/uploads/posts/167574144417.png', 'public/uploads/posts/167574144418.png', 'public/uploads/posts/167574144419.png', 'public/uploads/posts/167574144420.png', '1900000000'),
+(5, 'RUMAH DI JUAL DAERAH DUREN SAWIT', 1, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SHM&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>84</strong><strong> </strong>m2 &nbsp;</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Luas bangunan &nbsp;: <strong>84</strong> m2</li>\r\n	<li>Rumah dengan Teras, R. Tamu, R. Keluarga,Kamar Tidur, Kamar mandi 1, R. Makan &amp; Dapur.</li>\r\n	<li>Lokasi dekat pusat kota, Sekolah, Kampus, Pusat belanja, Pasar, Kantor Pemerintah.</li>\r\n</ul>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<ul>\r\n	<li>PT. BPR RIZKY BAROKAH (+62 821-1111-3976)</li>\r\n</ul>', 'public/uploads/posts/167574177421.png', '2023-02-06 20:49:34', '2023-02-15 05:31:01', 'rumah-di-jual-daerah-duren-sawit', NULL, 2, 'public/uploads/posts/167574177422.png', 'public/uploads/posts/167574177423.png', 'public/uploads/posts/167574177424.png', 'public/uploads/posts/167574177425.png', '800000000'),
+(6, 'RUMAH DI JUAL DAERAH PURWAKARTA', 1, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SHM&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>163 </strong>m2 &nbsp;</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Luas bangunan &nbsp;: <strong>129</strong> m2</li>\r\n	<li>Rumah di pinggir jalan, Carpot, Teras, Kolam Belakang &amp; Air mancur, R. Tamu, R. Keluarga,Kamar Tidur 3, Kamar mandi 3, R. Makan &amp; Dapur.</li>\r\n	<li>Lokasi dekat pusat kota, Sekolah, Kampus, Pusat belanja Giant, Jogja, Pasar, Kantor Pemerintah, RSUD, Tol Sadang.</li>\r\n</ul>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<p>PT. BPR RIZKY BAROKAH (+62 821-1111-3976)</p>', 'public/uploads/posts/167574246626.png', '2023-02-06 21:01:06', '2023-02-15 05:31:08', 'rumah-di-jual-daerah-purwakarta', NULL, 2, 'public/uploads/posts/167574246627.png', 'public/uploads/posts/167574246628.png', 'public/uploads/posts/167574246629.png', 'public/uploads/posts/167574246627.png', '570000000'),
+(7, 'RUMAH DI JUAL DAERAH KABUPATEN TANGERANG', 1, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SHM&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>1.009 </strong>m2 &nbsp;</li>\r\n	<li>Luas bangunan &nbsp;: <strong>&plusmn; 252</strong> m2</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Rumah 1 &frac12; Lantai, R.Keluarga, R.Tamu, K. Tidur 6, K. Mandi 3,Kolam renang &amp; Taman.</li>\r\n	<li>Lokasi Belakan Citra Raya, dekat dengan Bizzpoint, Pasar, Sekolah, kantor pemerintah, akses tol Cikupa, fasilitas umum lengkap,Dll.</li>\r\n</ul>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<ul>\r\n	<li>PT. BPR RIZKY BAROKAH (+62 821-1111-3976)</li>\r\n</ul>', 'public/uploads/posts/167574325730.png', '2023-02-06 21:14:17', '2023-02-15 05:31:18', 'rumah-di-jual-daerah-kabupaten-tangerang', NULL, 2, 'public/uploads/posts/167574325731.png', 'public/uploads/posts/167574325732.png', 'public/uploads/posts/167574325733.png', 'public/uploads/posts/167574325734.png', '1800000000'),
+(8, 'KONTRAKAN DI JUAL DAERAH PONDOK SERUT GRAHA', 1, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SH</strong><strong>GB</strong><strong>&nbsp; </strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>208</strong><strong> </strong>m2 &nbsp;</li>\r\n	<li>Luas bangunan &nbsp;: <strong>&plusmn; 32</strong><strong>0</strong> m2</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Rumah Kontrakan 2 Lantai terdiri dari : 5 pintu untuk latar dasar dan 8 pintu untuk lantai 2,</li>\r\n	<li>Lokasi berdekatan dengan Perumahan Graha Raya, Masjid Nurul Hikmah, SDN Pakujaya 2, Perumahan Parbu Residence, Akses Tol, Dll.</li>\r\n</ul>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<ul>\r\n	<li>PT. BPR RIZKY BAROKAH (+62 821-1111-3976)</li>\r\n</ul>', 'public/uploads/posts/16762861152023_02_13_16_20_IMG_4383.JPG', '2023-02-13 11:01:55', '2023-02-13 11:01:55', 'kontrakan-di-jual-daerah-pondok-serut-graha', NULL, 2, 'public/uploads/posts/16762861152023_02_13_16_23_IMG_4390.JPG', 'public/uploads/posts/16762861152023_02_13_16_23_IMG_4391.JPG', 'public/uploads/posts/16762861152023_02_13_16_21_IMG_4387.JPG', 'public/uploads/posts/16762861152023_02_13_16_23_IMG_4390.JPG', '1600000000'),
+(9, 'RUMAH DI JUAL KABUPATEN SERANG', 1, '<p><strong>SPESIFIKASI&nbsp; OBJEK :</strong></p>\r\n\r\n<ul>\r\n	<li><strong>Surat : SHM</strong><strong>&nbsp;</strong></li>\r\n	<li>Luas Tanah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>352&nbsp;</strong>m2 &nbsp;</li>\r\n	<li>Luas bangunan &nbsp;:&nbsp;<strong>&plusmn; 219</strong>&nbsp;m2</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Rumah Pinggir jalan,</li>\r\n	<li>Lokasi Dekat pasar, Sekolah, Rs, Akses pintu&nbsp;Tol Serang, Dll.</li>\r\n</ul>\r\n\r\n<p><strong>BERMINAT ? HUBUNGI :</strong></p>\r\n\r\n<ul>\r\n	<li>PT. BPR RIZKY BAROKAH (+62 821-1111-3976)</li>\r\n</ul>', 'public/uploads/posts/1676436823WhatsApp Image 2023-02-15 at 11.46.48.jpeg', '2023-02-15 04:53:43', '2023-02-15 04:53:43', 'rumah-di-jual-kabupaten-serang', NULL, 2, 'public/uploads/posts/1676436823WhatsApp Image 2023-02-15 at 11.46.48 (1).jpeg', 'public/uploads/posts/1676436823WhatsApp Image 2023-02-15 at 11.51.08.jpeg', 'public/uploads/posts/1676436823WhatsApp Image 2023-02-15 at 11.51.08 (1).jpeg', 'public/uploads/posts/1676436823WhatsApp Image 2023-02-15 at 11.51.08 (2).jpeg', '850000000');
 
 -- --------------------------------------------------------
 
@@ -418,7 +380,9 @@ INSERT INTO `posts_tags` (`id`, `posts_id`, `tags_id`, `created_at`, `updated_at
 (6, 6, 1, NULL, NULL),
 (7, 7, 1, NULL, NULL),
 (8, 8, 1, NULL, NULL),
-(9, 8, 2, NULL, NULL);
+(9, 8, 2, NULL, NULL),
+(10, 9, 1, NULL, NULL),
+(11, 9, 2, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -429,11 +393,11 @@ INSERT INTO `posts_tags` (`id`, `posts_id`, `tags_id`, `created_at`, `updated_at
 CREATE TABLE `publikasi` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `periode` year(4) NOT NULL,
-  `bulan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `jenis_laporan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `bulan` varchar(255) NOT NULL,
+  `jenis_laporan` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `file` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `file` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -454,8 +418,8 @@ INSERT INTO `publikasi` (`id`, `periode`, `bulan`, `jenis_laporan`, `created_at`
 
 CREATE TABLE `tags` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -477,11 +441,11 @@ INSERT INTO `tags` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) NOT NULL,
+  `remember_token` varchar(100) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `type` tinyint(1) NOT NULL DEFAULT 0
@@ -509,12 +473,6 @@ ALTER TABLE `categories`
 -- Indexes for table `category`
 --
 ALTER TABLE `category`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `category_news`
---
-ALTER TABLE `category_news`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -634,12 +592,6 @@ ALTER TABLE `category`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `category_news`
---
-ALTER TABLE `category_news`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -667,7 +619,7 @@ ALTER TABLE `jenis`
 -- AUTO_INCREMENT for table `kredits`
 --
 ALTER TABLE `kredits`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -691,7 +643,7 @@ ALTER TABLE `news_tags`
 -- AUTO_INCREMENT for table `pengaduan`
 --
 ALTER TABLE `pengaduan`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -703,13 +655,13 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `posts_tags`
 --
 ALTER TABLE `posts_tags`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `publikasi`

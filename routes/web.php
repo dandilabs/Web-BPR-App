@@ -43,7 +43,7 @@ Auth::routes([
 
 Route::get('/', 'App\Http\Controllers\BlogController@index');
 Route::get('/news-detail/{slug}', 'App\Http\Controllers\NewsController@detail_news')->name('news.detail');
-Route::get('/list-categories/{category}','App\Http\Controllers\NewsController@list_category')->name('news.categories');
+Route::get('/list-categories/{categories}','App\Http\Controllers\NewsController@list_category')->name('news.categories');
 Route::get('/aset', 'App\Http\Controllers\AsetController@index');
 Route::get('/aset-detail/{slug}', 'App\Http\Controllers\AsetController@detail_blog')->name('aset.detail');
 Route::get('/list-post','App\Http\Controllers\AsetController@list_blog')->name('aset.list');

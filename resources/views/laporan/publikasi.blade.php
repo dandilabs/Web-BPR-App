@@ -26,36 +26,14 @@
                 <div class="tab-content col-md-9" id="v-pills-tabContent">
                     <div class="tab-pane fade show active" id="Publikasi" role="tabpanel">
                         <h4>Laporan Publikasi</h4>
-                        <form action="" method="POST" id="form-publikasi">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="">Laporan Keuangan Periode</label>
-                                        <select class="form-control" name="publikasi" required>
-                                            <option value="">--- Pilih Periode --- </option>
-                                            @foreach ($data as $result)
-                                                <option value="{{ $result->id }}">{{ $result->periode }} -
-                                                    {{ $result->bulan }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Laporan</label>
-                                        <select class="form-control" name="laporan" required>
-                                            <option value="">--- Pilihan Laporan --- </option>
-                                            @foreach ($data as $result)
-                                                <option value="{{ $result->id }}">{{ $result->jenis_laporan }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="text-right">
-                                <button class="btn btn-primary solid blank" type="submit">Lihat</button>
-                            </div>
-                        </form><br>
+                        <div class="tranding_post wathc_text">  
+                            
+                            <a href="#" target="_blank" class="t_heding" download>laporan Neraca | 2022 Maret</a>
+                            <a href="{{asset('vendor/images/anak.png')}}" target="_blank" class="t_heding" download>
+                                <span class="tag_btn">Unduh</span><h6>  </h6>  
+                            </a>
+                            
+                        </div>
                     </div>
                 </div>
             </div>

@@ -166,7 +166,7 @@
                                 <div class="media feature_post">
                                     <div class="feture_img">
                                         <a href="{{ route('aset.detail', $aset->slug) }}"><img src="{{ $aset->image }}"
-                                                width="250"></a>
+                                                width="300"></a>
                                     </div>
                                     <div class="media-body feture_content">
                                         <a href="{{ route('aset.detail', $aset->slug) }}"
