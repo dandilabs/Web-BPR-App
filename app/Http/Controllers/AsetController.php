@@ -31,7 +31,7 @@ class AsetController extends Controller
 
     public function list_blog()
     {
-        $data = Posts::latest()->paginate(6);
+        $data = Posts::latest()->paginate(4);
         $category_list = Category::all();
         return view('aset.list', compact('data','category_list'));
     }

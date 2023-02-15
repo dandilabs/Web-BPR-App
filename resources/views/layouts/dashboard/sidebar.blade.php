@@ -1,10 +1,10 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="index.html">BPR RIzky Barokah</a>
+            <a href="/dashboard">BPR RIzky Barokah</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">BPR</a>
+            <a href="/dashboard">BPR</a>
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
@@ -15,7 +15,7 @@
             <li class="dropdown">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"> <i class="fas fa-money-bill">
                     </i>
-                    <span>Ajukan Kredit</span></a>
+                    <span>Pengajuan Kredit</span></a>
                 <ul class="dropdown-menu">
                     <li><a class="nav-link" href="{{ route('jenis.index') }}">Jenis Pekerjaan</a></li>
                     <li><a class="nav-link" href="{{ route('jaminan.index') }}">Jenis Jaminan</a></li>

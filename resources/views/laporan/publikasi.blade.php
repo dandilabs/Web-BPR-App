@@ -20,19 +20,43 @@
             <div class="mission_area row mt-5">
                 <div class="col-md-3">
                     <div class="nav tab_nav" role="tablist">
-                        <a class="active" data-toggle="pill" href="#Publikasi" role="tab">Laporan Publikasi </a>
+                        <a class="active" data-toggle="pill" href="#Neraca" role="tab">Laporan Neraca </a>
+                        <a data-toggle="pill" data-toggle="pill" href="#Laba" role="tab">Laporan Laba Rugi </a>
+                        <a data-toggle="pill" data-toggle="pill" href="#Aktiva" role="tab">Laporan Kualitas Aktiva </a>
+                        <a data-toggle="pill" data-toggle="pill" href="#Komitmen" role="tab">Laporan Komitmen </a>
                     </div>
                 </div>
                 <div class="tab-content col-md-9" id="v-pills-tabContent">
-                    <div class="tab-pane fade show active" id="Publikasi" role="tabpanel">
-                        <h4>Laporan Publikasi</h4>
+                    <div class="tab-pane fade show active" id="Neraca" role="tabpanel">
+                        <h4>Laporan Neraca</h4>
                         <div class="tranding_post wathc_text">  
-                            
-                            <a href="#" target="_blank" class="t_heding" download>laporan Neraca | 2022 Maret</a>
-                            <a href="{{asset('vendor/images/anak.png')}}" target="_blank" class="t_heding" download>
-                                <span class="tag_btn">Unduh</span><h6>  </h6>  
+                            <a href="{{asset('vendor/file/invoicePC.pdf')}}" target="_blank" class="t_heding" download>
+                                laporan Neraca | 2022 Maret <span class="tag_btn">Unduh</span> 
                             </a>
-                            
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="Laba" role="tabpanel">
+                        <h4>Laporan Laba Rugi</h4>
+                        <div class="tranding_post wathc_text">  
+                            <a href="{{asset('vendor/file/invoicePC.pdf')}}" target="_blank" class="t_heding" download>
+                                laporan Neraca | 2022 Maret <span class="tag_btn">Unduh</span> 
+                            </a>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="Aktiva" role="tabpanel">
+                        <h4>Laporan Aktiva dan Produktif</h4>
+                        <div class="tranding_post wathc_text">  
+                            <a href="{{asset('vendor/file/invoicePC.pdf')}}" target="_blank" class="t_heding" download>
+                                laporan Neraca | 2022 Maret <span class="tag_btn">Unduh</span> 
+                            </a>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="Komitmen" role="tabpanel">
+                        <h4>Laporan Komitmen dan Kontinjensi</h4>
+                        <div class="tranding_post wathc_text">  
+                            <a href="{{asset('vendor/file/invoicePC.pdf')}}" target="_blank" class="t_heding" download>
+                                laporan Neraca | 2022 Maret <span class="tag_btn">Unduh</span> 
+                            </a>
                         </div>
                     </div>
                 </div>

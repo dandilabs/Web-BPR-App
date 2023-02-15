@@ -174,7 +174,7 @@
                                         <h6>{{ \Carbon\Carbon::parse($aset->created_at)->translatedFormat('l, d F Y') }}
                                             <span>|</span><a href="http://emran-khan.com/">{{ $aset->users->name }}</a>
                                         </h6>
-                                        <p>{{ $aset->category->name }}</p>
+                                        <p> Kategori : {{ $aset->category->name }}</p>
                                     </div>
                                 </div>
                             </div>
