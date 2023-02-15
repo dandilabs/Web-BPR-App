@@ -102,7 +102,7 @@
                             sejenisnya*</p>
                     </div>
                     <div class="form-group larg_btn col-12">
-                        <input class="defult_btn" type="submit" value="Ajukan Proses">
+                        <input class="defult_btn" type="submit" value="Ajukan Sekarang">
                     </div>
                 </form>
             </div>

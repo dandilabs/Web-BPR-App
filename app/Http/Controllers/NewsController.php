@@ -77,7 +77,7 @@ class NewsController extends Controller
         $news->tags()->attach($request->tags);
         $image->move('public/uploads/news/', $new_image);
 
-        return redirect()->back()->with('success', 'News success upload');
+        return redirect()->route('new.index')->with('toast_success', 'News success upload');
     }
 
     /**
@@ -143,7 +143,7 @@ class NewsController extends Controller
         }
         $post->tags()->sync($request->tags);
         $post->update($post_data);
-        return redirect()->route('new.index')->with('success', 'News success update');
+        return redirect()->route('new.index')->with('toast_success', 'News success update');
     }
 
     /**
@@ -156,6 +156,6 @@ class NewsController extends Controller
     {
         $new = News::findOrFail($id);
         $new->delete();
-        return redirect()->back()->with('success', 'News success deleted, (Check in trash post) ');
+        return redirect()->route('new.index')->with('toast_success', 'News success deleted, (Check in trash post) ');
     }
 }

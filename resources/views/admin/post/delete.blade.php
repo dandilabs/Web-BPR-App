@@ -2,12 +2,12 @@
 @section('title', 'Post Trashed')
 @section('sub', 'Trashed')
 @section('content')
-
-    @if (Session::has('success'))
+@include('sweetalert::alert')
+    {{-- @if (Session::has('success'))
         <div class="alert alert-success" role="alert">
             {{ Session('success') }}
         </div>
-    @endif
+    @endif --}}
     <table class="table mt-3">
         <thead class="thead-dark">
             <tr>

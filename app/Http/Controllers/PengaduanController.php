@@ -55,7 +55,7 @@ class PengaduanController extends Controller
             'pesan'         => $request->pesan,
             'no_telp'       => $request->no_telp
         ]);
-        return redirect()->route('hubungi.kami')->with('success' ,'Pesan berhasil di kirim, Mohon tunggu ya');
+        return redirect()->route('hubungi.kami')->with('toast_success' ,'Pesan berhasil di kirim, Mohon tunggu ya');
     }
     
 

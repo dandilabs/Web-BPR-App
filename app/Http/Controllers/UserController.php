@@ -52,7 +52,7 @@ class UserController extends Controller
             'type'      => $request->type,
             'password'  => $password
         ]);
-        return redirect()->back()->with('success', 'User success created');
+        return redirect()->route('user.index')->with('toast_success', 'User success created');
     }
 
     /**
@@ -108,7 +108,7 @@ class UserController extends Controller
         $user = User::find($id);
         $user->update($data_update);
 
-        return redirect()->route('user.index')->with('success', 'User success updated');
+        return redirect()->route('user.index')->with('toast_success', 'User success updated');
 
     }
 
@@ -123,6 +123,6 @@ class UserController extends Controller
         $user = User::find($id);
         $user->delete();
 
-        return redirect()->back()->with('success', 'User success deleted');
+        return redirect()->route('user.index')->with('toast_success', 'User success deleted');
     }
 }

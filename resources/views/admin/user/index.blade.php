@@ -2,12 +2,12 @@
 @section('title', 'User')
 @section('sub', 'User')
 @section('content')
-
-    @if (Session::has('success'))
+@include('sweetalert::alert')
+    {{-- @if (Session::has('success'))
         <div class="alert alert-success" role="alert">
             {{ Session('success') }}
         </div>
-    @endif
+    @endif --}}
 
     <a href="{{ route('user.create') }}" class="btn btn-sm btn-primary">
         <i class="fas fa-pen"></i> Add User

@@ -45,7 +45,7 @@ class CategoryController extends Controller
             'name' => $request->name,
             'slug' => Str::slug($request->name),
         ]);
-        return redirect()->route('category.index')->with('success' ,'Add Category Success');
+        return redirect()->route('category.index')->with('toast_success' ,'Add Category Success');
     }
 
     /**
@@ -90,7 +90,7 @@ class CategoryController extends Controller
         ];
 
         Category::whereId($id)->update($category_data);
-        return redirect()->route('category.index')->with('success', 'Category Success updated');
+        return redirect()->route('category.index')->with('toast_success', 'Category Success updated');
     }
 
     /**
@@ -103,6 +103,6 @@ class CategoryController extends Controller
     {
         $categories = Category::findOrFail($id);
         $categories->delete();
-        return redirect()->route('category.index')->with('success', 'Category Success deleted');
+        return redirect()->route('category.index')->with('toast_success', 'Category Success deleted');
     }
 }

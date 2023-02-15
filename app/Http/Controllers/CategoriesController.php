@@ -45,7 +45,7 @@ class CategoriesController extends Controller
             'name' => $request->name,
             'slug' => Str::slug($request->name),
         ]);
-        return redirect()->back()->with('success' ,'Add Category Success');
+        return redirect()->route('categories.index')->with('toast_success' ,'Add Category Success');
     }
 
     /**
@@ -90,7 +90,7 @@ class CategoriesController extends Controller
         ];
 
         Categories::whereId($id)->update($category_data);
-        return redirect()->route('categories.index')->with('success', 'New Category Success updated');
+        return redirect()->route('categories.index')->with('toast_success', 'New Category Success updated');
     }
 
     /**
@@ -103,6 +103,6 @@ class CategoriesController extends Controller
     {
         $categories = Categories::findOrFail($id);
         $categories->delete();
-        return redirect()->back()->with('success', 'Category Success deleted');
+        return redirect()->route('categories.index')->with('toast_success', 'Category Success deleted');
     }
 }

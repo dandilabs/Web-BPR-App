@@ -102,6 +102,6 @@ class KreditController extends Controller
     {
         $kredit = Kredits::findOrFail($id);
         $kredit->delete();
-        return redirect()->route('kredit.index')->with('success', 'Kredits Success deleted');
+        return redirect()->route('kredit.index')->with('toast_success', 'Kredits Success deleted');
     }
 }
