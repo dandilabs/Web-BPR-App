@@ -17,7 +17,7 @@
     <section class="about_content">
         <div class="container">
             <h2><strong>PT Bank Perkreditan Rakyat Rizky Barokah</strong></h2>
-            <img src="{{ asset('vendor/images/Depan.jpg') }}" width="100%">
+            <img src="{{ asset('vendor/images/layar.png') }}">
             <div class="mission_area row mt-5">
                 <div class="col-md-3">
                     <div class="nav tab_nav" role="tablist">
