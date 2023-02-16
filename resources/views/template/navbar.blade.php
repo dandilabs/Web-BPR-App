@@ -23,7 +23,7 @@
                     aria-expanded="false">Tentang Kami</a>
                 <ul class="dropdown-menu">
                     <li><a href="/tentang-kami" class="active">Profile Perusahaan</a></li>
-                    <li><a href="/laporan">Laporan Publikasi</a></li>
+                    {{-- <li><a href="/laporan">Laporan Publikasi</a></li> --}}
                 </ul>
             </li>
             {{-- <li class="dropdown">
