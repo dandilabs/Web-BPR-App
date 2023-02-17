@@ -65,5 +65,5 @@
         </div>
     </div>
     <h3>Selamat datang di PT. Bank Perkreditan Rakyat RIzky Barokah</h3>
-    <h4>Saya {{ Auth::user()->name }} Sebagai Admin </h4>
+    <h4>Saya {{ Auth::user()->name }} di Kantor ini . </h4>
 @endsection

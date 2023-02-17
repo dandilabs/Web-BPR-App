@@ -4,7 +4,7 @@
             <a href="/dashboard">BPR RIzky Barokah</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="/dashboard">BPR</a>
+            <a href="/dashboard">BPR RB</a>
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
