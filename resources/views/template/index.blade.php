@@ -41,7 +41,7 @@
         <div class="container">
             <h2>Ikuti Kami di</h2>
             <ul class="contact_with_socail">
-                <li><a href="#"><img src="{{ asset('vendor/images/google.svg') }}" class="center"
+                <li><a href="mailto:bprrizkybarokah@gmail.com?subject=Ini%20adalah%20judul%20email%20default&body=Pesan%20ini%20akan%20secara%20otomatis%20muncul%20lho%21""><img src="{{ asset('vendor/images/google.svg') }}" class="center"
                             width="30"></a></li>
                 <li><a href="https://www.tiktok.com/@bprrizkybarokah?is_from_webapp=1&sender_device=pc"><img
                             src="{{ asset('vendor/images/tiktok.svg') }}" class="center" width="30"></a></li>

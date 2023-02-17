@@ -26,7 +26,7 @@
                                 <h6>{{ \Carbon\Carbon::parse($list->created_at)->translatedFormat('d F Y') }}</h6>
                                 <a href="{{ route('aset.detail', $list->slug) }}"
                                     class="news_heding">{{ $list->judul }}</a>
-                                <img src="{{ asset($list->image) }}" width="450px" alt="">
+                                <img src="{{ asset($list->image) }}" width="400px" alt="">
                                 <p>post by {{ $list->users->name }}</p>
                             </div>
                         @endforeach
