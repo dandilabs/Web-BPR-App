@@ -12,7 +12,6 @@
         </div>
     </div>
     <!-- End Pages Heder Area -->
-
     <!-- Tentang Kami Content Area -->
     <section class="about_content">
         <div class="container">

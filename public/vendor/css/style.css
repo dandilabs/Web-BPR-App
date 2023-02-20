@@ -2315,8 +2315,8 @@ body a:focus, body a:hover, body .btn:focus, body .btn:hover, body button:focus,
   padding-bottom: 85px;
 }
 .about_content img {
-  width: 700px;
-  height: 600px;
+  width: 350px;
+  height: 300px;
 }
 .about_content p {
   font: 400 18px/32px "Lato", sans-serif;
@@ -2388,6 +2388,100 @@ body a:focus, body a:hover, body .btn:focus, body .btn:hover, body button:focus,
 }
 
 /* about_content */
+
+/* tabungan_content */
+.tabungan_content {
+  display: block;
+  overflow: hidden;
+  padding-top: 100px;
+}
+.tabungan_content h2 {
+  font: 400 25px/42px "Poppins", sans-serif;
+  color: #1d2224;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 970px;
+  display: block;
+  padding-bottom: 85px;
+  
+}
+
+.tabungan_content img {
+  width: 390px;
+  height: 250px;
+}
+.tabungan_content p {
+  font: 400 18px/32px "Lato", sans-serif;
+  color: rgba(0, 0, 0, 0.702);
+  padding: 30px 70px 80px 0;
+}
+.tabungan_content .mission_area .tab_nav {
+  border-right: 1px solid #dedede;
+  margin-right: 33px;
+}
+.tabungan_content .mission_area .tab_nav a {
+  font: 400 18px/42px "Lato", sans-serif;
+  color: #4d4d4d;
+  display: block;
+  width: 100%;
+}
+.tabungan_content .mission_area .tab_nav a:hover, .tabungan_content .mission_area .tab_nav a:focus, .tabungan_content .mission_area .tab_nav a.active {
+  color: #2b00f7;
+}
+.tabungan_content .mission_area .tab-content .tab-pane h4 {
+  font: 500 22px/1 "Poppins", sans-serif;
+  color: #000;
+  border-bottom: 1px solid #dedede;
+  display: inline-block;
+  padding-bottom: 8px;
+  margin-bottom: 35px;
+}
+.tabungan_content .mission_area .tab-content .tab-pane p {
+  padding: 20px 0 0;
+}
+
+.topics_row {
+  padding: 100px 0 114px;
+}
+.topics_row h2 {
+  font: 500 36px/42px "Poppins", sans-serif;
+  color: #2b00f7;
+  display: block;
+  padding-bottom: 60px;
+}
+.topics_row a {
+  display: block;
+  color: #4d4d4d;
+  font: 400 20px/50px "Lato", sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+  border-radius: 22px;
+  background: #f2f2f2;
+}
+.topics_row a:hover, .topics_row a:focus {
+  color: #fff;
+  background-image: -moz-linear-gradient(-178deg, #917afc 0%, #f6a429 100%);
+  background-image: -webkit-linear-gradient(-178deg, #917afc 0%, #f6a429 100%);
+  background-image: -ms-linear-gradient(-178deg, #917afc 0%, #f6a429 100%);
+}
+
+.topic_area {
+  background: #fff;
+  display: block;
+  overflow: hidden;
+  text-align: center;
+}
+.topic_area .topics_row {
+  padding: 70px 0;
+}
+
+.ta_2 .topics_row {
+  padding-top: 40px;
+}
+
+/* tabungan_content */
+
+
 /*----------------------------------------------------*/
 .connect_with_us {
   display: block;

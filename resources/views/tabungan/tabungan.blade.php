@@ -14,7 +14,7 @@
     <!-- End Pages Heder Area -->
 
     <!-- Tabungan ku Content Area -->
-    <section class="about_content">
+    <section class="tabungan_content">
         <div class="container">
             <h2>
                 Produk simpanan yang ditujukan untuk masyarakat umum (pelajar, perorangan dan Lembaga) yang
