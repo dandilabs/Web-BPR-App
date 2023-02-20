@@ -2348,6 +2348,12 @@ body a:focus, body a:hover, body .btn:focus, body .btn:hover, body button:focus,
   padding: 20px 0 0;
 }
 
+.about_content .mission_area .tab-content .tab-pane iframe {
+  width: 350px;
+  height: 300px;
+}
+
+
 .topics_row {
   padding: 100px 0 114px;
 }

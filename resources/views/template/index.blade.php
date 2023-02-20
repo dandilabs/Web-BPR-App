@@ -75,7 +75,7 @@
                         <i class="fa-solid fa-phone"></i>
                         <p>Telp (021) 22213065</p>
                         <p>Wa (62) 812 8895 6562</p>
-                        <p>Email rizky_barokah@yahoo.com</p>
+                        <p>Email <br> rizky_barokah@yahoo.com | adminofficial@bprrb.com</p>
                     </address>
                 </div>
 
@@ -84,11 +84,11 @@
                         <h4>Terdaftar dan Diawasi</h4>
                         <div class="mt-2">
                             <a href="https://www.ojk.go.id/id/Default.aspx"><img
-                                    src="{{ asset('vendor/images/ojk.png') }}" width="100" alt="">
+                                    src="{{ asset('vendor/images/logo-ojk.png') }}" width="70" alt="">
                             </a>
-                            <a href="https://www.lps.go.id/"><img src="{{ asset('vendor/images/lps.png') }}"
-                                    width="110" alt=""></a>
-                            <a href="#"><img src="{{ asset('vendor/images/anak.png') }}" width="35"
+                            <a href="https://www.lps.go.id/"><img src="{{ asset('vendor/images/logo-lps.png') }}"
+                                    width="70" alt=""></a>
+                            <a href="#"><img src="{{ asset('vendor/images/anak.png') }}" width="40"
                                     alt=""></a>
                             <h4 class="mt-3">Jam Operasional</h4>
                         </div>
@@ -113,7 +113,7 @@
             </div>
         </div>
         <div class="copy_right">
-            <p><a target="_blank" href="/">&copy; 2023 PT BPR Rizky Barokah</a></p>
+            <p><a target="_blank" href="https://bprrb.com/">&copy; 2023 PT BPR Rizky Barokah</a></p>
         </div>
     </footer>
     <!-- End Footer Area -->
