@@ -7,6 +7,7 @@ use App\Models\Gender;
 use App\Models\Jaminan;
 use App\Models\Kredits;
 use Illuminate\Http\Request;
+use Artesaos\SEOTools\Facades\SEOMeta;
 
 class AjukanController extends Controller
 {
@@ -17,6 +18,9 @@ class AjukanController extends Controller
      */
     public function index()
     {
+        SEOMeta::setTitle('Pengajuan');
+        SEOMeta::setDescription('Pengajuan Kredit');
+        SEOMeta::setCanonical('https://bprrb.com/ajukan');
         $jenis = Jenis::all();
         $jaminan = Jaminan::all();
         $gender = Gender::all();

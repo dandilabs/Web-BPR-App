@@ -2,9 +2,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- set seo -->
+<meta name='keywords' content='bpr, rizkybarokah, bpr'>
+
 <link rel="icon" href="{{ asset('vendor/images/logo-bpr.png') }}" type="image/x-icon" />
 <!-- Theme tittle -->
-<title>BPR RB | @yield('title')</title>
+{{-- <title>BPR RB | @yield('title')</title> --}}
+{!! SEOMeta::generate() !!}
 
 <!-- Theme style CSS -->
 <link href="{{ asset('vendor/css/bootstrap.min.css') }}" rel="stylesheet">

@@ -7,11 +7,13 @@ use App\Models\Tags;
 use App\Models\Posts;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Artesaos\SEOTools\Facades\SEOMeta;
 
 class AsetController extends Controller
 {
     public function index(Posts $posts)
     {
+        SEOMeta::setTitle('Aset');
         $data = $posts->orderBy('created_at', 'desc')->take(8)->get();
         $populer = $posts->latest('created_at', 'desc')->paginate(3);
         $tags = Tags::all();
@@ -31,6 +33,7 @@ class AsetController extends Controller
 
     public function list_blog()
     {
+        SEOMeta::setTitle('List Aset');
         $data = Posts::latest()->get();
         $category_list = Category::all();
         return view('aset.list', compact('data','category_list'));

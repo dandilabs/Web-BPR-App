@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 17, 2023 at 08:45 AM
+-- Generation Time: Feb 23, 2023 at 07:58 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -457,7 +457,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `type`) VALUES
 (2, 'BPR RIZKY BAROKAH', 'dandihermawan87@gmail.com', NULL, '$2y$10$daCpKTcV.SBOXgQyXhgS/.IpoisstJuM8kyepf973vJlUUTzDY/l6', NULL, '2023-01-24 19:49:42', '2023-02-08 08:15:10', 1),
-(4, 'Dandi Hermawan', 'admin@admin.com', NULL, '$2y$10$UcTs0pWGEEanQ9gV3ZUAK.vFRDoAWBfscANzwKQCMNq8MlTMzAVfa', NULL, '2023-02-10 06:45:30', '2023-02-10 06:45:30', 1);
+(5, 'admin', 'bprrizkybarokah@gmail.com', NULL, '$2y$10$n1WRW5MKYgfXzCp55SpS2.H9gGaypNQVNmsoXwM3q5BjMvjpSmPy.', NULL, '2023-02-17 07:49:00', '2023-02-17 07:49:00', 1);
 
 --
 -- Indexes for dumped tables
@@ -679,7 +679,7 @@ ALTER TABLE `tags`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

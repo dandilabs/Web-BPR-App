@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pengaduan;
 use Illuminate\Http\Request;
+use Artesaos\SEOTools\Facades\SEOMeta;
 
 class PengaduanController extends Controller
 {
@@ -37,11 +38,15 @@ class PengaduanController extends Controller
 
     public function data()
     {
+        SEOMeta::setTitle('Hubungi Kami');
         $data = Pengaduan::paginate(10);
         return view('hubungi.kami', compact('data'));
     }
     public function proses_pengaduan(Request $request)
     {
+        SEOMeta::setTitle('Hubungi Kami');
+        SEOMeta::setDescription('Bpr Rizky Barokah');
+        SEOMeta::setCanonical('https://bprrb.com/');
         //memvalidasi data wajib di isi
         $this->validate($request, [
             'nama'      => 'required|unique:pengaduan|min:3',
