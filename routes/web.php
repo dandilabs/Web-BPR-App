@@ -76,9 +76,11 @@ Route::get('/tentang-kami', function () {
     return view('tentang.kami');
 });
 Route::get('/laporan', 'App\Http\Controllers\PublikasiController@data')->name('laporan.publikasi');
-Route::get('/simulasi', function () {
-    return view('simulasi.index');
-});
+// Route::get('/simulasi-kredit', function () {
+//     return view('simulasi.index');
+// });
+Route::get('/simulasi-kredit', 'App\Http\Controllers\SimulasiController@index')->name('simulasi.index');
+Route::post('/hitung', 'App\Http\Controllers\SimulasiController@hitung_kredit');
 
 //hubungi kami
 // Route::get('/hubungi-kami', function () {

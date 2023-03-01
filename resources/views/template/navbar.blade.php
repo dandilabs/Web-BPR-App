@@ -17,12 +17,12 @@
                     <li><a href="{{ route('aset.list') }}">List Aset</a></li>
                 </ul>
             </li>
-            {{-- <li><a class="nav-link" href="/simulasi">Simulasi Kredit</a></li> --}}
             <li class="dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                     aria-expanded="false">Tentang Kami</a>
                 <ul class="dropdown-menu">
                     <li><a href="/tentang-kami" class="active">Profile Perusahaan</a></li>
+                    <li><a class="nav-link" href="/simulasi-kredit">Simulasi Kredit</a></li>
                     {{-- <li><a href="/laporan">Laporan Publikasi</a></li> --}}
                 </ul>
             </li>
