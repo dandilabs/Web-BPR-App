@@ -20,7 +20,7 @@ class BlogController extends Controller
         $data = $posts->orderBy('created_at', 'desc')->take(3)->get();
         $populer = $posts->latest('created_at', 'desc')->paginate(3);
         $tags = Tags::all();
-        $news = News::all();
+        $news = News::latest()->get();
         $category_list = Category::all();
         return view('blog', compact('data','populer','tags', 'category_list','news'));
     }

@@ -80,7 +80,7 @@ Route::get('/laporan', 'App\Http\Controllers\PublikasiController@data')->name('l
 //     return view('simulasi.index');
 // });
 Route::get('/simulasi-kredit', 'App\Http\Controllers\SimulasiController@index')->name('simulasi.index');
-Route::post('/hitung', 'App\Http\Controllers\SimulasiController@hitung_kredit');
+Route::post('/proses_hitung', 'App\Http\Controllers\SimulasiController@proses_hitung');
 
 //hubungi kami
 // Route::get('/hubungi-kami', function () {

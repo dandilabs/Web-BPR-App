@@ -28,6 +28,11 @@
 @section('slider')
     <!-- Slicer col -->
     <div id="carouselExampleIndicators" class="carousel slide banner_slider col-12" data-ride="carousel">
+        <div class="alert alert-danger" role="alert">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            Di informasikan Tanggal <strong>5 Mei 2023</strong> PT BPR Rizky Barokah <button class="btn btn-sm btn-danger">tutup</button>
+            dan akan beroperasional kembali seperti biasa pada Tanggal <strong> 8 Mei 2023.</strong>
+        </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="{{ asset('vendor/images/produk/15.png') }}" alt="First slide">
